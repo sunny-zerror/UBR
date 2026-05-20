@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+* {
+  scroll-behavior: smooth;
+  user-select: none;
+}
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.text-blue{
+  color: #1666BA;
+}
+.bg-blue{
+  background-color: #1666BA;
+  color: white;
+}
+.scroller_none::-webkit-scrollbar {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.h-screen {
+  height: 100vh !important;
+  height: 100svh !important;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-inline: 1rem;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+.padding {
+  padding-inline: 1rem;
+}
+@media (min-width: 1020px) {
+  .padding {
+    padding-inline: 2rem;
+  }
+  .container {
+    padding-inline: 2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .padding {
+    padding-inline: 4rem;
+  }
+  .container {
+    padding-inline: 4rem;
+  }
+}

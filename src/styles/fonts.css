@@ -1,0 +1,52 @@
+@font-face {
+  font-family: graphik-medium;
+  src: url(../../public/fonts/GraphikLCG-Medium.woff2);
+}
+@font-face {
+  font-family: graphik-regular;
+  src: url(../../public/fonts/GraphikLCG-Regular.woff2);
+}
+html,
+body {
+  font-size: 14px;
+  font-family: graphik-regular, Arial, Helvetica, sans-serif;
+  font-display: swap;
+}
+
+@media (min-width: 1440px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: graphik-medium, sans-serif;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 4.75rem;
+}
+h2 {
+  font-size: 3.75rem;
+  line-height: 4rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 750px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+}
