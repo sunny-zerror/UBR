@@ -1,13 +1,14 @@
 import { RiCloseLine } from '@remixicon/react'
 import React from 'react'
+import DotButton from '../common/DotButton'
 
 const SelectedWork = () => {
     return (
         <>
             <div className='container py-24 space-y-5'>
-                <h6 className='text-blue'>Selected work</h6>
+                <DotButton text="Selected work"/>
                 <div className="grid grid-cols-2 items-end ">
-                    <h2>Brands we have <br /> backed.</h2>
+                    <h2 className='capitalize'>Brands we have <br /> backed.</h2>
                     <div className="flex justify-end">
                         <p className='w-[60%] leading-tight '>Capital and celebrity, structured as a single move. Strategic advisory anchored to talent. A full-stack engagement that compounds.</p>
                     </div>

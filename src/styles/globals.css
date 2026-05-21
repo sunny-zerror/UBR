@@ -6,16 +6,17 @@
 }
 body {
   overflow-x: hidden;
+  color: #191b1d;
   width: 100%;
 }
 body::-webkit-scrollbar {
   display: none;
 }
-.text-blue{
-  color: #1666BA;
+.text-black{
+  color: #191b1d;
 }
-.bg-blue{
-  background-color: #1666BA;
+.bg-black{
+  background-color: #191b1d;
   color: white;
 }
 .scroller_none::-webkit-scrollbar {
@@ -59,9 +60,9 @@ button {
 }
 @media (min-width: 1440px) {
   .padding {
-    padding-inline: 4rem;
+    padding-inline: 6rem;
   }
   .container {
-    padding-inline: 4rem;
+    padding-inline: 6rem;
   }
 }

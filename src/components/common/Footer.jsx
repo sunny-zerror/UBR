@@ -8,7 +8,7 @@ const Footer = () => {
   const skipBlackBox = pathname === '/contact'
   return (
     <>
-      {!skipBlackBox && (
+      {/* {!skipBlackBox && (
         <div className="w-full mt-24 bg-black">
           <div className='container py-24 text-white space-y-5'>
             <div className="grid grid-cols-2 items-end ">
@@ -25,10 +25,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      )}
-      <div className="bg-[#F4F4F2]">
-        <div className="container pt-24 grid grid-cols-6">
-          <div className="space-y-5 col-span-3">
+      )} */}
+      <div className=" mt-24 bg-black">
+        <div className="container pt-24 grid items-stretch grid-cols-6">
+          <div className="space-y-5 flex flex-col justify-between col-span-3">
             <img className='w-[15%]' src="/logo.png" alt="" />
             <p className='text-sm w-[50%] opacity-70 '>A venture builder for India 1. Talent, capital, strategy, design and distribution, fused into one operating model for profitable scale.</p>
           </div>
@@ -50,7 +50,7 @@ const Footer = () => {
               <p>kaushik@disrptve.com</p>
             </div>
           </div>
-          <div className="space-y-5">
+          <div className="space-y-5 pl-12">
             <h6 className='text-blue'>Socials</h6>
             <div className=" capitalize space-y-2">
               <p>LinkedIn</p>
@@ -59,8 +59,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="container">
-          <div className="w-full  border-t border-black/10 mt-10 py-5">
-            <h6 className='text-xs opacity-60'>© 2026 UBR × DISRPTVE</h6>
+          <div className="w-full  border-t border-white/10 mt-10 py-5">
+            <p className='text-xs opacity-60'>© 2026 UBR × DISRPTVE</p>
           </div>
         </div>
       </div>

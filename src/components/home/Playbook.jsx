@@ -1,9 +1,10 @@
 "use client";
 import { useGSAP } from '@gsap/react';
-import { RiBriefcaseLine, RiGlobalLine, RiLineChartLine, RiNodeTree, RiUserLine } from '@remixicon/react';
+import { RiArrowDownLine, RiArrowDownSLine, RiBriefcaseLine, RiGlobalLine, RiLineChartLine, RiNodeTree, RiUserLine } from '@remixicon/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+import DotButton from '../common/DotButton';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -76,57 +77,63 @@ const pillarsData = [
 
 const Playbook = () => {
 
-    const containerRef = useRef();
-
-    useGSAP(() => {
-        gsap.to(".content_slider", {
-            xPercent:-100,
-            ease:"linear",
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: true
-            }
-        })
-    }, { scope: containerRef })
+    const [openId, setOpenId] = useState(null)
 
     return (
         <>
-            <div ref={containerRef} className="w-full h-[400vh] border-t border-b border-black/30">
-                <div className=" py-24 sticky top-0 w-full h-screen flex flex-col justify-between">
+            <div className="w-full  bg-[#191B1D] text-white">
+                <div className=" py-24  w-full  flex flex-col justify-between">
                     <div className='container space-y-5'>
-                        <h6 className='text-blue'>The Playbook</h6>
+                        <DotButton text="The Playbook" />
                         <div className="grid grid-cols-2 items-end ">
-                            <h2>Five pillars. <br /> One playbook.</h2>
+                            <h2 className='capitalize'>Five pillars. <br /> One playbook.</h2>
                             <div className="flex justify-end">
                                 <p className='w-[60%] leading-tight '>Not concepts. Integrated capabilities delivered by an embedded team. Each pillar moves a specific metric.</p>
                             </div>
                         </div>
                     </div>
-                    <div className="container ">
-                        <div className=" content_slider flex gap-x-8">
-                            {pillarsData.map((pillar) => (
-                                <div key={pillar.id} className="p-8 shrink-0 w-[35vw] h-[45vh] flex flex-col justify-between bg-blue  rounded-xl">
-                                    <div className="w-full  flex items-center justify-between">
-                                        <div className=" leading-none">
-                                            <h3>{pillar.title}</h3>
-                                            <p className='text-lg  opacity-70'>{pillar.subtitle}</p>
-                                        </div>
-                                        <div className="">
-                                            <pillar.icon size={44} />
-                                        </div>
-                                    </div>
-                                    <div className="space-y-2">
-                                        {pillar.items.map((item) => (
-                                            <div className="flex items-center text-xl gap-x-2" key={item}>
-                                                <div className="size-2 bg-white"></div>
-                                                <p className='text-xl'>{item}</p>
+                    <div className="container pt-14 ">
+                        <div className=" flex items-stretch w-full">
+                            <div className="w-1/2 center pr-24">
+                                {pillarsData.map((item, index) => (
+                                    <div
+                                        key={item.id}
+                                        className={`size-[16rem] absolute border border-white rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-10"
+                                            }`}
+                                        style={{
+                                            transform: `translateX(${(index - 2) * 3}rem)`,
+                                        }}
+                                    />
+                                ))}
+                            </div>
+                            <div className="w-1/2">
+                                {pillarsData.map((item) => (
+                                    <div
+                                        onClick={() =>
+                                            setOpenId((prev) => (prev === item.id ? null : item.id))
+                                        }
+                                        key={item.id}
+                                        className=" border-b cursor-pointer group border-white/10">
+                                        <div className="  mb-2 mt-8 flex w-full justify-between items-center">
+                                            <div className="">
+                                                <p className="text-4xl font-medium leading-none">{item.title}</p>
+                                                <p className=" capitalize opacity-60">{item.subtitle}</p>
                                             </div>
-                                        ))}
+                                            <div className={`size-10 center rounded-full group-hover:bg-white group-hover:text-black ${openId === item.id ? "rotate-180 bg-white text-black" : "border text-white/40"}  transition-all duration-300`}>
+                                                <RiArrowDownLine />
+                                            </div>
+                                        </div>
+                                        <div className={`h-0 ${openId === item.id ? "h-40 opacity-100 pt-5" : "h-0 opacity-0 pt-0"} transition-all duration-300 overflow-hidden capitalize space-y-2`}>
+                                            {item.items.map((subItem, i) => (
+                                                <div key={i} className="flex items-center gap-x-2">
+                                                    <div className="size-2 bg-white"></div>
+                                                    <p key={subItem}> {subItem}</p>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

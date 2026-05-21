@@ -1,14 +1,15 @@
 import { RiBarChartBoxLine, RiFocus3Line, RiSettings3Line, RiShieldCheckLine, RiStarLine, RiTeamLine } from '@remixicon/react'
 import Image from 'next/image'
 import React from 'react'
+import DotButton from '../common/DotButton'
 
 const WhoWeAre = () => {
     return (
         <div className='py-24'>
             <div className='container space-y-5'>
-                <h6 className='text-blue'>Who we are</h6>
+                <DotButton text="Who we are" />
                 <div className="grid grid-cols-2 items-end ">
-                    <h2>Two operators. <br /> One model.</h2>
+                    <h2 className='capitalize'>Two operators. <br /> One model.</h2>
                     <div className="flex justify-end">
                         <p className='w-[60%] leading-tight '>UBR and DISRPTVE come from opposite ends of the consumer ventures spectrum. Together, they fix the two things most consumer brands get wrong at once.</p>
                     </div>
@@ -28,43 +29,43 @@ const WhoWeAre = () => {
                             </h3>
                         </div>
                         <p className="relative mt-10 leading-tight text-xl text-gray-700 w-[90%]">Disciplined capital, enterprise scaling, a proven playbook for turning revenue into profit. The operator side of the model, anchored by <b> Binoy Khimji </b> and the Cornerstone ecosystem. Governance, unit economics, and the patience to compound.</p>
-                        <div className="relative mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div className="rounded-2xl  px-5 py-5 bg-white">
-                                <div className="flex items-center gap-4">
+                        <div className="relative mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                                <div className="flex items-center gap-2">
                                     <RiBarChartBoxLine
-                                        size={24}
+                                        size={20}
                                         className=""
                                     />
 
-                                    <h5 className="uppercase">
+                                    <p className="uppercase">
                                         Capital
-                                    </h5>
+                                    </p>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl  px-5 py-5 bg-white">
-                                <div className="flex items-center gap-4">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                                <div className="flex items-center gap-2">
                                     <RiSettings3Line
-                                        size={24}
+                                        size={20}
                                         className=""
                                     />
 
-                                    <h5 className="uppercase">
+                                    <p className="uppercase">
                                         Operations
-                                    </h5>
+                                    </p>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl  px-5 py-5 bg-white">
-                                <div className="flex items-center gap-4">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                                <div className="flex items-center gap-2">
                                     <RiShieldCheckLine
-                                        size={24}
+                                        size={20}
                                         className=""
                                     />
 
-                                    <h5 className="uppercase">
+                                    <p className="uppercase">
                                         Governance
-                                    </h5>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -81,43 +82,43 @@ const WhoWeAre = () => {
                         </div>
                         <p className="relative mt-10 leading-tight text-xl text-gray-700   w-[95%]">
                             Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. Led by <b> Ashish Chowdhry </b> and <b> Kaushik Sundararajan,</b> with a decade of running culture-first agencies behind them. Trust as the unfair advantage.</p>
-                        <div className="relative  mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div className="rounded-2xl  px-5 py-5 bg-white">
-                                <div className="flex items-center gap-4 ">
+                        <div className="relative  mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                                <div className="flex items-center gap-2 ">
                                     <RiTeamLine
-                                        size={24}
+                                        size={20}
                                         className=""
                                     />
 
-                                    <h5 className="uppercase">
+                                    <p className="uppercase">
                                         Talent
-                                    </h5>
+                                    </p>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl  px-5 py-5 bg-white">
-                                <div className="flex items-center gap-4">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                                <div className="flex items-center gap-2">
                                     <RiStarLine
-                                        size={24}
+                                        size={20}
                                         className=""
                                     />
 
-                                    <h5 className="uppercase">
+                                    <p className="uppercase">
                                         Brand
-                                    </h5>
+                                    </p>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl  px-5 py-5 bg-white">
-                                <div className="flex items-center gap-4">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                                <div className="flex items-center gap-2">
                                     <RiFocus3Line
-                                        size={24}
+                                        size={20}
                                         className=""
                                     />
 
-                                    <h5 className="uppercase">
+                                    <p className="uppercase">
                                         Audience
-                                    </h5>
+                                    </p>
                                 </div>
                             </div>
                         </div>

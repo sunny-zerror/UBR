@@ -1,6 +1,7 @@
 "use client";
 import { RiArrowDownSLine } from '@remixicon/react';
 import React, { useState } from 'react'
+import DotButton from '../common/DotButton';
 
 const stageOptions = [
     {
@@ -56,66 +57,21 @@ const serviceOptions = [
     },
 ];
 
-const foundersData = [
-    {
-        role: "Co-Founder",
-        company: "UBR",
-        name: "Binoy Khimji",
-        email: "binoykhimji@gmail.com",
-    },
-    {
-        role: "Co-Founder",
-        company: "DISRPTVE",
-        name: "Ashish Chowdhry",
-        email: "ashish@disrptve.com",
-    },
-    {
-        role: "Co-Founder",
-        company: "DISRPTVE",
-        name: "Kaushik Sundararajan",
-        email: "kaushik@disrptve.com",
-    },
-];
 const ContactForm = () => {
     const [inquiry, setInquiry] = useState("General Inquiry");
     return (
         <>
-            <div className="container mb-24">
-                <div className="w-full grid grid-cols-5 gap-x-32">
-                    <div className="col-span-2">
-                        <h6 className='text-blue'>Direct</h6>
-                        <div className="grid mt-5 grid-cols-1 gap-5">
-                            {foundersData.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="px-7  space-y-2 py-5 border hover:bg-[#1666BA] transition-colors duration-300 hover:text-white cursor-pointer border-black/20 rounded-lg "
-                                >
-                                    {/* top */}
-                                    <h6 className="flex items-center gap-3 uppercase ">
-                                        <span>{item.role}</span>
-                                        <span>•</span>
-                                        <span>{item.company}</span>
-                                    </h6>
-
-                                    {/* name */}
-                                    <h5 className="">
-                                        {item.name}
-                                    </h5>
-
-                                    {/* email */}
-                                    <a
-                                        href={`mailto:${item.email}`}
-                                        className="inline-block  "
-                                    >
-                                        {item.email}
-                                    </a>
-                                </div>
-                            ))}
+            <div className="container my-24">
+                <div className="w-full grid grid-cols-2">
+                    <div className="">
+                        <div className="w-1/2 space-y-5">
+                            <DotButton text="get in touch" />
+                            <h2 className='capitalize'>Fill the form</h2>
                         </div>
                     </div>
-                    <div className=" col-span-3 space-y-8 h-full relative">
-                        <form className="space-y-6 mt-4">
-                            <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+                    <div className=" space-y-8 h-full relative">
+                        <form className="space-y-10">
+                            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 gap-x-10">
                                 <div className="space-y-2">
                                     <label className="text-xs font-medium uppercase  text-[#0f1219b3]">
                                         Full Name
@@ -124,7 +80,7 @@ const ContactForm = () => {
                                     <input
                                         type="text"
                                         placeholder="John Anderson"
-                                        className="  heading-font w-full border border-black/20 rounded-lg  px-6 py-4 placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 rounded-lg"
+                                        className="mt-2  heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 "
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -135,12 +91,12 @@ const ContactForm = () => {
                                     <input
                                         type="text"
                                         placeholder="john.anderson@gmail.com"
-                                        className="  heading-font w-full border border-black/20 rounded-lg  px-6 py-4 placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 rounded-lg"
+                                        className="mt-2  heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 "
                                     />
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+                            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 gap-x-10">
                                 <div className="space-y-3">
                                     <label className="text-xs font-medium uppercase  text-[#0f1219b3]">
                                         Company or brand
@@ -149,7 +105,7 @@ const ContactForm = () => {
                                     <input
                                         type="email"
                                         placeholder="john.anderson@gmail.com"
-                                        className="  heading-font w-full border border-black/20 rounded-lg  px-6 py-4 placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 rounded-lg"
+                                        className=" mt-2 heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 "
                                     />
                                 </div>
 
@@ -158,11 +114,11 @@ const ContactForm = () => {
                                         Stage
                                     </label>
 
-                                    <div className="relative">
+                                    <div className="relative  mt-2">
                                         <select
                                             value={inquiry}
                                             onChange={(e) => setInquiry(e.target.value)}
-                                            className="  heading-font w-full appearance-none border border-black/20 rounded-lg  px-6 py-4 placeholder:text-[#0f121980] text-[#111827] outline-none focus:border-black/20 rounded-lg"
+                                            className=" cursor-pointer   heading-font w-full appearance-none border-b border-black/20  placeholder:text-[#0f121980] text-[#111827] outline-none focus:border-black/20 "
                                         >
                                             {stageOptions.map((option) => (
                                                 <option key={option.value} value={option.value}>
@@ -173,7 +129,7 @@ const ContactForm = () => {
 
                                         <RiArrowDownSLine
                                             size={18}
-                                            className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 text-[#4b5563]"
+                                            className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[#4b5563]"
                                         />
                                     </div>
                                 </div>
@@ -184,11 +140,11 @@ const ContactForm = () => {
                                     What are you looking for?
                                 </label>
 
-                                <div className="relative">
+                                <div className="relative mt-2">
                                     <select
                                         value={inquiry}
                                         onChange={(e) => setInquiry(e.target.value)}
-                                        className="  heading-font w-full appearance-none border border-black/20 rounded-lg  px-6 py-4 placeholder:text-[#0f121980] text-[#111827] outline-none focus:border-black/20 rounded-lg"
+                                        className=" cursor-pointer heading-font w-full appearance-none border-b border-black/20  placeholder:text-[#0f121980] text-[#111827] outline-none focus:border-black/20 "
                                     >
                                         {serviceOptions.map((option) => (
                                             <option key={option.value} value={option.value}>
@@ -199,7 +155,7 @@ const ContactForm = () => {
 
                                     <RiArrowDownSLine
                                         size={18}
-                                        className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 text-[#4b5563]"
+                                        className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[#4b5563]"
                                     />
                                 </div>
                             </div>
@@ -213,12 +169,12 @@ const ContactForm = () => {
                                     rows={7}
                                     placeholder="category, traction, what you need, etc."
                                     required
-                                    className=" heading-font w-full resize-none border border-black/20 rounded-lg  px-6 py-4 placeholder:text-[#0f121980]  text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 rounded-lg"
+                                    className=" mt-2 heading-font w-full resize-none border-b border-black/20  placeholder:text-[#0f121980]  text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 "
                                 />
                             </div>
 
                         </form>
-                                    <button className='bg-black text-white text-sm px-4 py-2.5 rounded-full'>Send Message</button>
+                        <button className='bg-[#F20908] font-medium text-white text-sm px-5 py-3 rounded-full'>Send Message</button>
 
                     </div>
                 </div>

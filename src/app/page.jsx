@@ -4,6 +4,7 @@ import OurThesis from "@/components/home/OurThesis";
 import Playbook from "@/components/home/Playbook";
 import SelectedWork from "@/components/home/SelectedWork";
 import Team from "@/components/home/Team";
+import VideoSection from "@/components/home/VideoSection";
 import WhoWeAre from "@/components/home/WhoWeAre";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -11,6 +12,7 @@ const HomePage = () => {
   return (
     <>
     <Hero />
+    <VideoSection/>
     <MacroPicture/>
     <OurThesis/>
     <WhoWeAre/>
