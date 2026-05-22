@@ -9,6 +9,9 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ViewTransitions } from "next-view-transitions";
+import GlobalImgReveal from "../animation/GlobalImgReveal";
+import GlobalParaReveal from "../animation/GlobalParaReveal";
+import GlobalHeadingReveal from "../animation/GlobalHeadingReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +46,11 @@ export default function SiteLayout({ children }) {
   return (
     <ViewTransitions>
       <LenisScroll>
+        
+        <GlobalImgReveal />
+        <GlobalHeadingReveal />
+        <GlobalParaReveal/>
+
         <header>
           <Header />
         </header>

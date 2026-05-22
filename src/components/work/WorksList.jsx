@@ -1,5 +1,6 @@
 import { RiCloseLine } from '@remixicon/react';
 import React from 'react'
+import Button from '../common/Button';
 
 export const caseStudiesData = [
     {
@@ -52,11 +53,11 @@ export const WorksList = () => {
         <>
             <div className="container pt-24 space-y-20">
                 {caseStudiesData.map((item, i) => (
-                    <div key={i} className=" border-b pb-8 border-black/10 w-full items-stretch grid grid-cols-5">
+                    <div key={i} className=" border-b pb-20 border-black/10 last:border-none last:pb-0 w-full items-stretch grid grid-cols-5">
                         <div className="col-span-2 flex flex-col justify-between">
                             <div className="space-y-2">
-                                <h3 className="capitalize leading-none ">{item.title}</h3>
-                                <h6 className="">{item.category}</h6>
+                                <h3 className="capitalize  ">{item.title}</h3>
+                                <h6 className="opacity-80">{item.category}</h6>
                             </div>
                             <div className="space-y-4">
                                 <p className='leading-tight text-xl w-[80%]'>{item.description}</p>
@@ -69,11 +70,13 @@ export const WorksList = () => {
                                         </div>
                                     ))}
                                 </div>
-                        <button className='bg-[#F20908] mt-5 font-medium text-white text-sm px-5 py-3 rounded-full'>See Case Study</button>
+                                <Button text={"See Case Study"} className="mt-5" />
                             </div>
                         </div>
                         <div className={`col-span-3 aspect-video center ${item.classname}`}>
-                            <img className='' src={item.img} alt="" />
+                            <div data-img-effect className="w-full h-full center">
+                                <img className='' src={item.img} alt="" />
+                            </div>
                         </div>
 
                     </div>

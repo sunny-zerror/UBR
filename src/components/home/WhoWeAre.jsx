@@ -2,20 +2,17 @@ import { RiBarChartBoxLine, RiFocus3Line, RiSettings3Line, RiShieldCheckLine, Ri
 import Image from 'next/image'
 import React from 'react'
 import DotButton from '../common/DotButton'
+import SectionHeading from '../common/SectionHeading'
 
 const WhoWeAre = () => {
     return (
-        <div className='py-24'>
-            <div className='container space-y-5'>
-                <DotButton text="Who we are" />
-                <div className="grid grid-cols-2 items-end ">
-                    <h2 className='capitalize'>Two operators. <br /> One model.</h2>
-                    <div className="flex justify-end">
-                        <p className='w-[60%] leading-tight '>UBR and DISRPTVE come from opposite ends of the consumer ventures spectrum. Together, they fix the two things most consumer brands get wrong at once.</p>
-                    </div>
-                </div>
-            </div>
-            <div className="container  pt-20 overflow-hidden">
+        <div className='py-24 space-y-16'>
+            <SectionHeading
+                btnText={"Who we are"}
+                heading={"Two operators. One model."}
+                desc={"UBR and DISRPTVE come from opposite ends of the consumer ventures spectrum. Together, they fix the two things most consumer brands get wrong at once."}
+            />
+            <div className="container overflow-hidden">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
@@ -28,8 +25,8 @@ const WhoWeAre = () => {
                                 UBR brings the P&amp;L <br /> rigour.
                             </h3>
                         </div>
-                        <p className="relative mt-10 leading-tight text-xl text-gray-700 w-[90%]">Disciplined capital, enterprise scaling, a proven playbook for turning revenue into profit. The operator side of the model, anchored by <b> Binoy Khimji </b> and the Cornerstone ecosystem. Governance, unit economics, and the patience to compound.</p>
-                        <div className="relative mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <p className="relative mt-10 leading-6 text-xl opacity-80 w-[90%]">Disciplined capital, enterprise scaling, a proven playbook for turning revenue into profit. The operator side of the model, anchored by <b> Binoy Khimji </b> and the Cornerstone ecosystem. Governance, unit economics, and the patience to compound.</p>
+                        <div className="relative mt-10 opacity-80 grid grid-cols-1 sm:grid-cols-3 gap-2">
                             <div className="rounded-md font-medium  px-4 py-2 bg-white">
                                 <div className="flex items-center gap-2">
                                     <RiBarChartBoxLine
@@ -80,9 +77,9 @@ const WhoWeAre = () => {
                                 DISRPTVE brings the <br /> audience.
                             </h3>
                         </div>
-                        <p className="relative mt-10 leading-tight text-xl text-gray-700   w-[95%]">
+                        <p className="relative mt-10 leading-tight text-xl opacity-80   w-[95%]">
                             Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. Led by <b> Ashish Chowdhry </b> and <b> Kaushik Sundararajan,</b> with a decade of running culture-first agencies behind them. Trust as the unfair advantage.</p>
-                        <div className="relative  mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="relative  mt-10 grid grid-cols-1 opacity-80 sm:grid-cols-3 gap-2">
                             <div className="rounded-md font-medium  px-4 py-2 bg-white">
                                 <div className="flex items-center gap-2 ">
                                     <RiTeamLine

@@ -1,5 +1,6 @@
 import React from 'react'
 import DotButton from '../common/DotButton'
+import SectionHeading from '../common/SectionHeading';
 
 const valuesData = [
     {
@@ -28,30 +29,26 @@ const valuesData = [
 ];
 const HowWeWork = () => {
     return (
-        <>
-            <div className='container border-t border-black/10 mt-24 py-24 pb-16 space-y-5'>
-                <DotButton text="How we work" />
-                <div className="grid grid-cols-2 items-end ">
-                    <h2 className='capitalize'>Co-founders, <br /> not consultants.</h2>
-                    <div className="flex justify-end">
-                        <p className='w-[60%] leading-tight '>We embed across all five pillars from day one. Equity-aligned. Vested against KPIs. Same room as the founder, same target on the wall.</p>
-                    </div>
-                </div>
-            </div>
+        <div className='border-t border-black/10  pt-24 space-y-16'>
+            <SectionHeading
+                btnText="How we work"
+                heading="Co-founders, not consultants."
+                desc={"We embed across all five pillars from day one. Equity-aligned. Vested against KPIs. Same room as the founder, same target on the wall."}
+            />
             <div className="container">
                 {valuesData.map((item, i) => (
-                    <div key={i} className="flex border-b pb-3 mb-10 border-black/10  justify-between">
-                        <div className="space-y-10">
+                    <div key={i} className="grid grid-cols-6 border-b pb-3 mb-10 border-black/10  justify-between">
+                        <div className=" col-span-4 space-y-10">
                             <h6>{item.label}</h6>
                             <h4 className='leading-none w-[70%]'>{item.title}</h4>
                         </div>
-                        <div className="w-[30%] flex items-end">
+                        <div className="col-span-2 flex items-end">
                             <p className='leading-tight text-xl'>{item.description}</p>
                         </div>
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 

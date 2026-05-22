@@ -2,6 +2,7 @@
 import { RiArrowDownSLine } from '@remixicon/react';
 import React, { useState } from 'react'
 import DotButton from '../common/DotButton';
+import Button from '../common/Button';
 
 const stageOptions = [
     {
@@ -65,52 +66,51 @@ const ContactForm = () => {
                 <div className="w-full grid grid-cols-2">
                     <div className="">
                         <div className="w-1/2 space-y-5">
-                            <DotButton text="get in touch" />
-                            <h2 className='capitalize'>Fill the form</h2>
+                            <DotButton text="start a conversation" />
                         </div>
                     </div>
                     <div className=" space-y-8 h-full relative">
                         <form className="space-y-10">
                             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 gap-x-10">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-medium uppercase  text-[#0f1219b3]">
+                                    <label className="text-xs font-medium uppercase  opacity-80">
                                         Full Name
                                     </label>
 
                                     <input
                                         type="text"
                                         placeholder="John Anderson"
-                                        className="mt-2  heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 "
+                                        className="mt-2  heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] opacity-80 outline-none placeholder:opacity-80 focus:border-black/20 "
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-medium uppercase  text-[#0f1219b3]">
+                                    <label className="text-xs font-medium uppercase  opacity-80">
                                         Email
                                     </label>
 
                                     <input
                                         type="text"
                                         placeholder="john.anderson@gmail.com"
-                                        className="mt-2  heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 "
+                                        className="mt-2  heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] opacity-80 outline-none placeholder:opacity-80 focus:border-black/20 "
                                     />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 gap-x-10">
                                 <div className="space-y-3">
-                                    <label className="text-xs font-medium uppercase  text-[#0f1219b3]">
+                                    <label className="text-xs font-medium uppercase  opacity-80">
                                         Company or brand
                                     </label>
 
                                     <input
                                         type="email"
                                         placeholder="john.anderson@gmail.com"
-                                        className=" mt-2 heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 "
+                                        className=" mt-2 heading-font w-full border-b border-black/20  placeholder:text-[#0f121980] opacity-80 outline-none placeholder:opacity-80 focus:border-black/20 "
                                     />
                                 </div>
 
                                 <div className="space-y-3">
-                                    <label className="text-xs font-medium uppercase  text-[#0f1219b3]">
+                                    <label className="text-xs font-medium uppercase  opacity-80">
                                         Stage
                                     </label>
 
@@ -136,7 +136,7 @@ const ContactForm = () => {
                             </div>
 
                             <div className="space-y-3">
-                                <label className="text-xs font-medium uppercase  text-[#0f1219b3]">
+                                <label className="text-xs font-medium uppercase  opacity-80">
                                     What are you looking for?
                                 </label>
 
@@ -161,7 +161,7 @@ const ContactForm = () => {
                             </div>
 
                             <div className="space-y-3">
-                                <label className="text-xs font-medium uppercase  text-[#0f1219b3]">
+                                <label className="text-xs font-medium uppercase  opacity-80">
                                     Tell us a bit more
                                 </label>
 
@@ -169,13 +169,12 @@ const ContactForm = () => {
                                     rows={7}
                                     placeholder="category, traction, what you need, etc."
                                     required
-                                    className=" mt-2 heading-font w-full resize-none border-b border-black/20  placeholder:text-[#0f121980]  text-[#0f1219b3] outline-none placeholder:text-[#0f1219b3] focus:border-black/20 "
+                                    className=" mt-2 heading-font w-full resize-none border-b border-black/20  placeholder:text-[#0f121980]  opacity-80 outline-none placeholder:opacity-80 focus:border-black/20 "
                                 />
                             </div>
 
                         </form>
-                        <button className='bg-[#F20908] font-medium text-white text-sm px-5 py-3 rounded-full'>Send Message</button>
-
+                        <Button text='Send Message' />
                     </div>
                 </div>
             </div>

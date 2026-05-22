@@ -1,5 +1,6 @@
 import React from 'react'
 import DotButton from '../common/DotButton'
+import SectionHeading from '../common/SectionHeading';
 
 export const statsData = [
     [
@@ -44,25 +45,22 @@ export const statsData = [
 ];
 const MacroPicture = () => {
     return (
-        <div className='w-full  pb-12 bg-[#CDCECF]'>
-            <div className='container pt-24  space-y-5'>
-                <DotButton text="The macro picture" />
-                <div className="grid grid-cols-2 items-end ">
-                    <h2 className='capitalize'>All signals point to a once-in-a-generation moment.</h2>
-                    <div className="flex justify-end">
-                        <p className='w-[60%] leading-tight '>Five tailwinds are converging to create an unprecedented environment for building consumer brands in India. The next decade will be defined by the model that captures India 1.</p>
-                    </div>
-                </div>
-            </div>
-            <div className="container space-y-10  mt-24">
+        <div className='w-full py-24  pb-12 bg-[#CDCECF]'>
+            <SectionHeading
+                btnText={"The macro picture"}
+                heading={"All signals point to a once-in-a-generation moment."}
+                desc={"Five tailwinds are converging to create an unprecedented environment for building consumer brands in India. The next decade will be defined by the model that captures India 1."}
+            />
+
+            <div className="container space-y-10  mt-16">
 
                 {statsData.flat().map((item, index) => (
                     <div
                         key={index}
-                        className="w-full border-b pb-3 border-black/10 last:border-none grid grid-cols-2 items-stretch"
+                        className="w-full border-b pb-3 border-black/10 last:border-none grid grid-cols-6 items-stretch"
                     >
-                        <div>
-                            <p className="font-medium tracking-tight text-white text-9xl">
+                        <div className='col-span-4'>
+                            <p data-heading-effect className="font-medium  text-8xl">
                                 {item.value}
 
                                 {item.suffix && (
@@ -71,16 +69,14 @@ const MacroPicture = () => {
                             </p>
                         </div>
 
-                        <div className="flex justify-end">
-                            <div className="w-[60%] flex flex-col justify-between">
-                                <p className="text-xl font-medium uppercase opacity-80">
-                                    {item.title}
-                                </p>
+                        <div className=" col-span-2 flex flex-col justify-between">
+                            <p className="text-lg font-medium uppercase ">
+                                {item.title}
+                            </p>
 
-                                <p className="opacity-60 leading-tight">
-                                    {item.description}
-                                </p>
-                            </div>
+                            <p className=" w-[80%] opacity-60 leading-5">
+                                {item.description}
+                            </p>
                         </div>
                     </div>
                 ))}

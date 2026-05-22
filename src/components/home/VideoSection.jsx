@@ -12,7 +12,7 @@ const VideoSection = () => {
 
         gsap.to(".img_cv", {
             opacity:1,
-            delay:0.25
+            delay:1
         })
 
         gsap.fromTo(".img_cv", {

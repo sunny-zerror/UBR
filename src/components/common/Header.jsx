@@ -1,5 +1,6 @@
 import { Link } from 'next-view-transitions'
 import React from 'react'
+import Button from './Button'
 
 const Header = () => {
   return (
@@ -18,7 +19,7 @@ const Header = () => {
         </div>
         <div className="w-[25%] flex justify-end">
           <Link href={"/contact"}>
-            <button className='bg-[#F20908] font-medium text-white text-sm px-4 py-2.5 rounded-full'>Get in Touch</button>
+            <Button text={"Get in Touch"} />
           </Link>
         </div>
       </div>

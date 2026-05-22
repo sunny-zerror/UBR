@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React, { useRef, useState } from 'react'
 import DotButton from '../common/DotButton';
+import SectionHeading from '../common/SectionHeading';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -82,19 +83,18 @@ const Playbook = () => {
     return (
         <>
             <div className="w-full  bg-[#191B1D] text-white">
-                <div className=" py-24  w-full  flex flex-col justify-between">
-                    <div className='container space-y-5'>
-                        <DotButton text="The Playbook" />
-                        <div className="grid grid-cols-2 items-end ">
-                            <h2 className='capitalize'>Five pillars. <br /> One playbook.</h2>
-                            <div className="flex justify-end">
-                                <p className='w-[60%] leading-tight '>Not concepts. Integrated capabilities delivered by an embedded team. Each pillar moves a specific metric.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container pt-14 ">
-                        <div className=" flex items-stretch w-full">
-                            <div className="w-1/2 center pr-24">
+                <div className=" py-24  w-full space-y-16">
+
+                    <SectionHeading
+                        btnText={"The Playbook"}
+                        btnOutline={"outline"}
+                        heading={"Five pillars. One playbook."}
+                        desc={"Not concepts. Integrated capabilities delivered by an embedded team. Each pillar moves a specific metric."}
+                    />
+
+                    <div className="container ">
+                        <div className="  grid grid-cols-6 items-stretch w-full">
+                            <div className=" col-span-3 center pr-24">
                                 {pillarsData.map((item, index) => (
                                     <div
                                         key={item.id}
@@ -106,26 +106,26 @@ const Playbook = () => {
                                     />
                                 ))}
                             </div>
-                            <div className="w-1/2">
+                            <div className="col-span-3 pl-2.5">
                                 {pillarsData.map((item) => (
                                     <div
                                         onClick={() =>
                                             setOpenId((prev) => (prev === item.id ? null : item.id))
                                         }
                                         key={item.id}
-                                        className=" border-b cursor-pointer group border-white/10">
+                                        className={`border-b cursor-pointer group border-white/10 transition-all duration-300  `}>
                                         <div className="  mb-2 mt-8 flex w-full justify-between items-center">
                                             <div className="">
-                                                <p className="text-4xl font-medium leading-none">{item.title}</p>
+                                                <h4 data-para-effect className="">{item.title}</h4>
                                                 <p className=" capitalize opacity-60">{item.subtitle}</p>
                                             </div>
                                             <div className={`size-10 center rounded-full group-hover:bg-white group-hover:text-black ${openId === item.id ? "rotate-180 bg-white text-black" : "border text-white/40"}  transition-all duration-300`}>
                                                 <RiArrowDownLine />
                                             </div>
                                         </div>
-                                        <div className={`h-0 ${openId === item.id ? "h-40 opacity-100 pt-5" : "h-0 opacity-0 pt-0"} transition-all duration-300 overflow-hidden capitalize space-y-2`}>
+                                        <div className={`h-0 pl-5 ${openId === item.id ? "h-42 opacity-100 pt-5" : "h-0 opacity-0 pt-0"} transition-all duration-300 overflow-hidden capitalize space-y-2`}>
                                             {item.items.map((subItem, i) => (
-                                                <div key={i} className="flex items-center gap-x-2">
+                                                <div key={i} className="flex text-lg items-center gap-x-2">
                                                     <div className="size-2 bg-white"></div>
                                                     <p key={subItem}> {subItem}</p>
                                                 </div>

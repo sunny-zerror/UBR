@@ -1,22 +1,21 @@
 import React from 'react'
 import DotButton from '../common/DotButton'
+import SectionHeading from '../common/SectionHeading'
 
 const CoFounders = () => {
     return (
-        <>
-            <div className='container py-24 pb-16 space-y-5'>
-                <DotButton text="Co Founders"/>
-                <div className="grid grid-cols-2 items-end ">
-                    <h2 className='capitalize'>Three operators.<br /> One model.</h2>
-                    <div className="flex justify-end">
-                        <p className='w-[60%] leading-tight '>UBR brings disciplined capital and operator discipline. DISRPTVE brings audience ownership and brand-building. Together, the two cultures most consumer ventures struggle to combine.</p>
-                    </div>
-                </div>
-            </div>
+        <div className='space-y-16 pt-24'>
+            <SectionHeading
+                btnText="Co Founders"
+                heading="Three operators. One model."
+                desc={"UBR brings disciplined capital and operator discipline. DISRPTVE brings audience ownership and brand-building. Together, the two cultures most consumer ventures struggle to combine."}
+                />
             <div className="container grid grid-cols-3 gap-x-5">
                 <div className="space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
+                    <div data-img-effect className="w-full h-full">
                         <img className='cover' src="/images/team/binoy.png" alt="" />
+                    </div>
                     </div>
                     <div className="space-y-1">
                         <h4 className='capitalize leading-none'>Binoy Khimji</h4>
@@ -26,7 +25,9 @@ const CoFounders = () => {
                 </div>
                 <div className="space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
+                    <div data-img-effect className="w-full h-full">
                         <img className='cover' src="/images/team/ashish.png" alt="" />
+                    </div>
                     </div>
                     <div className="space-y-1">
                         <h4 className='capitalize leading-none'>Ashish Chowdhry</h4>
@@ -36,7 +37,9 @@ const CoFounders = () => {
                 </div>
                 <div className="space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
+                    <div data-img-effect className="w-full h-full">
                         <img className='cover' src="/images/team/kaushik.png" alt="" />
+                    </div>
                     </div>
                     <div className="space-y-1">
                         <h4 className='capitalize leading-none'>Kaushik Sundararajan</h4>
@@ -46,7 +49,7 @@ const CoFounders = () => {
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }
 

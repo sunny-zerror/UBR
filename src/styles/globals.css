@@ -13,11 +13,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 .text-black{
-  color: #191b1d;
+  color: #191b1d !important;
 }
 .bg-black{
-  background-color: #191b1d;
-  color: white;
+  background-color: #191b1d !important;
+  color: white !important;
 }
 .scroller_none::-webkit-scrollbar {
   display: none;
@@ -65,4 +65,16 @@ button {
   .container {
     padding-inline: 6rem;
   }
+}
+
+.line-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+  display: block;
+}
+.split-line {
+  display: block;
+  text-align: inherit;
+  will-change: transform;
 }
