@@ -26,8 +26,8 @@ const WhoWeAre = () => {
                             </h3>
                         </div>
                         <p className="relative mt-10 leading-6 text-xl opacity-80 w-[90%]">Disciplined capital, enterprise scaling, a proven playbook for turning revenue into profit. The operator side of the model, anchored by <b> Binoy Khimji </b> and the Cornerstone ecosystem. Governance, unit economics, and the patience to compound.</p>
-                        <div className="relative mt-10 opacity-80 grid grid-cols-1 sm:grid-cols-3 gap-2">
-                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                        <div className="relative mt-10 opacity-80 grid grid-cols-1 sm:grid-cols-3 gap-5">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white group-hover:bg-black group-hover:text-white transition-all duration-300">
                                 <div className="flex items-center gap-2">
                                     <RiBarChartBoxLine
                                         size={20}
@@ -40,7 +40,7 @@ const WhoWeAre = () => {
                                 </div>
                             </div>
 
-                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white group-hover:bg-black group-hover:text-white transition-all duration-300">
                                 <div className="flex items-center gap-2">
                                     <RiSettings3Line
                                         size={20}
@@ -53,7 +53,7 @@ const WhoWeAre = () => {
                                 </div>
                             </div>
 
-                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white group-hover:bg-black group-hover:text-white transition-all duration-300">
                                 <div className="flex items-center gap-2">
                                     <RiShieldCheckLine
                                         size={20}
@@ -68,7 +68,7 @@ const WhoWeAre = () => {
                         </div>
                     </div>
 
-                    <div className="group relative bg-[#F8F8F8] rounded-xl  p-8 md:p-10 overflow-hidden ">
+                    <div className="group relative bg-[#F8F8F8]  rounded-xl  p-8 md:p-10 overflow-hidden ">
                         <div className="relative h-20 ">
                             <Image width={200} height={100} src="/images/logo-disrptve-dark.png" alt="" />
                         </div>
@@ -79,8 +79,8 @@ const WhoWeAre = () => {
                         </div>
                         <p className="relative mt-10 leading-tight text-xl opacity-80   w-[95%]">
                             Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. Led by <b> Ashish Chowdhry </b> and <b> Kaushik Sundararajan,</b> with a decade of running culture-first agencies behind them. Trust as the unfair advantage.</p>
-                        <div className="relative  mt-10 grid grid-cols-1 opacity-80 sm:grid-cols-3 gap-2">
-                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                        <div className="relative  mt-10 grid grid-cols-1 opacity-80 sm:grid-cols-3 gap-5">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white group-hover:bg-black group-hover:text-white transition-all duration-300">
                                 <div className="flex items-center gap-2 ">
                                     <RiTeamLine
                                         size={20}
@@ -93,7 +93,7 @@ const WhoWeAre = () => {
                                 </div>
                             </div>
 
-                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white group-hover:bg-black group-hover:text-white transition-all duration-300">
                                 <div className="flex items-center gap-2">
                                     <RiStarLine
                                         size={20}
@@ -106,7 +106,7 @@ const WhoWeAre = () => {
                                 </div>
                             </div>
 
-                            <div className="rounded-md font-medium  px-4 py-2 bg-white">
+                            <div className="rounded-md font-medium  px-4 py-2 bg-white group-hover:bg-black group-hover:text-white transition-all duration-300">
                                 <div className="flex items-center gap-2">
                                     <RiFocus3Line
                                         size={20}
