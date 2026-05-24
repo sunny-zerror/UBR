@@ -62,7 +62,7 @@ const ContactHero = () => {
       stagger: 0.2
     });
     tl.to(heading_split.lines, {
-      yPercent: -8,
+      yPercent: 0,
       duration: 0.8,
       ease: "expo.out",
       stagger: 0.05,
@@ -77,10 +77,10 @@ const ContactHero = () => {
   });
 
   return (
-    <div className='container pt-32  bg-[#CDCECF]'>
-      <div className="  content_box pb-16 border-b border-black/10">
+    <div className='container pt-32  bg-[#003049] text-white'>
+      <div className="  content_box pb-16 border-b border-white/10">
         <div className="space-y-5">
-          <h1 className=' heading_split capitalize text-white'>Get In Touch <br /> <span className=' normal-case text-black hover:opacity-80 cursor-pointer transition-all duration-300'>info@ubr.com</span></h1>
+          <h1 className=' heading_split capitalize text-white'>Get In Touch <br /> <span className=' normal-case  text-white cursor-pointer transition-all duration-300'>info@ubr.com</span></h1>
         </div>
       </div>
       <div className=" w-full pt-16 pb-24 grid grid-cols-6 ">
@@ -92,7 +92,7 @@ const ContactHero = () => {
               {foundersData.map((item, index) => (
                 <div
                   key={index}
-                  className=" hover:px-3 transition-all duration-300 pb-2 border-b flex items-center justify-between group cursor-pointer border-black/10 "
+                  className=" hover:px-3 transition-all duration-300 pb-2 border-b flex items-center justify-between group cursor-pointer border-white/10 "
                 >
                   <div className="space-y-5">
                     <div className="">

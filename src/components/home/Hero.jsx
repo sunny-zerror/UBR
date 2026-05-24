@@ -42,7 +42,7 @@ const Hero = () => {
       stagger: 0.2
     });
     tl.to(heading_split.lines, {
-      yPercent: -8,
+      yPercent: 0,
       duration: 0.8,
       ease: "expo.out",
       stagger: 0.05,
@@ -60,11 +60,11 @@ const Hero = () => {
 
   });
   return (
-    <div className="w-full content_box bg-[#CDCECF]">
+    <div className="w-full content_box ">
       <div className='container grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
           <DotButton text="A venture builder for India" className={"opacity-0 blink_btn"} />
-          <h1 className=' capitalize heading_split'>The integrated model <br /> for  <span className='text-[#ffffff]'>  non-linear</span> <br /> growth.</h1>
+          <h1 className=' capitalize heading_split'>The integrated model <br /> for  <span className='text-[#F20908]'>  non-linear</span> <br /> growth.</h1>
         </div>
         <div className="col-span-2"></div>
         <div className="col-span-4"></div>

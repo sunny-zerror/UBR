@@ -41,7 +41,7 @@ const TeamHero = () => {
       stagger: 0.2
     });
     tl.to(heading_split.lines, {
-      yPercent: -8,
+      yPercent: 0,
       duration: 0.8,
       ease: "expo.out",
       stagger: 0.05,
@@ -59,7 +59,7 @@ const TeamHero = () => {
 
   });
   return (
-    <div className=" content_boxw-full bg-[#CDCECF]">
+    <div className=" content_boxw-full bg-[#003049] text-white">
       <div className='container grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
           <DotButton text="The team" className={"blink_btn opacity-0"} />

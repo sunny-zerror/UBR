@@ -2,7 +2,7 @@ import React from 'react'
 import DotButton from '../common/DotButton'
 import SectionHeading from '../common/SectionHeading';
 
-export const statsData = [
+ const statsData = [
     [
         {
             value: "$4.3",
@@ -45,7 +45,7 @@ export const statsData = [
 ];
 const MacroPicture = () => {
     return (
-        <div className='w-full py-24  pb-12 bg-[#CDCECF]'>
+        <div className='w-full py-24  pb-10 border-b border-black/10 bg-[#003049]  text-white'>
             <SectionHeading
                 btnText={"The macro picture"}
                 heading={"All signals point to a once-in-a-generation moment."}
@@ -57,7 +57,7 @@ const MacroPicture = () => {
                 {statsData.flat().map((item, index) => (
                     <div
                         key={index}
-                        className="w-full border-b pb-3 border-black/10 last:border-none grid grid-cols-6 items-stretch"
+                        className="w-full border-b pb-3 border-white/10 last:border-none grid grid-cols-6 items-stretch"
                     >
                         <div className='col-span-4'>
                             <p data-heading-effect className="font-medium  text-8xl">

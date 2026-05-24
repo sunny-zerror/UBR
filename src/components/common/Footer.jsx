@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
         </div>
       )} */}
-      <div className=" mt-24 bg-black">
+      <div className=" mt-24 bg-[#003049] text-white">
         <div className="container pt-24 grid items-stretch grid-cols-6">
           <div className="space-y-5 flex flex-col justify-between col-span-3">
             <img className='w-[15%]' src="/logo.png" alt="" />

@@ -82,7 +82,7 @@ const Playbook = () => {
 
     return (
         <>
-            <div className="w-full  bg-[#191B1D] text-white">
+            <div className="w-full  bg-[#003049] text-white">
                 <div className=" py-24  w-full space-y-16">
 
                     <SectionHeading

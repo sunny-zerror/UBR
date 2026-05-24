@@ -7,8 +7,7 @@ import SplitText from 'gsap/dist/SplitText'
 import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
-const WorkListingHero = () => {
-
+const ApproachHero = () => {
   useGSAP(() => {
     const heading_split = SplitText.create(".heading_split", {
       type: "lines",
@@ -59,22 +58,21 @@ const WorkListingHero = () => {
     }, "<");
 
   });
-  
   return (
-    <div className=" content_box w-full bg-[#003049] text-white">
+    <div className=" content_boxw-full bg-[#003049] text-white">
       <div className='container grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
-          <DotButton text="Selected work" className={"blink_btn opacity-0"} />
-          <h1 className='heading_split capitalize'>Brands we have <br /> <span className='text-[#ffffff]'>  backed.</span></h1>
+          <DotButton text="Our approach" className={"blink_btn opacity-0"} />
+          <h1 className=' heading_split capitalize'>An operating system for profitable scale.</h1>
         </div>
         <div className="col-span-2"></div>
         <div className="col-span-4"></div>
         <div className="w-full col-span-2 flex flex-col justify-end">
-          <p className='text-xl paragraph_split leading-5.5'>Capital and celebrity, structured as a single move. Strategic advisory anchored to talent. Full-stack engagements that compound.</p>
+          <p className=' paragraph_split text-xl  leading-5.5'>In India's complex market, long-term value isn't created by venture capital alone. It is created by venture building. Five convictions, five phases, five pillars.</p>
         </div>
       </div>
     </div>
   )
 }
 
-export default WorkListingHero
+export default ApproachHero
