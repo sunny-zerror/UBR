@@ -112,7 +112,7 @@ const ContactHero = () => {
                       {item.email}
                     </a>
                   </div>
-                  <div className={`size-10 center rounded-full border border-black/10 group-hover:bg-[#191b1d] group-hover:text-white transition-all duration-300`}>
+                  <div className={`size-10 center rounded-full border border-white/10 group-hover:bg-[#ffff] group-hover:text-[#003049] transition-all duration-300`}>
                     <RiArrowDownLine size={18} className='-rotate-[135deg] group-hover:-rotate-90 transition-all duration-300' />
                   </div>
                 </div>

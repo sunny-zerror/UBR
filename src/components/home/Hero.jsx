@@ -64,7 +64,7 @@ const Hero = () => {
       <div className='container grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
           <DotButton text="A venture builder for India" className={"opacity-0 blink_btn"} />
-          <h1 className=' capitalize heading_split'>The integrated model <br /> for  <span className='text-[#F20908]'>  non-linear</span> <br /> growth.</h1>
+          <h1 className=' capitalize heading_split'>The integrated model <br /> for  <span className=''>  non-linear</span> <br /> growth.</h1>
         </div>
         <div className="col-span-2"></div>
         <div className="col-span-4"></div>
