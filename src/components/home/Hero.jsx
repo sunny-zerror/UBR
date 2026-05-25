@@ -8,7 +8,7 @@ import SplitText from 'gsap/dist/SplitText'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const Hero = () => {
-const imageRef = useRef(null);
+  const imageRef = useRef(null);
   useGSAP(() => {
     const heading_split = SplitText.create(".heading_split", {
       type: "lines",
@@ -79,7 +79,7 @@ const imageRef = useRef(null);
     });
   })
 
-   const handleMouseMove = (e) => {
+  const handleMouseMove = (e) => {
     const { innerWidth, innerHeight } = window;
 
     // mouse position from center
@@ -114,22 +114,23 @@ const imageRef = useRef(null);
   return (
     <div className=" hero_section w-full h-screen content_box relative bg-[#000000]">
       <div className='container grid grid-cols-6  pt-[40vh] text-white pb-16'>
-<div
-      className="absolute inset-0 overflow-hidden perspective-[1200px]"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={reset}
-    >
-      <img
-        ref={imageRef}
-        className="hero_bg opacity-0 w-full h-full absolute inset-0 object-cover z-[1] scale-110 scale-x-[-1] will-change-transform"
-        src="/images/hero_bg.avif"
-        alt=""
-      />
-    </div>        <div className="space-y-5 relative z-10 col-span-4">
+        <div
+          className="absolute inset-0 overflow-hidden perspective-[1200px]"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={reset}
+        >
+          <img
+            ref={imageRef}
+            className="hero_bg opacity-0 w-full h-full absolute inset-0 object-cover z-[1] scale-110 scale-x-[-1] will-change-transform"
+            src="/images/hero_bg.avif"
+            alt=""
+          />
+        </div>
+        <div className="pointer-events-none space-y-5 relative z-10 col-span-4">
           <DotButton text="A venture builder for India" className={"opacity-0 blink_btn"} />
           <h1 className=' capitalize heading_split'>The integrated model <br /> for  <span className=''>  non-linear</span> <br /> growth.</h1>
         </div>
-        <div className=" relative z-10 w-full col-span-2 flex flex-col justify-end">
+        <div className=" pointer-events-none relative z-10 w-full col-span-2 flex flex-col justify-end">
           <p className='text-xl  leading-5.5 paragraph_split'>We build consumer brands faster, profitably. Talent, capital, strategy, design and distribution, fused into one operating system that replaces paid CAC with trust.</p>
           <p className='text-xl leading-5.5 paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> and  <b>Kaushik Sundararajan.</b></p>
         </div>
