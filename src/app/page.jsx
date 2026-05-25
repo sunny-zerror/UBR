@@ -1,3 +1,4 @@
+import Clients from "@/components/home/Clients";
 import Hero from "@/components/home/Hero";
 import MacroPicture from "@/components/home/MacroPicture";
 import OurThesis from "@/components/home/OurThesis";
@@ -18,6 +19,7 @@ const HomePage = () => {
     <WhoWeAre/>
     <Playbook/>
     <SelectedWork/>
+    <Clients/>
     <Team/>
     </>
   );

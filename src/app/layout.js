@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/fonts.css";
+import "../styles/website.css";
 import SiteLayout from "@/components/common/SiteLayout";
 import { createRootMetadata } from "@/lib/seo";
 

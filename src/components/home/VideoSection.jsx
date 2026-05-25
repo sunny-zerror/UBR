@@ -30,7 +30,7 @@ const VideoSection = () => {
     }, { scope: containerRef })
     return (
         <div ref={containerRef} className='w-full bg-black! aspect-video overflow-hidden'>
-            <img className=' img_cv opacity-0 cover' src="https://plus.unsplash.com/premium_photo-1673326630848-fecf43ae8db1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+            <video loop autoPlay muted playsInline className=' img_cv opacity-0 cover' src="https://www.disrptve.com/video/show_reel.mp4" alt="" />
         </div>
     )
 }
