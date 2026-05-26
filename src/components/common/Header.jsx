@@ -37,7 +37,8 @@ const Header = () => {
       },
     });
     tl.to('.header_bg', {
-      top: 0,
+      transform: "translateY(0%)",
+      duration: .6,
       ease: "expo.out",
     });
     tl.to('.navLinkBar', {
@@ -46,6 +47,7 @@ const Header = () => {
     }, 0);
     tl.to('.navLink', {
       color: "black",
+      fontWeight: "bold",
       ease: "expo.out",
     }, 0);
     tl.to('.logo_white', {
@@ -61,7 +63,7 @@ const Header = () => {
   return (
     <div className='header w-full  z-100 fixed'>
       <div className=" container py-3  flex items-center justify-between   ">
-        <div className="header_bg absolute bg-[#C4BAB0] pointer-events-none z-[-1] w-full h-full left-0 -top-[100%]"></div>
+        <div className="header_bg absolute bg-[#C4BAB0] pointer-events-none z-[-1] w-full h-full left-0 -translate-y-full"></div>
         <div className="flex items-end w-[75%] gap-x-20">
           <Link href="/" className='block  w-fit relative'>
             <img className='w-20 logo_white' src="/logo_white.png" alt="logo" />
@@ -72,14 +74,14 @@ const Header = () => {
               const isActive = pathname === link.href;
 
               return (
-                <div key={i} className=" navLink text-white w-fit  text-sm uppercase aeonik  group cursor-pointer">
-                  <Link href={link.href} className="relative leading-none">
+                <div key={i} className=" navLink text-[#C4BAB0] w-fit  text-sm uppercase aeonik  group cursor-pointer">
+                  <Link href={link.href} className="relative  leading-none">
                     {link.label}
 
                     <span
                       className={`
                         navLinkBar
-              absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-white
+              absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#C4BAB0]
               transition-transform duration-300 ease-out
               ${isActive ? "scale-x-100 origin-left" : "scale-x-0 origin-left group-hover:scale-x-100"}
             `}

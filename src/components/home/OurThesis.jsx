@@ -58,12 +58,12 @@ const OurThesis = () => {
     }, []);
 
     return (
-        <div ref={containerRef} className=' border-b border-black/10 w-full h-[300vh] relative'>
+        <div ref={containerRef} className=' border-b border-black w-full h-[300vh] relative'>
             <div className="container h-screen sticky! top-0 flex ">
                 <div className="w-1/2 h-screen flex flex-col gap-y-20 justify-center">
                     <div className="space-y-5">
                         <DotButton text="Our thesis" />
-                        <h2 data-heading-effect className='capitalize'>We replace paid CAC <br /> with   trust CAC.</h2>
+                        <h2 data-para-effect className='capitalize'>We replace paid CAC <br /> with   trust CAC.</h2>
                     </div>
                     <p data-para-effect className='text-lg leading-tight w-[80%] '>UBR × DISRPTVE is a venture builder that installs a complete operating system for profitable scaling, whether you are launching a new brand or reigniting an established one.</p>
                 </div>

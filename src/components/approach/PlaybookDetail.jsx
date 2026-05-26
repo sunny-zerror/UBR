@@ -2,6 +2,10 @@
 import React, { useState } from 'react'
 import SectionHeading from '../common/SectionHeading'
 import { RiArrowDownLine } from '@remixicon/react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const pillarsData = [
     {
@@ -86,48 +90,76 @@ const pillarsData = [
 ];
 
 const PlaybookDetail = () => {
-    const [openId, setOpenId] = useState(null)
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".playbook_sticky_paren",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true,
+            }
+        })
+
+        tl.to(".dec_h_01", {
+            height: "0px",
+            ease:"none"
+        }).to(".dec_h_02", {
+            height: "0px",
+            ease:"none"
+        }).to(".dec_h_03", {
+            height: "0px",
+            ease:"none"
+        }).to(".dec_h_04", {
+            height: "0px",
+            ease:"none"
+    })
+    })
+
     return (
         <>
-            <div className="w-full py-24  pb-0 space-y-16 ">
+            <div className="w-full py-24 relative  pb-0">
                 <SectionHeading
                     btnText="The playbook in detail"
-                    heading="Five pillars. In depth."
-                    desc="Each pillar moves a specific metric and brings its own capabilities. Together they form one integrated operating system, delivered by an embedded team."
-                />
+                    heading="Five deeply integrated pillars engineered to accelerate growth, sharpen execution, and unlock measurable outcomes through a unified operating system built around strategy, systems, and scale." />
 
-                <div className="container ">
-                    <div className="space-y-5">
+                <div className="playbook_sticky_paren container h-[250vh]! ">
+                    <div className="sticky pt-18 top-0 left-0">
                         {pillarsData.map((item) => (
                             <div
                                 onClick={() =>
                                     setOpenId((prev) => (prev === item.id ? null : item.id))
                                 }
                                 key={item.id}
-                                className={` grid grid-cols-6 pt-6  last:pb-0 border-t cursor-pointer group border-black/10   `}>
-                                <div className="col-span-4">
-                                    <div className="uppercase">
-                                        <h2 data-para-effect className="">{item.title}</h2>
-                                    </div>
+                                className={` border-t cursor-pointer group border-black   `}>
+                                <div className="flex items-center h-14">
+                                    <h5 data-para-effect className="font-semibold">{item.title}</h5>
                                 </div>
-                                <div className="col-span-2 space-y-5">
+                                <div className={`dec_h_${item.id} h-10`}></div>
+                                <div className={`dec_h_${item.id} overflow-hidden grid grid-cols-6`}>
+                                    <div className="col-span-3">
+                                        <div className={` capitalize space-y-1`}>
+                                            {item.services.map((subItem, i) => (
+                                                <div key={i} className="flex  items-center gap-x-2">
+                                                    <div className="size-1.5 bg-black"></div>
+                                                    <p key={subItem}> {subItem}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="col-span-3 space-y-5">
 
-                                    <div className={` capitalize space-y-1`}>
-                                        {item.description.map((desc, i) => (
-                                            <div key={i} className="">
-                                                <p key={desc} className='text-lg'> {desc}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className={` capitalize space-y-1`}>
-                                        {item.services.map((subItem, i) => (
-                                            <div key={i} className="flex text-lg items-center gap-x-2">
-                                                <div className="size-2 bg-black"></div>
-                                                <p key={subItem}> {subItem}</p>
-                                            </div>
-                                        ))}
+                                        <div className={`  grid grid-cols-2  gap-x-10 capitalize`}>
+                                            {item.description.map((desc, i) => (
+                                                <div key={i} className="">
+                                                    <p key={desc} className=''> {desc}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+
                                     </div>
                                 </div>
+                                <div className={`dec_h_${item.id} h-5`}></div>
                             </div>
                         ))}
                     </div>

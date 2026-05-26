@@ -1,7 +1,6 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { useEffect } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -14,13 +13,11 @@ const GlobalParaReveal = () => {
 
   useGSAP(() => {
 
-    let splits = []
+    const splits = []
 
-    const init = async () => {
+    const ctx = gsap.context(async () => {
 
       await document.fonts.ready
-
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
 
       const elements = gsap.utils.toArray("[data-para-effect]")
 
@@ -30,7 +27,7 @@ const GlobalParaReveal = () => {
 
         el.dataset.splitInitialized = "true"
 
-        const split = SplitText.create(el, {
+        const split = new SplitText(el, {
           type: "lines",
           linesClass: "split-line",
         })
@@ -41,7 +38,7 @@ const GlobalParaReveal = () => {
 
           const wrapper = document.createElement("div")
 
-          wrapper.classList.add("line-wrapper")
+          wrapper.style.overflow = "hidden"
 
           line.parentNode.insertBefore(wrapper, line)
 
@@ -50,6 +47,7 @@ const GlobalParaReveal = () => {
 
         gsap.set(split.lines, {
           yPercent: 110,
+          willChange: "transform",
         })
 
         gsap.to(split.lines, {
@@ -60,41 +58,32 @@ const GlobalParaReveal = () => {
 
           scrollTrigger: {
             trigger: el,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none reverse",
           },
         })
       })
 
-      ScrollTrigger.refresh()
-    }
+    })
 
-    init()
+    const timeout = setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 500)
 
     return () => {
 
-      splits.forEach((split) => {
-        split.revert()
-      })
+      clearTimeout(timeout)
+
+      splits.forEach((split) => split.revert())
 
       document
-        .querySelectorAll("[data-split-initialized]")
+        .querySelectorAll("[data-para-effect]")
         .forEach((el) => {
           delete el.dataset.splitInitialized
         })
 
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      ctx.revert()
     }
-
-  }, [pathname])
-
-  useEffect(() => {
-
-    const timeout = setTimeout(() => {
-      ScrollTrigger.refresh()
-    }, 300)
-
-    return () => clearTimeout(timeout)
 
   }, [pathname])
 

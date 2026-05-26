@@ -8,51 +8,51 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger)
 
 const processData = [
-    {
-        id: 1,
-        tag: "PICK",
-        img: "/images/approach/pick.png",
-        title: "Audit & Align",
-        description:
-            "Listen to category, competition and culture. Establish a clear baseline.",
-        output: "360° Brand Diagnosis",
-    },
-    {
-        id: 2,
-        tag: "REFRAME",
-        img: "/images/approach/reframe.png",
-        title: "Reframe & Reimagine",
-        description:
-            "Identify growth bottlenecks. Redefine purpose and positioning for market impact.",
-        output: "Sharper Architecture",
-    },
-    {
-        id: 3,
-        tag: "DESIGN",
-        img: "/images/approach/design.png",
-        title: "Design the Engine",
-        description:
-            "Build the experience layer, identity, packaging, retail-ready, high-converting digital.",
-        output: "Brand System That Performs",
-    },
-    {
-        id: 4,
-        tag: "SCALE",
-        img: "/images/approach/scale.png",
-        title: "Scale with Intelligence",
-        description:
-            "Activate growth, performance media, authentic content, community building.",
-        output: "Better CAC, Higher Retention",
-    },
-    {
-        id: 5,
-        tag: "CAPITALISE",
-        img: "/images/approach/capitalise.png",
-        title: "Institutionalise & Capitalise",
-        description:
-            "Embed governance. Activate our network. Shape the investor narrative. Open doors.",
-        output: "Funding-Ready Brand",
-    },
+  {
+    id: 1,
+    tag: "PICK",
+    img: "/images/approach/pick.png",
+    title: "Audit & Align",
+    description:
+      "Listen to category, competition and culture. Establish a clear baseline.",
+    output: "360° Brand Diagnosis",
+  },
+  {
+    id: 2,
+    tag: "REFRAME",
+    img: "/images/approach/reframe.png",
+    title: "Reframe & Reimagine",
+    description:
+      "Identify growth bottlenecks. Redefine purpose and positioning for market impact.",
+    output: "Sharper Architecture",
+  },
+  {
+    id: 3,
+    tag: "DESIGN",
+    img: "/images/approach/design.png",
+    title: "Design the Engine",
+    description:
+      "Build the experience layer, identity, packaging, retail-ready, high-converting digital.",
+    output: "Brand System That Performs",
+  },
+  {
+    id: 4,
+    tag: "SCALE",
+    img: "/images/approach/scale.png",
+    title: "Scale with Intelligence",
+    description:
+      "Activate growth, performance media, authentic content, community building.",
+    output: "Better CAC, Higher Retention",
+  },
+  {
+    id: 5,
+    tag: "CAPITALISE",
+    img: "/images/approach/capitalise.png",
+    title: "Institutionalise & Capitalise",
+    description:
+      "Embed governance. Activate our network. Shape the investor narrative. Open doors.",
+    output: "Funding-Ready Brand",
+  },
 ];
 
 const TheOs = () => {
@@ -71,16 +71,16 @@ const TheOs = () => {
 
       const maxTranslate = totalWidth - viewportWidth;
 
-        gsap.to(slider, {
-            x: -maxTranslate,
-            ease: "none",
-            scrollTrigger: {
-                trigger: container,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: true,
-                invalidateOnRefresh: true,
-            },
+      gsap.to(slider, {
+        x: -maxTranslate,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
       });
     };
 
@@ -94,12 +94,10 @@ const TheOs = () => {
   });
 
   return (
-    <div className="w-full py-24 border-b pb-10 border-black/10">
+    <div className="w-full py-24 border-b pb-10 border-black bg-black">
       <SectionHeading
         btnText="The OS"
-        heading="A phase-gated journey from vision to velocity."
-        desc="Five phases. Clear outputs. We don’t just advise, we co-create."
-      />
+        heading="A structured, phase-gated journey designed to transform ambitious ideas into scalable momentum through aligned strategy, decisive execution, and measurable progress at every stage." />
 
       <div ref={containerRef} className=" w-full h-[300vh]">
         <div className="w-screen sticky top-0 h-screen flex items-center overflow-hidden">
@@ -110,7 +108,7 @@ const TheOs = () => {
             {processData.map((item, i) => (
               <div
                 key={i}
-                className="w-[35vw] shrink-0 space-y-5"
+                className="w-[35vw] shrink-0 space-y-2"
               >
                 <div className="w-full aspect-[4/3] rounded-sm relative overflow-hidden">
                   <Image
@@ -122,10 +120,10 @@ const TheOs = () => {
                 </div>
 
                 <div>
-                  <h3>{item.title}</h3>
+                  <h4>{item.title}</h4>
                 </div>
 
-                <p className="text-xl opacity-80 leading-none">
+                <p className=" opacity-80 leading-tight">
                   {item.description}
                 </p>
               </div>

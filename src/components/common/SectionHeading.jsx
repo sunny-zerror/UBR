@@ -6,9 +6,9 @@ const SectionHeading = ({ btnText, btnOutline, heading }) => {
         <>
             <div className='container'>
                 <div data-para-effect className="absolute translate-y-3.5">
-                    <span className=' pr-44 uppercase text-xs aeonik pointer-events-none'>[{btnText}]</span> 
+                    <span className=' pr-44 uppercase text-xs aeonik pointer-events-none'>[{btnText}]</span>
                 </div>
-                <h2 data-heading-effect className='capitalize'> <span className=' pr-44 uppercase text-xs aeonik opacity-0 pointer-events-none'>[{btnText}]</span> {heading}</h2>
+                <h2 data-para-effect className='capitalize'> <span className=' pr-44 uppercase text-xs aeonik opacity-0 pointer-events-none'>[{btnText}]</span> {heading}</h2>
             </div>
         </>
     )

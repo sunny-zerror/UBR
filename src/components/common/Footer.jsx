@@ -2,12 +2,31 @@
 import { useGSAP } from '@gsap/react';
 import { RiArrowRightLine } from '@remixicon/react'
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { usePathname } from 'next/navigation';
 import React from 'react'
 import Button from './Button';
 import { Link } from 'next-view-transitions';
 gsap.registerPlugin(ScrollTrigger)
+
+const navLinks = [
+  {
+    label: "Home",
+    href: "/"
+  },
+  {
+    label: "Approach",
+    href: "/approach"
+  },
+  {
+    label: "Work",
+    href: "/work"
+  },
+  {
+    label: "Team",
+    href: "/team"
+  },
+]
 
 const Footer = () => {
   const pathname = usePathname();
@@ -25,7 +44,8 @@ const Footer = () => {
         start: "center center",
         end: "center center",
         scrub: true,
-        pin: true
+        pin: true,
+        pinSpacing: true
       },
     });
     gsap.fromTo('.footer_img', {
@@ -60,7 +80,7 @@ const Footer = () => {
             <div className="size-2 aspect-square z-10 bg-black absolute -bottom-1 -left-1 "></div>
             <div className="w-full h-full border-2 flex flex-col justify-between border-black  p-8">
               <div className="space-y-5">
-                <h4 data-heading-effect className='leading-none!'>Let’s build India’s next iconic brand. Together.</h4>
+                <h4 data-para-effect className='leading-none!'>Let’s build India’s next iconic brand. Together.</h4>
                 <p data-para-effect className='leading-tight opacity-80'>We are looking for our next cohort of partners. Founders, talent, investors and retailers, all welcome.</p>
               </div>
               <div className="w-full flex items-center justify-between">
@@ -81,26 +101,76 @@ const Footer = () => {
           <div className=" h-full space-y-5">
             <p className=' uppercase text-sm aeonik'>Sitemap</p>
             <div className=" capitalize space-y-2">
-              <p className='opacity-60 text-sm'>Home</p>
-              <p className='opacity-60 text-sm'>Approach</p>
-              <p className='opacity-60 text-sm'>Work</p>
-              <p className='opacity-60 text-sm'>Team</p>
-              <p className='opacity-60 text-sm'>contact</p>
+              {navLinks.map((link, i) => {
+                const isActive = pathname === link.href;
+
+                return (
+                  <div key={i} className={` text-[#C4BAB0] w-fit  text-sm capitalize opacity-60 hover:opacity-100 transition-all duration-150 ${isActive && "opacity-100"}  group cursor-pointer`}>
+                    <Link href={link.href} className="relative  leading-none">
+                      {link.label}
+
+                      <span
+                        className={`
+                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#C4BAB0]
+                            transition-transform duration-300 ease-out
+                            ${isActive ? "scale-x-100 origin-left" : "scale-x-0 origin-left group-hover:scale-x-100"}
+                          `}
+                      ></span>
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className=" h-full space-y-5">
             <p className=' uppercase text-sm aeonik'>Contact</p>
             <div className=" space-y-2">
-              <p className='opacity-60 text-sm'>binoykhimji@gmail.com</p>
-              <p className='opacity-60 text-sm'>ashish@disrptve.com</p>
-              <p className='opacity-60 text-sm'>kaushik@disrptve.com</p>
+              <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
+                <span
+                  className={`
+                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#C4BAB0]
+                            transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100
+                            `}
+                ></span>
+                binoykhimji@gmail.com</div>
+              <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
+                <span
+                  className={`
+                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#C4BAB0]
+                            transition-transform duration-300 ease-out
+                            scale-x-0 origin-left group-hover:scale-x-100
+                          `}
+                ></span>
+                ashish@disrptve.com</div>
+              <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
+                <span
+                  className={`
+                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#C4BAB0]
+                            transition-transform duration-300 ease-out
+                            scale-x-0 origin-left group-hover:scale-x-100
+                          `}
+                ></span>
+                kaushik@disrptve.com</div>
             </div>
           </div>
           <div className=" h-full space-y-5 pl-12">
             <p className=' uppercase text-sm aeonik' >Socials</p>
             <div className=" capitalize space-y-2">
-              <p className='opacity-60 text-sm'>LinkedIn</p>
-              <p className='opacity-60 text-sm'>Instagram</p>
+               <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
+                <span
+                  className={`
+                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#C4BAB0]
+                            transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100
+                            `}
+                ></span>
+               LinkedIn</div> <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
+                <span
+                  className={`
+                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#C4BAB0]
+                            transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100
+                            `}
+                ></span>
+                Instagram</div>
             </div>
           </div>
         </div>

@@ -82,14 +82,14 @@ const Hero = () => {
 
   return (
     <div className=" hero_section w-full h-screen overflow-hidden content_box relative bg-[#000000]">
-      <div className='container flex items-end text-white pb-16'>
+      <div className='container flex items-end text-[#C4BAB0] pb-16'>
         <Image fill
-          className="hero_bg absolute inset-0  opacity-0 cover"
+          className="hero_bg absolute inset-0 brightness-75  opacity-0 cover"
           src="/images/hero_bg.png"
           alt=""
         />
         <div className="absolute top-1/2 -translate-y-1/2 z-10 left-8 ">
-          <DotButton text="A venture builder for India" className={"opacity-0 text-white! blink_btn"} />
+          <DotButton text="A venture builder for India" className={"opacity-0 text-[#C4BAB0]! blink_btn"} />
         </div>
         <div className="pointer-events-none w-full  relative z-10 grid items-end grid-cols-6">
           <h1 className=' capitalize leading-none tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>

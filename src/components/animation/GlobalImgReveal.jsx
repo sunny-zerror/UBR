@@ -13,39 +13,44 @@ const GlobalImgReveal = () => {
 
   useGSAP(() => {
 
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+    const ctx = gsap.context(() => {
 
-    const elements = gsap.utils.toArray("[data-img-effect]")
+      const elements = gsap.utils.toArray("[data-img-effect]")
 
-    elements.forEach((el) => {
+      elements.forEach((el) => {
 
-      if (el.dataset.imgInitialized) return
+        if (el.dataset.imgInitialized) return
 
-      el.dataset.imgInitialized = "true"
+        el.dataset.imgInitialized = "true"
 
-      gsap.set(el, {
-        opacity: 0,
-        scale: 1.2,
-        willChange: "transform, opacity",
+        gsap.set(el, {
+          opacity: 0,
+          scale: 1.2,
+          willChange: "transform, opacity",
+        })
+
+        gsap.to(el, {
+          opacity: 1,
+          scale: 1,
+          duration: 1.2,
+          ease: "power3.out",
+
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        })
       })
 
-      gsap.to(el, {
-        opacity: 1,
-        scale: 1,
-        duration: 1.2,
-        ease: "power3.out",
-
-        scrollTrigger: {
-          trigger: el,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      })
     })
 
-    ScrollTrigger.refresh()
+    const timeout = setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 300)
 
     return () => {
+      clearTimeout(timeout)
 
       document
         .querySelectorAll("[data-img-effect]")
@@ -53,18 +58,8 @@ const GlobalImgReveal = () => {
           delete el.dataset.imgInitialized
         })
 
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      ctx.revert()
     }
-
-  }, [pathname])
-
-  useEffect(() => {
-
-    const timeout = setTimeout(() => {
-      ScrollTrigger.refresh()
-    }, 300)
-
-    return () => clearTimeout(timeout)
 
   }, [pathname])
 

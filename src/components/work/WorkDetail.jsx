@@ -72,16 +72,16 @@ const WorkDetail = () => {
 
   return (
     <>
-      <div className=" content_box w-full bg-[#C4BAB0] text-white">
-        <div className='container grid grid-cols-6  pt-32 pb-16'>
+      <div className=" content_box w-full bg-black">
+        <div className='container h-[70vh]! items-end grid grid-cols-6  pt-32 pb-16'>
           <div className="space-y-5 col-span-4">
-            <DotButton text={work.engagement} className={"blink_btn opacity-0"} />
-            <h1 className='heading_split capitalize'>{work.title}</h1>
+            <DotButton text={work.engagement} className={"blink_btn opacity-0 text-[#C4BAB0]!"} />
+            <h1 className=' heading_split leading-none capitalize'>{work.title}</h1>
           </div>
           <div className="col-span-2"></div>
           <div className="col-span-4"></div>
           <div className="w-full col-span-2 flex flex-col justify-end">
-            <p className='text-xl paragraph_split leading-5.5'>{work.description}</p>
+            <p className=' paragraph_split leading-tight'>{work.description}</p>
           </div>
         </div>
       </div>
@@ -92,25 +92,25 @@ const WorkDetail = () => {
         <div className="col-span-3 grid grid-cols-2 pr-20 ">
 
           <div className="pr-10">
-            <div className=" border-b border-black/10 mb-5">
+            <div className=" border-b border-black mb-5">
               <h6 className=''>category</h6>
             </div>
             <p className='text-lg'>{work.category}</p>
           </div>
           <div className="">
-            <div className=" border-b border-black/10 mb-5">
+            <div className=" border-b border-black mb-5">
               <h6 className=''>Scope</h6>
             </div>
             <p className='text-lg'>{work.scope}</p>
           </div>
           <div className="col-span-2">
-            <div className=" border-b border-black/10 mb-5">
+            <div className=" border-b border-black mb-5">
               <h6 className=''>Services deployed</h6>
             </div>
             <div className='flex flex-wrap gap-2'>
               {work.services.map((tag, i) => (
-                <div key={i} className="rounded-md font-medium  px-4 py-2 bg-[#C4BAB0] text-white">
-                  <p className=" text-sm uppercase">
+                <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-black">
+                  <p className=" text-xs aeonik uppercase">
                     {tag}
                   </p>
                 </div>
@@ -120,7 +120,7 @@ const WorkDetail = () => {
 
         </div>
         <div className="col-span-3 space-y-8">
-          <h3 data-para-effect className='leading-13!'>{work.detailHeading}</h3>
+          <h3 data-para-effect className=' font-semibold leading-13!'>{work.detailHeading}</h3>
           <div className="space-y-4 text-lg leading-tight">
             {work.descArray.map((para, i) => (
               <p key={i}>{para}</p>
@@ -129,12 +129,10 @@ const WorkDetail = () => {
         </div>
       </div>
 
-      <div className='pt-24 space-y-16  border-t border-black/10'>
+      <div className='pt-24 space-y-16  border-t border-black'>
         <SectionHeading
           btnText="More work"
-          heading="Other partnerships."
-          desc="Capital, advisory and ambassador signings across beauty, fashion and sports."
-        />
+heading="Strategic partnerships spanning beauty, fashion, and sport — combining capital, influence, and cultural reach to help visionary brands expand with credibility, momentum, and long-term market relevance."        />
         <div className="container grid grid-cols-3 gap-x-3 gap-y-10">
           {remainingWorks.map((item, i) => (
             <Link key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
@@ -144,8 +142,8 @@ const WorkDetail = () => {
                 </div>
               </div>
               <div className="">
-                <h6 className='opacity-80'>{item.engagement}</h6>
-                <h4 className='capitalize  flex items-center gap-x-2'>{item.title}</h4>
+                <h6 className=''>{item.engagement}</h6>
+                <h4 className='capitalize font-semibold flex items-center gap-x-2 leading-none mt-1'>{item.title}</h4>
               </div>
             </Link>
           ))}

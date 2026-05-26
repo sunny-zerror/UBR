@@ -59,16 +59,16 @@ const TeamHero = () => {
 
   });
   return (
-    <div className=" content_boxw-full bg-[#C4BAB0] text-white">
-      <div className='container grid grid-cols-6  pt-32 pb-16'>
+    <div className=" content_boxw-full bg-black">
+      <div className='container h-[70vh]! items-end grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
-          <DotButton text="The team" className={"blink_btn opacity-0"} />
-          <h1 className=' heading_split capitalize'>An embedded<br /> operating   <span className='text-[#ffffff]'>  team.</span></h1>
+          <DotButton text="The team" className={"blink_btn opacity-0 text-[#C4BAB0]!"} />
+          <h1 className=' heading_split leading-none capitalize'>An embedded<br /> operating  team.</h1>
         </div>
         <div className="col-span-2"></div>
         <div className="col-span-4"></div>
         <div className="w-full col-span-2 flex flex-col justify-end">
-          <p className=' paragraph_split text-xl  leading-5.5'>Operators, strategists and capital advisors, assembled to solve India’s specific challenges. Three co-founders. Two capital partners. One operating system.</p>
+          <p className=' paragraph_split leading-tight'>Operators, strategists and capital advisors, assembled to solve India’s specific challenges. Three co-founders. Two capital partners. One operating system.</p>
         </div>
       </div>
     </div>

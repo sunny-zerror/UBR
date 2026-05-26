@@ -57,10 +57,10 @@ const MacroPicture = () => {
                 {statsData.flat().map((item, index) => (
                     <div
                         key={index}
-                        className="w-full border-b pb-3 border-black/10 last:border-none grid grid-cols-6 items-stretch"
+                        className="w-full border-b pb-3 border-black last:border-none grid grid-cols-6 items-stretch"
                     >
                         <div className='col-span-4'>
-                            <p data-heading-effect className=" aeonik   leading-24  text-8xl">
+                            <p data-para-effect className=" aeonik   leading-24  text-8xl">
                                 {item.value}
 
                                 {item.suffix && (

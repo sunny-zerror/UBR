@@ -9,18 +9,18 @@ export const WorksList = () => {
         <>
             <div className="container pt-24 space-y-20">
                 {WorkData.map((item, i) => (
-                    <div key={i} className=" border-b pb-20 border-black/10 last:border-none last:pb-0 w-full items-stretch grid grid-cols-5">
+                    <div key={i} className=" border-b pb-20 border-black last:border-none w-full items-stretch grid grid-cols-5 gap-x-10">
                         <div className="col-span-2 flex flex-col justify-between">
                             <div className="">
-                                <h3 data-heading-effect className="capitalize leading-15!  ">{item.title}</h3>
+                                <h3 data-para-effect className="font-semibold capitalize leading-15!  ">{item.title}</h3>
                                 <h6 className="opacity-80">{item.category}</h6>
                             </div>
                             <div className="space-y-4">
-                                <p className='leading-tight text-xl w-[80%]'>{item.description}</p>
+                                <p className='leading-tight text-lg w-[80%]'>{item.description}</p>
                                 <div className="relative flex flex-wrap gap-2">
                                     {item.services.map((tag, i) => (
-                                        <div key={i} className="rounded-md font-medium  px-4 py-2 bg-[#F8F8F8]">
-                                            <p className=" text-sm uppercase">
+                                        <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-black">
+                                            <p className=" text-xs aeonik uppercase">
                                                 {tag}
                                             </p>
                                         </div>

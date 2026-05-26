@@ -61,16 +61,16 @@ const WorkListingHero = () => {
   });
 
   return (
-    <div className=" content_box w-full bg-[#C4BAB0] text-white">
-      <div className='container grid grid-cols-6  pt-32 pb-16'>
+    <div className=" content_box w-full bg-black">
+      <div className='container h-[70vh]! items-end grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
-          <DotButton text="Selected work" className={"blink_btn opacity-0"} />
-          <h1 className='heading_split capitalize'>Brands we have <br /> <span className='text-[#ffffff]'>  backed.</span></h1>
+          <DotButton text="Selected work" className={"blink_btn opacity-0 text-[#C4BAB0]!"} />
+          <h1 className=' heading_split leading-none capitalize'>Brands we have <br />  backed.</h1>
         </div>
         <div className="col-span-2"></div>
         <div className="col-span-4"></div>
         <div className="w-full col-span-2 flex flex-col justify-end">
-          <p className='text-xl paragraph_split leading-5.5'>Capital and celebrity, structured as a single move. Strategic advisory anchored to talent. Full-stack engagements that compound.</p>
+          <p className=' paragraph_split leading-tight'>Capital and celebrity, structured as a single move. Strategic advisory anchored to talent. Full-stack engagements that compound.</p>
         </div>
       </div>
     </div>

@@ -73,7 +73,7 @@ const ContactForm = () => {
                         <form className="space-y-10">
                             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 gap-x-10">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-medium uppercase  opacity-80">
+                                    <label className="text-xs aeonik font-medium uppercase  opacity-80">
                                         Full Name
                                     </label>
 
@@ -84,7 +84,7 @@ const ContactForm = () => {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-medium uppercase  opacity-80">
+                                    <label className="text-xs aeonik font-medium uppercase  opacity-80">
                                         Email
                                     </label>
 
@@ -98,7 +98,7 @@ const ContactForm = () => {
 
                             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 gap-x-10">
                                 <div className="space-y-3">
-                                    <label className="text-xs font-medium uppercase  opacity-80">
+                                    <label className="text-xs aeonik font-medium uppercase  opacity-80">
                                         Company or brand
                                     </label>
 
@@ -110,7 +110,7 @@ const ContactForm = () => {
                                 </div>
 
                                 <div className="space-y-3">
-                                    <label className="text-xs font-medium uppercase  opacity-80">
+                                    <label className="text-xs aeonik font-medium uppercase  opacity-80">
                                         Stage
                                     </label>
 
@@ -136,7 +136,7 @@ const ContactForm = () => {
                             </div>
 
                             <div className="space-y-3">
-                                <label className="text-xs font-medium uppercase  opacity-80">
+                                <label className="text-xs aeonik font-medium uppercase  opacity-80">
                                     What are you looking for?
                                 </label>
 
@@ -161,7 +161,7 @@ const ContactForm = () => {
                             </div>
 
                             <div className="space-y-3">
-                                <label className="text-xs font-medium uppercase  opacity-80">
+                                <label className="text-xs aeonik font-medium uppercase  opacity-80">
                                     Tell us a bit more
                                 </label>
 
