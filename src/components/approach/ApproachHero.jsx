@@ -59,7 +59,7 @@ const ApproachHero = () => {
 
   });
   return (
-    <div className=" content_boxw-full bg-[#003049] text-white">
+    <div className=" content_boxw-full bg-[#C4BAB0] text-white">
       <div className='container grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
           <DotButton text="Our approach" className={"blink_btn opacity-0"} />

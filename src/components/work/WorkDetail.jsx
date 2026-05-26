@@ -72,7 +72,7 @@ const WorkDetail = () => {
 
   return (
     <>
-      <div className=" content_box w-full bg-[#003049] text-white">
+      <div className=" content_box w-full bg-[#C4BAB0] text-white">
         <div className='container grid grid-cols-6  pt-32 pb-16'>
           <div className="space-y-5 col-span-4">
             <DotButton text={work.engagement} className={"blink_btn opacity-0"} />
@@ -109,7 +109,7 @@ const WorkDetail = () => {
             </div>
             <div className='flex flex-wrap gap-2'>
               {work.services.map((tag, i) => (
-                <div key={i} className="rounded-md font-medium  px-4 py-2 bg-[#003049] text-white">
+                <div key={i} className="rounded-md font-medium  px-4 py-2 bg-[#C4BAB0] text-white">
                   <p className=" text-sm uppercase">
                     {tag}
                   </p>

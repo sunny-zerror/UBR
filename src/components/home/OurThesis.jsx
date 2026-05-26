@@ -65,46 +65,46 @@ const OurThesis = () => {
                         <DotButton text="Our thesis" />
                         <h2 data-heading-effect className='capitalize'>We replace paid CAC <br /> with   trust CAC.</h2>
                     </div>
-                    <p data-para-effect className='text-xl leading-tight w-[80%] '>UBR × DISRPTVE is a venture builder that installs a complete operating system for profitable scaling, whether you are launching a new brand or reigniting an established one.</p>
+                    <p data-para-effect className='text-lg leading-tight w-[80%] '>UBR × DISRPTVE is a venture builder that installs a complete operating system for profitable scaling, whether you are launching a new brand or reigniting an established one.</p>
                 </div>
                 <div className="w-1/2 h-screen center relative">
                     <div className=" circ_1 scale-0 opacity-0 size-[18rem] -translate-x-[14rem] absolute border border-[#191b1d] rounded-full center">
-                        <div className=' text-xl font-medium  uppercase block w-fit overflow-hidden'>
+                        <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Talent
                             </p>
                         </div>
                     </div>
                     <div className=" circ_2 scale-0 opacity-0 size-[18rem] -translate-y-[14rem] absolute border border-[#191b1d] rounded-full center">
-                        <div className=' text-xl font-medium  uppercase block w-fit overflow-hidden'>
+                        <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Capital
                             </p>
                         </div>
                     </div>
                     <div className="circ_3  scale-0 opacity-0 size-[18rem] translate-x-[14rem] absolute border border-[#191b1d] rounded-full center">
-                        <div className=' text-xl font-medium  uppercase block w-fit overflow-hidden'>
+                        <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Design
                             </p>
                         </div>
                     </div>
                     <div className=" circ_4 scale-0 opacity-0 size-[18rem] translate-y-[14rem] absolute border border-[#191b1d] rounded-full center">
-                        <div className=' text-xl font-medium  uppercase block w-fit overflow-hidden'>
+                        <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Strategy
                             </p>
                         </div>
                     </div>
                     <div className=" circ_5  size-[18rem] absolute border border-[#191b1d] rounded-full center">
-                        <div className=' text-xl font-medium  uppercase block w-fit overflow-hidden'>
+                        <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Distribution
                             </p>
                         </div>
                     </div>
                     <div className=" circ_6 opacity-0 size-[18rem]  absolute border border-[#191b1d] rounded-full center">
-                        <div className=' text-xl font-medium  uppercase block w-fit overflow-hidden'>
+                        <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_2 translate-y-full'>
                                 Sustainable
                                 Scale

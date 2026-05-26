@@ -27,9 +27,7 @@ const Clients = () => {
   useGSAP(() => {
     gsap.to(".arc_container", {
       "--progress": 1,
-
       ease: "none",
-
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
@@ -37,19 +35,19 @@ const Clients = () => {
         scrub: true,
       },
     });
-  }, []);
+  }, { scope: containerRef });
 
   return (
     <div
       ref={containerRef}
-      className="container h-[200vh]! bg-[#003049] relative"
+      className="container h-[200vh]! bg-black relative"
     >
       <div className="arc flex flex-col gap-y-20 justify-center pt-24">
         <div className="space-y-5">
-        <DotButton text={"who trust us"} />
-        <h2 data-heading-effect className='capitalize w-[60%] '>Trusted by <br /> visionary brands.</h2>
+          <DotButton text={"who trust us"} className={"text-[#C4BAB0]!"} />
+          <h2 data-heading-effect className='capitalize w-[60%] '>Trusted by <br /> visionary brands.</h2>
         </div>
-        <p data-para-effect className='text-xl leading-tight w-[40%] '>We collaborate with industry leaders and emerging icons to create bold digital experiences that leave a lasting impression.</p>
+        <p data-para-effect className='text-lg leading-tight w-[40%] '>We collaborate with industry leaders and emerging icons to create bold digital experiences that leave a lasting impression.</p>
         <div
           className="arc_container"
           style={{

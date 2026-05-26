@@ -1,125 +1,143 @@
-import { RiBarChartBoxLine, RiFocus3Line, RiSettings3Line, RiShieldCheckLine, RiStarLine, RiTeamLine } from '@remixicon/react'
-import Image from 'next/image'
 import React from 'react'
-import DotButton from '../common/DotButton'
 import SectionHeading from '../common/SectionHeading'
+import {
+    RiBarChartBoxLine,
+    RiSettings3Line,
+    RiShieldCheckLine,
+    RiTeamLine,
+    RiStarLine,
+    RiFocus3Line,
+} from "@remixicon/react"
+
+export const modelCards = [
+    {
+        title: "UBR Brings The P&L Rigour.",
+        desc: "Disciplined capital, enterprise scaling, a proven playbook for turning revenue into profit. The operator side of the model, anchored by Binoy Khimji and the Cornerstone ecosystem. Governance, unit economics, and the patience to compound.",
+
+        tags: [
+            {
+                label: "CAPITAL",
+                icon: RiBarChartBoxLine,
+            },
+            {
+                label: "OPERATIONS",
+                icon: RiSettings3Line,
+            },
+            {
+                label: "GOVERNANCE",
+                icon: RiShieldCheckLine,
+            },
+        ],
+    },
+
+    {
+        title: "DISRPTVE brings the audience.",
+        desc: "Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. Led by Ashish Chowdhry and Kaushik Sundararajan, with a decade of running culture-first agencies behind them. Trust as the unfair advantage.",
+
+        tags: [
+            {
+                label: "TALENT",
+                icon: RiTeamLine,
+            },
+            {
+                label: "BRAND",
+                icon: RiStarLine,
+            },
+            {
+                label: "AUDIENCE",
+                icon: RiFocus3Line,
+            },
+        ],
+    },
+]
 
 const WhoWeAre = () => {
     return (
-        <div className='py-24 space-y-16'>
+        <div className='py-24 border-b border-black space-y-16'>
             <SectionHeading
                 btnText={"Who we are"}
-                heading={"Two operators. One model."}
-                desc={"UBR and DISRPTVE come from opposite ends of the consumer ventures spectrum. Together, they fix the two things most consumer brands get wrong at once."}
+                heading={
+                    "Two operators. One model. UBR and DISRPTVE combine brand-building expertise with operational depth to solve the two biggest challenges most consumer brands."
+                }
             />
-            <div className="container overflow-hidden">
+            <div className="w-[75%] mx-auto overflow-hidden">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                    {modelCards.map((card, index) => (
+                        <div
+                            key={index}
+                            className="group relative bg-black rounded-lg p-8 md:p-10 overflow-hidden"
+                        >
+                            <div
+                                // style={{
+                                //     maskImage:
+                                //         "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.33) 100%)",
+                                //     WebkitMaskImage:
+                                //         "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.33) 100%)",
+                                // }}
+                                className="absolute inset-0 z-10 pointer-events-none">
 
-                    <div className="group relative  bg-[#F8F8F8]  rounded-xl  p-8 md:p-10 overflow-hidden ">
-                        <div className="relative h-20">
-                            <Image width={100} height={100} src="/images/logo-ubrxdisrptve.png" alt="" />
-                        </div>
-                        <div className="relative ">
-                            <h3 className="leading-none">
-                                UBR brings the P&amp;L <br /> rigour.
-                            </h3>
-                        </div>
-                        <p className="relative mt-10 leading-6 text-xl opacity-80 w-[90%]">Disciplined capital, enterprise scaling, a proven playbook for turning revenue into profit. The operator side of the model, anchored by <b> Binoy Khimji </b> and the Cornerstone ecosystem. Governance, unit economics, and the patience to compound.</p>
-                        <div className="relative mt-10  grid grid-cols-1 sm:grid-cols-3 gap-5">
-                            <div className="rounded-md font-medium  px-4 py-2 bg-[#003049] text-white transition-all duration-300">
-                                <div className="flex items-center gap-2">
-                                    <RiBarChartBoxLine
-                                        size={20}
-                                        className=""
-                                    />
+                                {/* Vertical Lines */}
+                                <div
+                                    className="absolute inset-0 flex justify-evenly"
+                                >
+                                    {[...Array(8)].map((_, i) => (
+                                        <div
+                                            key={i}
+                                            className="  w-px h-full bg-[#C4BAB030]  origin-top scale-y-0  group-hover:scale-y-100  transition-transform duration-300  "
+                                            style={{
+                                                transitionDelay: `${i * 80}ms`,
+                                            }}
+                                        />
+                                    ))}
+                                </div>
 
-                                    <p className="uppercase">
-                                        Capital
-                                    </p>
+                                {/* Horizontal Lines */}
+                                <div
+                                    className="absolute inset-0 flex flex-col justify-evenly">
+                                    {[...Array(4)].map((_, i) => (
+                                        <div
+                                            key={i}
+                                            className="h-px w-full bg-[#C4BAB030]  origin-left scale-x-0  group-hover:scale-x-100  transition-transform duration-300  "
+                                            style={{
+                                                transitionDelay: `${i * 120}ms`,
+                                            }}
+                                        />
+                                    ))}
                                 </div>
                             </div>
-
-                            <div className="rounded-md font-medium  px-4 py-2 bg-[#003049] text-white transition-all duration-300">
-                                <div className="flex items-center gap-2">
-                                    <RiSettings3Line
-                                        size={20}
-                                        className=""
-                                    />
-
-                                    <p className="uppercase">
-                                        Operations
-                                    </p>
-                                </div>
+                            <div className="relative">
+                                <h4 className="leading-none capitalize font-semibold">
+                                    {card.title}
+                                </h4>
                             </div>
 
-                            <div className="rounded-md font-medium  px-4 py-2 bg-[#003049] text-white transition-all duration-300">
-                                <div className="flex items-center gap-2">
-                                    <RiShieldCheckLine
-                                        size={20}
-                                        className=""
-                                    />
+                            <p className="relative mt-10 leading-6 text-lg">
+                                {card.desc}
+                            </p>
 
-                                    <p className="uppercase">
-                                        Governance
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <div className="relative mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                {card.tags.map((tag, i) => {
+                                    const Icon = tag.icon
 
-                    <div className="group relative bg-[#F8F8F8]  rounded-xl  p-8 md:p-10 overflow-hidden ">
-                        <div className="relative h-20 ">
-                            <Image width={200} height={100} src="/images/logo-disrptve-dark.png" alt="" />
-                        </div>
-                        <div className="relative">
-                            <h3 className="leading-none">
-                                DISRPTVE brings the <br /> audience.
-                            </h3>
-                        </div>
-                        <p className="relative mt-10 leading-tight text-xl opacity-80   w-[95%]">
-                            Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. Led by <b> Ashish Chowdhry </b> and <b> Kaushik Sundararajan,</b> with a decade of running culture-first agencies behind them. Trust as the unfair advantage.</p>
-                        <div className="relative  mt-10 grid grid-cols-1  sm:grid-cols-3 gap-5">
-                            <div className="rounded-md font-medium  px-4 py-2 bg-[#003049] text-white transition-all duration-300">
-                                <div className="flex items-center gap-2 ">
-                                    <RiTeamLine
-                                        size={20}
-                                        className=""
-                                    />
+                                    return (
+                                        <div
+                                            key={i}
+                                            className={`rounded-md font-medium text-sm p-3 border bg-[#C4BAB0] text-black`}
+                                        >
+                                            <div className="flex items-center gap-2">
+                                                <Icon size={16} />
 
-                                    <p className="uppercase">
-                                        Talent
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="rounded-md font-medium  px-4 py-2 bg-[#003049] text-white transition-all duration-300">
-                                <div className="flex items-center gap-2">
-                                    <RiStarLine
-                                        size={20}
-                                        className=""
-                                    />
-
-                                    <p className="uppercase">
-                                        Brand
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="rounded-md font-medium  px-4 py-2 bg-[#003049] text-white transition-all duration-300">
-                                <div className="flex items-center gap-2">
-                                    <RiFocus3Line
-                                        size={20}
-                                        className=""
-                                    />
-
-                                    <p className="uppercase">
-                                        Audience
-                                    </p>
-                                </div>
+                                                <p className=" aeonik font-semibold   uppercase">
+                                                    {tag.label}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>

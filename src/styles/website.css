@@ -4,9 +4,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-
-  background: #003049;
-  color: white;
+  color: #C4BAB0;
 }
 
 .arc_container {
@@ -20,20 +18,14 @@
   position: absolute;
   right: 16rem;
   top: 50%;
-  --rel-index: calc(
-    var(--index) - var(--progress) * (var(--total-items) - 1)
-  );
+  --rel-index: calc(var(--index) - var(--progress) * (var(--total-items) - 1));
 
   --radius: 35rem;
   --theta: calc(var(--rel-index) * 12deg);
   --x: calc(var(--radius) * (1 - cos(var(--theta))));
   --y: calc(var(--radius) * sin(var(--theta)));
 
-  transform:
-    translate(
-      var(--x),
-      calc(-50% + var(--y))
-    )
+  transform: translate(var(--x), calc(-50% + var(--y)))
     rotate(calc(-1 * var(--theta)));
 
   transform-origin: center right;

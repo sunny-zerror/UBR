@@ -29,7 +29,7 @@ const foundersData = [
 ];
 const ContactHero = () => {
 
-    useGSAP(() => {
+  useGSAP(() => {
     const heading_split = SplitText.create(".heading_split", {
       type: "lines",
       linesClass: "split-line"
@@ -77,7 +77,7 @@ const ContactHero = () => {
   });
 
   return (
-    <div className='container pt-32  bg-[#003049] text-white'>
+    <div className='container pt-32  bg-[#C4BAB0] text-white'>
       <div className="  content_box pb-16 border-b border-white/10">
         <div className="space-y-5">
           <h1 className=' heading_split capitalize text-white'>Get In Touch <br /> <span className=' normal-case  text-white cursor-pointer transition-all duration-300'>info@ubr.com</span></h1>
@@ -87,38 +87,38 @@ const ContactHero = () => {
         <div className=" content_box col-span-3">
           <p className=' paragraph_split capitalize w-[60%] opacity-80 leading-tight'>Founders, talent partners, investors and retailers, we’d like to hear from you. Tell us where you are and we’ll come back within two working days.</p>
         </div>
-          <div className="col-span-3">
-            <div className="space-y-7">
-              {foundersData.map((item, index) => (
-                <div
-                  key={index}
-                  className=" hover:px-3 transition-all duration-300 pb-2 border-b flex items-center justify-between group cursor-pointer border-white/10 "
-                >
-                  <div className="space-y-5">
-                    <div className="">
-                      <h5 className="">
-                        {item.name}
-                      </h5>
-                      <h6 className="flex items-center gap-2 opacity-80 text-sm uppercase ">
-                        <span>{item.role}</span>
-                        <span>•</span>
-                        <span>{item.company}</span>
-                      </h6>
-                    </div>
-                    <a
-                      href={`mailto:${item.email}`}
-                      className="inline-block  "
-                    >
-                      {item.email}
-                    </a>
+        <div className="col-span-3">
+          <div className="space-y-7">
+            {foundersData.map((item, index) => (
+              <div
+                key={index}
+                className=" hover:px-3 transition-all duration-300 pb-2 border-b flex items-center justify-between group cursor-pointer border-white/10 "
+              >
+                <div className="space-y-5">
+                  <div className="">
+                    <h5 className="">
+                      {item.name}
+                    </h5>
+                    <h6 className="flex items-center gap-2 opacity-80 text-sm uppercase ">
+                      <span>{item.role}</span>
+                      <span>•</span>
+                      <span>{item.company}</span>
+                    </h6>
                   </div>
-                  <div className={`size-10 center rounded-full border border-white/10 group-hover:bg-[#ffff] group-hover:text-[#003049] transition-all duration-300`}>
-                    <RiArrowDownLine size={18} className='-rotate-[135deg] group-hover:-rotate-90 transition-all duration-300' />
-                  </div>
+                  <a
+                    href={`mailto:${item.email}`}
+                    className="inline-block  "
+                  >
+                    {item.email}
+                  </a>
                 </div>
-              ))}
-            </div>
+                <div className={`size-10 center rounded-full border border-white/10 group-hover:bg-[#ffff] group-hover:text-[#C4BAB0] transition-all duration-300`}>
+                  <RiArrowDownLine size={18} className='-rotate-[135deg] group-hover:-rotate-90 transition-all duration-300' />
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
       </div>
     </div>
   )

@@ -1,16 +1,19 @@
 @font-face {
-  font-family: graphik-medium;
-  src: url(../../public/fonts/GraphikLCG-Medium.woff2);
+  font-family: habitus;
+  src: url(../../public/fonts/habitus-book.C_msFUnG.woff2);
 }
 @font-face {
-  font-family: graphik-regular;
-  src: url(../../public/fonts/GraphikLCG-Regular.woff2);
+  font-family: aeonik;
+  src: url(../../public/fonts/aeonik-regular.B7F5ivrz.woff2);
+}
+.aeonik{
+  font-family: aeonik, "Times New Roman", Times, serif;
 }
 html,
 body {
   font-size: 14px;
   font-style: normal;
-  font-family: graphik-regular, Arial, sans-serif;
+  font-family: habitus, Arial, Helvetica, sans-serif;
   font-display: swap;
 }
 
@@ -18,48 +21,29 @@ body {
   html,
   body {
     font-size: 16px;
-    letter-spacing: -3%;
   }
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: graphik-medium, Arial, sans-serif;
-  font-display: swap;
 }
 
 h1 {
-  font-size: 5.65rem;
-  line-height: 5.9rem;
-  letter-spacing: -0.35rem;
+  font-size: 5rem;
 }
 h2 {
   font-size: 3.5rem;
-  line-height: 3.5rem;
-  letter-spacing: -0.2rem;
+  line-height: 4rem;
 }
 h3 {
   font-size: 3rem;
-  line-height: 2.5rem;
-  letter-spacing: -0.2rem;
 }
 h4 {
   font-size: 2rem;
-  line-height: 2.25rem;
 }
 h5 {
   font-size: 1.5rem;
 }
 h6 {
   font-size: 0.75rem;
+  font-family: aeonik, "Times New Roman", Times, serif;
   text-transform: uppercase;
-}
-.font-medium {
-  font-family: graphik-medium, Arial, sans-serif;
-  font-display: swap;
 }
 @media (max-width: 750px) {
   h1 {

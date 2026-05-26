@@ -6,18 +6,19 @@
 }
 body {
   overflow-x: hidden;
-  color: #191b1d;
+  color: #000000;
+  background-color: #C4BAB0;
   width: 100%;
 }
 body::-webkit-scrollbar {
   display: none;
 }
 .text-black{
-  color: #191b1d !important;
+  color: #000000 !important;
 }
 .bg-black{
-  background-color: #191b1d !important;
-  color: white !important;
+  background-color: #000000 !important;
+  color: #C4BAB0 !important;
 }
 .scroller_none::-webkit-scrollbar {
   display: none;
@@ -56,14 +57,6 @@ button {
   }
   .container {
     padding-inline: 2rem;
-  }
-}
-@media (min-width: 1440px) {
-  .padding {
-    padding-inline: 6rem;
-  }
-  .container {
-    padding-inline: 6rem;
   }
 }
 

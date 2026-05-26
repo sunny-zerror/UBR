@@ -53,7 +53,7 @@ const GlobalHeadingReveal = () => {
         })
 
         gsap.to(split.lines, {
-          yPercent: -8,
+          yPercent: 0,
           duration: 1,
           stagger: 0.08,
           ease: "expo.out",

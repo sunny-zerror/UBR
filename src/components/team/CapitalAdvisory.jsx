@@ -11,11 +11,11 @@ const CapitalAdvisory = () => {
                 desc={"Ex-bankers with deep relationships across VCs, family offices and angel syndicates in India, the GCC and the USA. The fundraise track is theirs to run."}
             />
             <div className="container grid grid-cols-2 gap-x-5">
-                <div className="bg-[#00304910] items-stretch gap-x-5 rounded-xl flex  p-8">
+                <div className="bg-[#C4BAB010] items-stretch gap-x-5 rounded-xl flex  p-8">
                     <div className="rounded-lg aspect-3/4 w-[35%] overflow-hidden">
-                    <div data-img-effect className="w-full h-full">
-                        <img className='cover' src="/images/team/akshi.png" alt="" />
-                    </div>
+                        <div data-img-effect className="w-full h-full">
+                            <img className='cover' src="/images/team/akshi.png" alt="" />
+                        </div>
                     </div>
                     <div className="w-[65%] flex flex-col justify-between">
                         <div className="">
@@ -25,11 +25,11 @@ const CapitalAdvisory = () => {
                         <p className='leading-tight text-lg opacity-80 '>A Chartered Accountant and ex-banker with strong investor relationships and 25+ successfully closed fundraise mandates for early-stage D2C brands, tech companies and B2B SaaS, across VCs, family offices and angel syndicates.</p>
                     </div>
                 </div>
-                <div className="bg-[#00304910] items-stretch gap-x-5 rounded-xl flex  p-8">
+                <div className="bg-[#C4BAB010] items-stretch gap-x-5 rounded-xl flex  p-8">
                     <div className="rounded-lg aspect-3/4 w-[35%] overflow-hidden">
-                    <div data-img-effect className="w-full h-full">
-                        <img className='cover' src="/images/team/ankur.png" alt="" />
-                    </div>
+                        <div data-img-effect className="w-full h-full">
+                            <img className='cover' src="/images/team/ankur.png" alt="" />
+                        </div>
                     </div>
                     <div className="w-[65%] flex flex-col justify-between">
                         <div className="">

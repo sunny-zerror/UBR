@@ -59,9 +59,9 @@ const WorkListingHero = () => {
     }, "<");
 
   });
-  
+
   return (
-    <div className=" content_box w-full bg-[#003049] text-white">
+    <div className=" content_box w-full bg-[#C4BAB0] text-white">
       <div className='container grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
           <DotButton text="Selected work" className={"blink_btn opacity-0"} />

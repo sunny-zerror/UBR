@@ -2,7 +2,7 @@ import React from 'react'
 import DotButton from '../common/DotButton'
 import SectionHeading from '../common/SectionHeading';
 
- const statsData = [
+const statsData = [
     [
         {
             value: "$4.3",
@@ -45,22 +45,22 @@ import SectionHeading from '../common/SectionHeading';
 ];
 const MacroPicture = () => {
     return (
-        <div className='w-full py-24  pb-10 border-b border-black/10 bg-[#003049]  text-white'>
+        <div className='w-full py-24  pb-10 border-b border-black bg-[#C4BAB0]'>
             <SectionHeading
                 btnText={"The macro picture"}
-                heading={"All signals point to a once-in-a-generation moment."}
-                desc={"Five tailwinds are converging to create an unprecedented environment for building consumer brands in India. The next decade will be defined by the model that captures India 1."}
-            />
+                heading={
+                    "All signals point to a once-in-a-generation moment as five powerful tailwinds converge to reshape India’s consumer landscape, creating unprecedented opportunities."
+                } />
 
-            <div className="container space-y-10  mt-16">
+            <div className="container space-y-8 mt-16">
 
                 {statsData.flat().map((item, index) => (
                     <div
                         key={index}
-                        className="w-full border-b pb-3 border-white/10 last:border-none grid grid-cols-6 items-stretch"
+                        className="w-full border-b pb-3 border-black/10 last:border-none grid grid-cols-6 items-stretch"
                     >
                         <div className='col-span-4'>
-                            <p data-heading-effect className="font-medium  text-8xl">
+                            <p data-heading-effect className=" aeonik   leading-24  text-8xl">
                                 {item.value}
 
                                 {item.suffix && (
@@ -70,7 +70,7 @@ const MacroPicture = () => {
                         </div>
 
                         <div className=" col-span-2 flex flex-col justify-between">
-                            <p className="text-lg font-medium uppercase ">
+                            <p className=" font-medium uppercase ">
                                 {item.title}
                             </p>
 

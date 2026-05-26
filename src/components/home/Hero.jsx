@@ -5,10 +5,11 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
+import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const Hero = () => {
-  const imageRef = useRef(null);
+
   useGSAP(() => {
     const heading_split = SplitText.create(".heading_split", {
       type: "lines",
@@ -79,60 +80,23 @@ const Hero = () => {
     });
   })
 
-  const handleMouseMove = (e) => {
-    const { innerWidth, innerHeight } = window;
-
-    // mouse position from center
-    const x = (e.clientX - innerWidth / 2) / innerWidth;
-    const y = (e.clientY - innerHeight / 2) / innerHeight;
-
-    gsap.to(imageRef.current, {
-      rotateY: x * 12,
-      rotateX: -y * 12,
-
-      x: x * 40,
-      y: y * 40,
-
-      transformPerspective: 1200,
-      transformOrigin: "center",
-
-      duration: 1.2,
-      ease: "power3.out",
-    });
-  };
-
-  const reset = () => {
-    gsap.to(imageRef.current, {
-      rotateX: 0,
-      rotateY: 0,
-      x: 0,
-      y: 0,
-      duration: 1.5,
-      ease: "power3.out",
-    });
-  };
   return (
-    <div className=" hero_section w-full h-screen content_box relative bg-[#000000]">
-      <div className='container grid grid-cols-6  pt-[40vh] text-white pb-16'>
-        <div
-          className="absolute inset-0 overflow-hidden perspective-[1200px]"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={reset}
-        >
-          <img
-            ref={imageRef}
-            className="hero_bg opacity-0 w-full h-full absolute inset-0 object-cover z-[1] scale-110 scale-x-[-1] will-change-transform"
-            src="/images/hero_bg.avif"
-            alt=""
-          />
+    <div className=" hero_section w-full h-screen overflow-hidden content_box relative bg-[#000000]">
+      <div className='container flex items-end text-white pb-16'>
+        <Image fill
+          className="hero_bg absolute inset-0  opacity-0 cover"
+          src="/images/hero_bg.png"
+          alt=""
+        />
+        <div className="absolute top-1/2 -translate-y-1/2 z-10 left-8 ">
+          <DotButton text="A venture builder for India" className={"opacity-0 text-white! blink_btn"} />
         </div>
-        <div className="pointer-events-none space-y-5 relative z-10 col-span-4">
-          <DotButton text="A venture builder for India" className={"opacity-0 blink_btn"} />
-          <h1 className=' capitalize heading_split'>The integrated model <br /> for  <span className=''>  non-linear</span> <br /> growth.</h1>
-        </div>
-        <div className=" pointer-events-none relative z-10 w-full col-span-2 flex flex-col justify-end">
-          <p className='text-xl  leading-5.5 paragraph_split'>We build consumer brands faster, profitably. Talent, capital, strategy, design and distribution, fused into one operating system that replaces paid CAC with trust.</p>
-          <p className='text-xl leading-5.5 paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> and  <b>Kaushik Sundararajan.</b></p>
+        <div className="pointer-events-none w-full  relative z-10 grid items-end grid-cols-6">
+          <h1 className=' capitalize leading-none tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>
+          <div className=" pb-4  pointer-events-none relative z-10 w-full col-span-2">
+            <p className=' leading-tight  paragraph_split'>We build consumer brands faster, profitably. Talent, capital, strategy, design and distribution, fused into one operating system that replaces paid CAC with trust.</p>
+            <p className='leading-tight  paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> and  <b>Kaushik Sundararajan.</b></p>
+          </div>
         </div>
       </div>
     </div>

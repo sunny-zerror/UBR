@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const VideoSection = () => {
 
     const containerRef = useRef()
+    
     useGSAP(() => {
 
         gsap.to(".img_cv", {
@@ -28,6 +29,7 @@ const VideoSection = () => {
             ease:"none"
         });
     }, { scope: containerRef })
+
     return (
         <div ref={containerRef} className='w-full bg-black! aspect-video overflow-hidden'>
             <video loop autoPlay muted playsInline className=' img_cv opacity-0 cover' src="https://www.disrptve.com/video/show_reel.mp4" alt="" />
