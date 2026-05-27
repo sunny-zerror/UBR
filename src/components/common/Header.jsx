@@ -1,6 +1,6 @@
 "use client";
 import { Link } from 'next-view-transitions'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from './Button'
 import { usePathname } from 'next/navigation'
 import { useGSAP } from '@gsap/react';
@@ -67,6 +67,39 @@ const Header = () => {
       }, 0);
     }
   }, [pathname])
+
+  useEffect(() => {
+    if (pathname === "/contact") {
+      gsap.set('.logo_white', {
+        opacity: 1,
+        duration: .6,
+      }, 0);
+      gsap.set('.navLink', {
+        color: "white",
+        fontWeight: 100,
+        duration: .6,
+      }, 0);
+      gsap.set('.navLinkBar', {
+        backgroundColor: "#ffffff",
+        duration: .6,
+      }, 0);
+    } else {
+      gsap.set('.logo_white', {
+        opacity: 0,
+        duration: .6,
+      }, 0);
+      gsap.set('.navLink', {
+        color: "black",
+        fontWeight: 1000,
+        duration: .6,
+      }, 0);
+      gsap.set('.navLinkBar', {
+        backgroundColor: "#000000",
+        duration: .6,
+      }, 0);
+    }
+  }, [pathname])
+
 
   return (
     <div className='header w-full  z-100 fixed'>
