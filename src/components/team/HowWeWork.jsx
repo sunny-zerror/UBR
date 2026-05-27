@@ -29,14 +29,14 @@ const valuesData = [
 ];
 const HowWeWork = () => {
     return (
-        <div className='border-t border-black  pt-24 space-y-16'>
+        <div className=' night_bg text-white   py-24 space-y-16'>
             <SectionHeading
                 btnText="How we work"
                 heading="Co-founders, not consultants."
                 desc="We embed across all five pillars from day one. Equity-aligned. Vested against KPIs. Same room as the founder, same target on the wall." />
             <div className="container">
                 {valuesData.map((item, i) => (
-                    <div key={i} className="grid grid-cols-6 border-b pb-3 mb-10 border-black  justify-between">
+                    <div key={i} className="grid grid-cols-6 border-b  pb-3 mb-10 border-white/50  justify-between">
                         <div className=" col-span-4 space-y-20">
                             <h6>{item.label}</h6>
                             <h4 className='leading-none font-semibold w-[70%]'>{item.title}</h4>

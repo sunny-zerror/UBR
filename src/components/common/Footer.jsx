@@ -33,9 +33,15 @@ const Footer = () => {
 
   const skipBlackBox = pathname === '/contact'
 
+  const images = [
+    "https://images.unsplash.com/photo-1563906267088-b029e7101114?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1509130298739-651801c76e96?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1434296159862-a6c213a9316f?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1557180295-76eee20ae8aa?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ]
 
   useGSAP(() => {
-    gsap.to('.sticky_box', {
+    gsap.to(".sticky_box", {
       ease: "none",
       transformOrigin: "50% 50%",
       scrollTrigger: {
@@ -45,49 +51,88 @@ const Footer = () => {
         end: "center center",
         scrub: true,
         pin: true,
-        pinSpacing: true
+        pinSpacing: true,
       },
     });
-    gsap.fromTo('.footer_img', {
-      y: -200,
-    }, {
-      y: 200,
-      ease: "none",
+
+    gsap.fromTo(
+      ".footer_img",
+      {
+        y: -200,
+      },
+      {
+        y: 200,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".sticky_box",
+          endTrigger: ".main_footer",
+          start: "bottom bottom",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      }
+    );
+
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".sticky_box",
-        endTrigger: ".main_footer",
-        start: "bottom bottom",
-        end: "bottom bottom",
+        endTrigger: ".box_left",
+        start: "top center",
+        end: "bottom center",
         scrub: true,
       },
     });
-  })
+
+    tl.to(".footer_img_item_1", {
+      opacity: 1,
+      ease: "none",
+    });
+
+    tl.to(".footer_img_item_2", {
+      opacity: 1,
+      ease: "none",
+    });
+
+    tl.to(".footer_img_item_3", {
+      opacity: 1,
+      ease: "none",
+    });
+  });
 
   return (
     <div className='mt-24'>
       {!skipBlackBox && (
         <div className=" sticky_box_paren w-full  h-[75vw] relative">
-          <div className="w-full h-full bg-[#0D1738]  center  absolute inset-0 overflow-hidden z-[-1]">
-          <img className=' footer_img footer_mask_img w-full ' src="https://images.stripeassets.com/fzn2n1nzq965/1lk5Hfstc9dnE8xVFz1HeC/0dec8f2dde7f904eade36d8390d81c69/developer-wave-wide_2x.png?fm=webp&q=80" alt="" />
+          <div className="w-full h-full center absolute inset-0 overflow-hidden -z-10">
+            {images.map((img, i) => (
+              <img
+                key={i}
+                src={img}
+                alt=""
+                className={`footer_img footer_img_item_${i} cover absolute inset-0 h-full w-full object-cover ${i === 0 ? "opacity-100" : "opacity-0"
+                  }`}
+                style={{ zIndex: i }}
+              />
+            ))}
           </div>
-          <div className=" absolute top-0 w-[calc(50%-15vw)] h-[60vw] left-0 ">
+          <div className=" absolute top-0 w-[calc(50%-12.5vw)] h-[50vw] left-0 ">
             <div className="w-full h-1/2 bg-[#FFFFFF]"></div>
             <div className=" box_left w-full h-1/2 "></div>
           </div>
-          <div className="absolute top-0 w-[calc(50%-15vw)] h-[30vw] right-0 bg-[#FFFFFF]"></div>
-          <div className=" sticky_box aspect-square relative left-1/2 -translate-x-1/2 h-[30vw] w-[30vw] bg-[#FFFFFF]">
+          <div className="absolute top-0 w-[calc(50%-12.5vw)] h-[25vw] right-0 bg-[#FFFFFF]"></div>
+          <div className=" sticky_box aspect-square relative left-1/2 -translate-x-1/2 h-[25vw] w-[25vw] bg-[#FFFFFF]">
             <div className="size-2 aspect-square z-10 bg-black absolute -top-1 -left-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -top-1 -right-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -bottom-1 -right-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -bottom-1 -left-1 "></div>
-            <div className="w-full h-full border-2 flex flex-col justify-between border-black  p-8">
+            <div className="w-full h-full border-2 flex flex-col justify-between border-black  p-6">
               <div className="space-y-5">
                 <h4 data-para-effect className='leading-none!'>Let’s build India’s next iconic brand. Together.</h4>
                 <p data-para-effect className='leading-tight opacity-80'>We are looking for our next cohort of partners. Founders, talent, investors and retailers, all welcome.</p>
               </div>
               <div className="w-full flex items-center justify-between">
-                <Link href={"/contact"} className={`group block w-fit  text-[#FFFFFF] uppercase aeonik text-xs px-4 border hover:text-[#000000] border-transparent hover:border-[#000000] py-2.5 leading-none relative overflow-hidden rounded-full transition-all duration-300 `}>
-                  <span className='absolute w-full h-full z-[-1] bg-[#0D1738]  inset-0 group-hover:-top-full transition-all duration-300'></span>
+                <Link href={"/contact"} className={`group block w-fit  text-[#FFFFFF] uppercase aeonik text-xs px-4 border hover:text-[#000000] border-transparent hover:border-[#000000] py-2.5 leading-none relative overflow-hidden  transition-all duration-300 `}>
+                  <span className='absolute w-full h-full z-[-1] bg-[#29227d]  inset-0 group-hover:-top-full transition-all duration-300'></span>
                   get in touch
                 </Link>
               </div>
@@ -95,10 +140,10 @@ const Footer = () => {
           </div>
         </div>
       )}
-      <div className=" main_footer -translate-y-px bg-[#0D1738]  text-[#FFFFFF]  pt-14">
+      <div className=" main_footer -translate-y-px night_bg  text-[#FFFFFF]  pt-14">
         <div className="container h-[35vh]! grid  grid-cols-6">
-          <div className="space-y-5 h-full flex items-end col-span-3">
-            <img className='w-[35%]' src="/logo_white.png" alt="" />
+          <div className="space-y-5 h-full  col-span-3">
+            <img className='w-[25%]' src="/logo_white.png" alt="" />
           </div>
           <div className=" h-full space-y-5">
             <p className=' uppercase text-sm aeonik'>Sitemap</p>

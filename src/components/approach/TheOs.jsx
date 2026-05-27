@@ -69,7 +69,7 @@ const TheOs = () => {
       const totalWidth = slider.scrollWidth;
       const viewportWidth = window.innerWidth;
 
-      const maxTranslate = totalWidth - viewportWidth;
+      const maxTranslate = totalWidth - viewportWidth + 96;
 
       gsap.to(slider, {
         x: -maxTranslate,
@@ -94,14 +94,16 @@ const TheOs = () => {
   });
 
   return (
-    <div className="w-full py-24 night_bg text-white pb-10 ">
-      <SectionHeading
-        btnText="The OS"
-        heading="A phase-gated journey from vision to velocity." 
-        desc="Five phases. Clear outputs. We don’t just advise, we co-create."/>
+    <div className="w-full  night_bg text-white pb-10 ">
 
       <div ref={containerRef} className=" w-full h-[300vh]">
-        <div className="w-screen sticky top-0 h-screen flex items-center overflow-hidden">
+        <div className=" py-24 w-screen sticky top-0 h-screen flex flex-col gap-y-16 justify-center overflow-hidden">
+          <div className="">
+          <SectionHeading
+            btnText="The OS"
+            heading="A phase-gated journey from vision to velocity."
+            desc="Five phases. Clear outputs. We don’t just advise, we co-create." />
+          </div>
           <div
             ref={sliderRef}
             className="slider flex gap-x-10 px-24"
@@ -109,7 +111,7 @@ const TheOs = () => {
             {processData.map((item, i) => (
               <div
                 key={i}
-                className="w-[35vw] shrink-0 "
+                className="w-[30vw] shrink-0 "
               >
                 <div className="w-full aspect-[4/3] rounded-sm relative overflow-hidden">
                   <Image
@@ -122,9 +124,9 @@ const TheOs = () => {
 
                 <div>
                   <h4 className='leading-none mt-5 mb-1'>{item.title}</h4>
-                <p className=" opacity-80 leading-tight">
-                  {item.description}
-                </p>
+                  <p className=" opacity-80 leading-tight">
+                    {item.description}
+                  </p>
                 </div>
 
               </div>

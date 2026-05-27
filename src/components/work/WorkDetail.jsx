@@ -73,12 +73,12 @@ const WorkDetail = () => {
 
   return (
     <>
-       <SectionHero
+      <SectionHero
         btnText={work.engagement}
         heading={work.title}
         desc={work.description}
       />
-  
+
       <div className={`w-full  center aspect-video ${work.classname}`}>
         <img src={work.image} alt="" />
       </div>
@@ -103,7 +103,7 @@ const WorkDetail = () => {
             </div>
             <div className='flex flex-wrap gap-2'>
               {work.services.map((tag, i) => (
-                <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-[#0D1738] text-white w-fit]">
+                <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-[#29227d] text-white w-fit]">
                   <p className=" text-xs aeonik uppercase">
                     {tag}
                   </p>

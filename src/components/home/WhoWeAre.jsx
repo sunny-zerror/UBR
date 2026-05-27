@@ -67,7 +67,7 @@ const WhoWeAre = () => {
                 }
                 desc="UBR and DISRPTVE come from opposite ends of the consumer ventures spectrum. Together, they fix the two things most consumer brands get wrong at once."
             />
-            <div className="w-[75%] mx-auto overflow-hidden">
+            <div className="w-full container overflow-hidden">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                     {modelCards.map((card, index) => (
@@ -75,7 +75,7 @@ const WhoWeAre = () => {
                             key={index}
                             className="group relative border border-black/20  rounded-lg p-8 md:p-10 overflow-hidden"
                         >
-                            <img className=' cover absolute inset-0 opacity-50' src={card.img} alt="" />
+                            <img className=' cover absolute inset-0 group-hover:opacity-100 opacity-50 transition-all duration-300' src={card.img} alt="" />
                             <div className="relative">
                                 <h4 className="leading-none capitalize font-semibold">
                                     {card.brand}
@@ -85,7 +85,7 @@ const WhoWeAre = () => {
                                 </h4>
                             </div>
 
-                            <p className="relative mt-10 leading-6 text-lg">
+                            <p className="relative mt-10 w-[85%] leading-6 text-lg">
                                 {card.desc}
                             </p>
 
@@ -96,10 +96,10 @@ const WhoWeAre = () => {
                                     return (
                                         <div
                                             key={i}
-                                            className={`rounded-md font-medium text-sm p-3 border border-black/50 bg-[#FFFFFF] text-black`}
+                                            className={`rounded-md font-medium text-sm p-3 border border-black/20  bg-[#FFFFFF80] text-black`}
                                         >
-                                            <div className="flex items-center gap-2">
-                                                <Icon size={16} />
+                                            <div className="flex flex-col justify-center items-center gap-5">
+                                                <Icon size={34} />
 
                                                 <p className=" aeonik font-semibold   uppercase">
                                                     {tag.label}

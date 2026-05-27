@@ -52,8 +52,31 @@
     #141e4b 100%
   );
 }
+.pre-dawn_bg {
+  background: radial-gradient(
+    103.24% 102.63% at 50% 102.63%,
+    #486ffd 0,
+    #7f81f3 9.84%,
+    #c489ff 20.83%,
+    #dac0ff 34.13%,
+    #eadcff 44.86%,
+    #f9f6ff 58.59%,
+    #f8fafd 100%
+  );
+}
+.sunset_bg {
+  background: radial-gradient(
+    103.12% 100% at 50% 100%,
+    #ffa577 0,
+    #ff90a1 15.52%,
+    #ddadff 30.09%,
+    #ecd8ff 45.72%,
+    #f5eaff 54.96%,
+    #f8fafd 88.16%
+  );
+}
 
-.footer_mask_img{
-    -webkit-mask-image: radial-gradient(#000 0, #000 30%, transparent 75%);
-    mask-image: radial-gradient(#000 0, #000 30%, transparent 75%);
+.footer_mask_img {
+  -webkit-mask-image: radial-gradient(#000 0, #000 30%, transparent 75%);
+  mask-image: radial-gradient(#000 0, #000 30%, transparent 75%);
 }

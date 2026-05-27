@@ -11,6 +11,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ViewTransitions } from "next-view-transitions";
 import GlobalImgReveal from "../animation/GlobalImgReveal";
 import GlobalParaReveal from "../animation/GlobalParaReveal";
+import GlobalClipReveal from "../animation/GlobalClipReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,6 +37,7 @@ export default function SiteLayout({ children }) {
 
         <GlobalImgReveal />
         <GlobalParaReveal />
+        <GlobalClipReveal/>
 
         <header>
           <Header />

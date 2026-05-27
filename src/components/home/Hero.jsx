@@ -65,7 +65,7 @@ const Hero = () => {
   useGSAP(() => {
 
     gsap.to(".hero_bg", {
-      opacity: .5,
+      opacity: 1,
       delay: 1.5
     })
 
@@ -86,11 +86,11 @@ const Hero = () => {
       <div className='container flex items-end pb-16'>
         <div className="absolute inset-0 z-[-1] hero_bg opacity-0">
           <ColorBends
-            colors={[ "#6763e4","#29227d"]}
-            rotation={90}
+            colors={[ "#111184","#111184","#111184","#111184"]}
+            rotation={100}
             speed={0.2}
             scale={1}
-            frequency={1.4}
+            frequency={1.5}
             warpStrength={1}
             mouseInfluence={1}
             noise={0}

@@ -1,45 +1,148 @@
-import { RiCloseLine } from '@remixicon/react';
-import React from 'react'
-import Button from '../common/Button';
-import { Link } from 'next-view-transitions';
-import { WorkData } from '@/store/WorkData';
+"use client";
+
+import React, { useRef, useState } from "react";
+import gsap from "gsap";
+import Marquee from "react-fast-marquee";
+import { Link } from "next-view-transitions";
+import { WorkData } from "@/store/WorkData";
 
 export const WorksList = () => {
+    const marqueeRef = useRef(null);
+
+    const [activeTitle, setActiveTitle] = useState("Project");
+
+    const xTo = useRef(null);
+    const yTo = useRef(null);
+
+    const mouse = useRef({
+        x: 0,
+        y: 0,
+    });
+
+    const handleMouseEnter = (e, title) => {
+        setActiveTitle(title);
+
+        if (!marqueeRef.current) return;
+
+        // set current mouse position instantly
+        mouse.current.x = e.clientX + 20;
+        mouse.current.y = e.clientY - 20;
+
+        gsap.set(marqueeRef.current, {
+            x: mouse.current.x,
+            y: mouse.current.y,
+        });
+
+        // create smooth followers once
+        if (!xTo.current || !yTo.current) {
+            xTo.current = gsap.quickTo(marqueeRef.current, "x", {
+                duration: 0.4,
+                ease: "expo.out",
+            });
+
+            yTo.current = gsap.quickTo(marqueeRef.current, "y", {
+                duration: 0.4,
+                ease: "expo.out",
+            });
+        }
+
+        gsap.to(marqueeRef.current, {
+            width: "6rem",
+            paddingRight: ".5rem",
+            paddingLeft: ".5rem",
+            autoAlpha: 1,
+            duration: 0.3,
+            ease: "expo.out",
+        });
+    };
+
+    const handleMouseMove = (e) => {
+        if (!marqueeRef.current) return;
+
+        mouse.current.x = e.clientX + 20;
+        mouse.current.y = e.clientY - 20;
+
+        xTo.current?.(mouse.current.x);
+        yTo.current?.(mouse.current.y);
+    };
+
+    const handleMouseLeave = () => {
+        if (!marqueeRef.current) return;
+
+        gsap.to(marqueeRef.current, {
+            width: 0,
+            paddingRight: 0,
+            paddingLeft: 0,
+            autoAlpha: 0,
+            duration: 0.3,
+            ease: "expo.out",
+        });
+    };
+
     return (
         <>
+            {/* cursor marquee */}
+            <div
+                ref={marqueeRef}
+                className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#29227d] px-0 py-1 will-change-transform overflow-hidden"
+            >
+                <Marquee speed={40}>
+                    <p className="mr-1 whitespace-nowrap">
+                        View {activeTitle} |
+                    </p>
+                </Marquee>
+            </div>
+
             <div className="container pt-24 space-y-20">
                 {WorkData.map((item, i) => (
-                    <div key={i} className=" border-b pb-20 border-black last:border-none w-full items-stretch grid grid-cols-5 gap-x-10">
+                    <Link
+                        href={`/work/${item.slug}`}
+                        key={i}
+                        onMouseEnter={(e) => handleMouseEnter(e, item.title)}
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+                        className="border-b pb-20 border-black last:border-none w-full items-stretch grid grid-cols-5 gap-x-10"
+                    >
                         <div className="col-span-2 flex flex-col justify-between">
-                            <div className="">
-                                <h3 data-para-effect className="font-semibold capitalize leading-15!  ">{item.title}</h3>
+                            <div>
                                 <h6 className="opacity-80">{item.category}</h6>
+
+                                <h3
+                                    data-para-effect
+                                    className="font-semibold capitalize leading-15!"
+                                >
+                                    {item.title}
+                                </h3>
                             </div>
+
                             <div className="space-y-4">
-                                <p className='leading-tight text-lg w-[80%]'>{item.description}</p>
+                                <p className="leading-tight text-lg w-[80%]">
+                                    {item.description}
+                                </p>
+
                                 <div className="relative flex flex-wrap gap-2">
                                     {item.services.map((tag, i) => (
-                                        <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-[#0D1738] text-white">
-                                            <p className=" text-xs aeonik uppercase">
-                                                {tag}
-                                            </p>
+                                        <div
+                                            key={i}
+                                            className="font-medium px-4 py-2 bg-[#29227d] text-white"
+                                        >
+                                            <p className="text-xs aeonik uppercase">{tag}</p>
                                         </div>
                                     ))}
                                 </div>
-                                <Link href={`/work/${item.slug}`} className='w-fit block'>
-                                    <Button text={"See Case Study"} className="mt-5" />
-                                </Link>
-                            </div>
-                        </div>
-                        <div className={`col-span-3 aspect-video center ${item.classname}`}>
-                            <div data-img-effect className="w-full h-full center">
-                                <img className='' src={item.image} alt="" />
                             </div>
                         </div>
 
-                    </div>
+                        <div
+                            className={`col-span-3 aspect-video center ${item.classname}`}
+                        >
+                            <div data-img-effect className="w-full h-full center">
+                                <img src={item.image} alt="" />
+                            </div>
+                        </div>
+                    </Link>
                 ))}
             </div>
         </>
-    )
-}
+    );
+};

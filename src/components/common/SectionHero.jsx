@@ -80,14 +80,15 @@ const SectionHero = ({ btnText, heading, desc }) => {
     })
     return (
         <div className=" content_box w-full ">
-            <div className='container h-[75vh]! overflow-hidden items-end grid grid-cols-6  pt-32 pb-16'>
+            <div className='container h-[75vh]! overflow-hidden items-end flex pb-16'>
+                <div className="gradient h-full w-full absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent from-[80%] to-white to-[100%]"></div>
                 <div className="w-full h-full hero_bg opacity-0 absolute inset-0 z-[-1] ">
                     <ColorBends
-                        colors={["#FD0916", "#0D1738", "#FD0916"]}
-                        rotation={90}
+                        colors={["#111184", "#111184", "#111184", "#111184"]}
+                        rotation={100}
                         speed={0.2}
                         scale={1}
-                        frequency={1.4}
+                        frequency={1.5}
                         warpStrength={1}
                         mouseInfluence={1}
                         noise={0}
@@ -99,14 +100,9 @@ const SectionHero = ({ btnText, heading, desc }) => {
                         autoRotate={0}
                     />
                 </div>
-                <div className="space-y-5 col-span-4">
-                    <DotButton text={btnText} className={"blink_btn opacity-0"} />
+                <div className="space-y-5 w-1/2 relative z-10 ">
                     <h1 className=' heading_split leading-none capitalize'>{heading}</h1>
-                </div>
-                <div className="col-span-2"></div>
-                <div className="col-span-4"></div>
-                <div className="w-full col-span-2 flex flex-col justify-end">
-                    <p className=' paragraph_split leading-tight'>{desc}</p>
+                    <p className=' paragraph_split w-[80%] leading-tight'>{desc}</p>
                 </div>
             </div>
         </div>

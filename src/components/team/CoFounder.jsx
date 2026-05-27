@@ -13,7 +13,7 @@ const CoFounders = () => {
             <div className="container grid grid-cols-3 gap-x-5">
                 <div className="space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
-                        <div data-img-effect className="w-full h-full">
+                        <div data-clip-effect className="w-full h-full">
                             <img className='cover' src="/images/team/binoy.png" alt="" />
                         </div>
                     </div>
@@ -25,7 +25,7 @@ const CoFounders = () => {
                 </div>
                 <div className="space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
-                        <div data-img-effect className="w-full h-full">
+                        <div data-clip-effect className="w-full h-full">
                             <img className='cover' src="/images/team/ashish.png" alt="" />
                         </div>
                     </div>
@@ -37,7 +37,7 @@ const CoFounders = () => {
                 </div>
                 <div className="space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
-                        <div data-img-effect className="w-full h-full">
+                        <div data-clip-effect className="w-full h-full">
                             <img className='cover' src="/images/team/kaushik.png" alt="" />
                         </div>
                     </div>
