@@ -39,7 +39,8 @@ const TheMindset = () => {
         <div className='w-full py-24 border-b pb-10 border-black '>
             <SectionHeading
                 btnText="The Mindset"
-                heading="Built with an operator’s mindset — five convictions that shape every engagement, define how we create impact, and determine the kind of ambitious partners we choose to work alongside." />
+                heading="An operating system for profitable scale. "
+                desc="In India's complex market, long-term value isn't created by venture capital alone. It is created by venture building. Five convictions, five phases, five pillars." />
 
             <div className="container space-y-10  mt-16">
 

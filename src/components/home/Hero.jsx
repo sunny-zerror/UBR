@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import Image from 'next/image';
+import ColorBends from './../animation/ColorBends';
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const Hero = () => {
@@ -64,7 +65,7 @@ const Hero = () => {
   useGSAP(() => {
 
     gsap.to(".hero_bg", {
-      opacity: 1,
+      opacity: .5,
       delay: 1.5
     })
 
@@ -81,21 +82,34 @@ const Hero = () => {
   })
 
   return (
-    <div className=" hero_section w-full h-screen overflow-hidden content_box relative bg-[#000000]">
-      <div className='container flex items-end text-[#C4BAB0] pb-16'>
-        <Image fill
-          className="hero_bg absolute inset-0 brightness-75  opacity-0 cover"
-          src="/images/hero_bg.png"
-          alt=""
-        />
-        <div className="absolute top-1/2 -translate-y-1/2 z-10 left-8 ">
-          <DotButton text="A venture builder for India" className={"opacity-0 text-[#C4BAB0]! blink_btn"} />
+    <div className=" hero_section w-full h-screen overflow-hidden content_box relative ">
+      <div className='container flex items-end pb-16'>
+        <div className="absolute inset-0 z-[-1] hero_bg opacity-0">
+          <ColorBends
+            colors={[ "#6763e4","#29227d"]}
+            rotation={90}
+            speed={0.2}
+            scale={1}
+            frequency={1.4}
+            warpStrength={1}
+            mouseInfluence={1}
+            noise={0}
+            parallax={0.5}
+            iterations={1}
+            intensity={1.5}
+            bandWidth={6}
+            transparent
+            autoRotate={0}
+          />
+        </div>
+        <div className="absolute top-1/2 -translate-y-1/2 z-10 left-24 ">
+          <DotButton text="A venture builder for India" className={"opacity-0  blink_btn"} />
         </div>
         <div className="pointer-events-none w-full  relative z-10 grid items-end grid-cols-6">
-          <h1 className=' capitalize leading-none tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>
+          <h1 className=' capitalize leading-24 tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>
           <div className=" pb-4  pointer-events-none relative z-10 w-full col-span-2">
-            <p className=' leading-tight  paragraph_split'>We build consumer brands faster, profitably. Talent, capital, strategy, design and distribution, fused into one operating system that replaces paid CAC with trust.</p>
-            <p className='leading-tight  paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> and  <b>Kaushik Sundararajan.</b></p>
+            <p className=' leading-tight text-lg opacity-60  paragraph_split'>We build consumer brands faster, profitably. Talent, capital, strategy, design and distribution, fused into one operating system that replaces paid CAC with trust.</p>
+            <p className='leading-tight text-lg opacity-60  paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> and  <b>Kaushik Sundararajan.</b></p>
           </div>
         </div>
       </div>

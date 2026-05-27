@@ -58,52 +58,53 @@ const OurThesis = () => {
     }, []);
 
     return (
-        <div ref={containerRef} className=' border-b border-black w-full h-[300vh] relative'>
+        <div ref={containerRef} className=' night_bg text-white w-full h-[300vh] relative'>
             <div className="container h-screen sticky! top-0 flex ">
+                {/* <img className=' absolute inset-0 cover opacity-50  object-top' src="https://images.stripeassets.com/fzn2n1nzq965/5dQAw5oJf3TOO1Jt6IKDRH/f391594c11f38d821259acdd3412a7a6/platform-graphic-background_2x.png?w=2460&fm=webp&q=90" alt="" /> */}
                 <div className="w-1/2 h-screen flex flex-col gap-y-20 justify-center">
                     <div className="space-y-5">
-                        <DotButton text="Our thesis" />
-                        <h2 data-para-effect className='capitalize'>We replace paid CAC <br /> with   trust CAC.</h2>
+                        <DotButton text="Our thesis" className={"text-white!"} />
+                        <h3 data-para-effect className='capitalize font-semibold leading-tight'>We replace paid CAC <br /> with   trust CAC.</h3>
                     </div>
-                    <p data-para-effect className='text-lg leading-tight w-[80%] '>UBR × DISRPTVE is a venture builder that installs a complete operating system for profitable scaling, whether you are launching a new brand or reigniting an established one.</p>
+                    <p data-para-effect className='text-lg opacity-60 leading-tight w-[80%] '>UBR × DISRPTVE is a venture builder that installs a complete operating system for profitable scaling, whether you are launching a new brand or reigniting an established one.</p>
                 </div>
                 <div className="w-1/2 h-screen center relative">
-                    <div className=" circ_1 scale-0 opacity-0 size-[18rem] -translate-x-[14rem] absolute border border-[#191b1d] rounded-full center">
+                    <div className=" circ_1 scale-0 opacity-0 size-[18rem] -translate-x-[14rem] absolute border border-[#fff] rounded-full center">
                         <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Talent
                             </p>
                         </div>
                     </div>
-                    <div className=" circ_2 scale-0 opacity-0 size-[18rem] -translate-y-[14rem] absolute border border-[#191b1d] rounded-full center">
+                    <div className=" circ_2 scale-0 opacity-0 size-[18rem] -translate-y-[14rem] absolute border border-[#fff] rounded-full center">
                         <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Capital
                             </p>
                         </div>
                     </div>
-                    <div className="circ_3  scale-0 opacity-0 size-[18rem] translate-x-[14rem] absolute border border-[#191b1d] rounded-full center">
+                    <div className="circ_3  scale-0 opacity-0 size-[18rem] translate-x-[14rem] absolute border border-[#fff] rounded-full center">
                         <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Design
                             </p>
                         </div>
                     </div>
-                    <div className=" circ_4 scale-0 opacity-0 size-[18rem] translate-y-[14rem] absolute border border-[#191b1d] rounded-full center">
+                    <div className=" circ_4 scale-0 opacity-0 size-[18rem] translate-y-[14rem] absolute border border-[#fff] rounded-full center">
                         <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Strategy
                             </p>
                         </div>
                     </div>
-                    <div className=" circ_5  size-[18rem] absolute border border-[#191b1d] rounded-full center">
+                    <div className=" circ_5  size-[18rem] absolute border border-[#fff] rounded-full center">
                         <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Distribution
                             </p>
                         </div>
                     </div>
-                    <div className=" circ_6 opacity-0 size-[18rem]  absolute border border-[#191b1d] rounded-full center">
+                    <div className=" circ_6 opacity-0 size-[18rem]  absolute border border-[#fff] rounded-full center">
                         <div className=' text-xl font-semibold aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_2 translate-y-full'>
                                 Sustainable

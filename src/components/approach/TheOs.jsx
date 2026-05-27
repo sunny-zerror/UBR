@@ -94,10 +94,11 @@ const TheOs = () => {
   });
 
   return (
-    <div className="w-full py-24 border-b pb-10 border-black bg-black">
+    <div className="w-full py-24 night_bg text-white pb-10 ">
       <SectionHeading
         btnText="The OS"
-        heading="A structured, phase-gated journey designed to transform ambitious ideas into scalable momentum through aligned strategy, decisive execution, and measurable progress at every stage." />
+        heading="A phase-gated journey from vision to velocity." 
+        desc="Five phases. Clear outputs. We don’t just advise, we co-create."/>
 
       <div ref={containerRef} className=" w-full h-[300vh]">
         <div className="w-screen sticky top-0 h-screen flex items-center overflow-hidden">
@@ -108,7 +109,7 @@ const TheOs = () => {
             {processData.map((item, i) => (
               <div
                 key={i}
-                className="w-[35vw] shrink-0 space-y-2"
+                className="w-[35vw] shrink-0 "
               >
                 <div className="w-full aspect-[4/3] rounded-sm relative overflow-hidden">
                   <Image
@@ -120,12 +121,12 @@ const TheOs = () => {
                 </div>
 
                 <div>
-                  <h4>{item.title}</h4>
-                </div>
-
+                  <h4 className='leading-none mt-5 mb-1'>{item.title}</h4>
                 <p className=" opacity-80 leading-tight">
                   {item.description}
                 </p>
+                </div>
+
               </div>
             ))}
           </div>

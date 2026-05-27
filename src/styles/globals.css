@@ -7,18 +7,18 @@
 body {
   overflow-x: hidden;
   color: #000000;
-  background-color: #C4BAB0;
+  background-color: #ffffff;
   width: 100%;
 }
 body::-webkit-scrollbar {
   display: none;
 }
-.text-black{
+.text-black {
   color: #000000 !important;
 }
-.bg-black{
+.bg-black {
   background-color: #000000 !important;
-  color: #C4BAB0 !important;
+  color: #ffffff !important;
 }
 .scroller_none::-webkit-scrollbar {
   display: none;
@@ -57,6 +57,14 @@ button {
   }
   .container {
     padding-inline: 2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .padding {
+    padding-inline: 6rem;
+  }
+  .container {
+    padding-inline: 6rem;
   }
 }
 

@@ -32,7 +32,8 @@ const HowWeWork = () => {
         <div className='border-t border-black  pt-24 space-y-16'>
             <SectionHeading
                 btnText="How we work"
-                heading="More than consultants, we operate as embedded co-founders — aligned by equity, accountable to outcomes, and committed to building alongside founders from day one through scale." />
+                heading="Co-founders, not consultants."
+                desc="We embed across all five pillars from day one. Equity-aligned. Vested against KPIs. Same room as the founder, same target on the wall." />
             <div className="container">
                 {valuesData.map((item, i) => (
                     <div key={i} className="grid grid-cols-6 border-b pb-3 mb-10 border-black  justify-between">

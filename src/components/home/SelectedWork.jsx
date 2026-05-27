@@ -10,7 +10,8 @@ const SelectedWork = () => {
         <div className='py-24 space-y-16  border-b '>
             <SectionHeading
                 btnText="Selected work"
-                heading="Brands we have backed through a model where capital, celebrity, and strategic advisory work as one integrated move, creating full-stack partnerships designed to build long-term consumer value." />
+                heading="Brands we have backed."
+                desc={"Capital and celebrity, structured as a single move. Strategic advisory anchored to talent. A full-stack engagement that compounds."} />
             <div className="container grid grid-cols-2 gap-x-5 gap-y-10">
                 {WorkData.map((item, i) => (
                     <Link key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
@@ -21,7 +22,7 @@ const SelectedWork = () => {
                         </div>
                         <div className="">
                             <h6 className=''>{item.engagement}</h6>
-                            <h4 className='capitalize font-semibold flex items-center gap-x-2'>{item.title}</h4>
+                            <h5 className='capitalize font-semibold flex items-center gap-x-2'>{item.title}</h5>
                         </div>
                     </Link>
                 ))}

@@ -45,19 +45,21 @@ const statsData = [
 ];
 const MacroPicture = () => {
     return (
-        <div className='w-full py-24  pb-10 border-b border-black bg-[#C4BAB0]'>
+        <div className='w-full py-24  pb-10 border-b border-black bg-[#FFFFFF]'>
             <SectionHeading
                 btnText={"The macro picture"}
                 heading={
-                    "All signals point to a once-in-a-generation moment as five powerful tailwinds converge to reshape India’s consumer landscape, creating unprecedented opportunities."
-                } />
+                    "All signals point to a once-in-a-generation moment."
+                }
+                desc={"Five tailwinds are converging to create an unprecedented environment for building consumer brands in India. The next decade will be defined by the model that captures India 1."}
+                 />
 
             <div className="container space-y-8 mt-16">
 
                 {statsData.flat().map((item, index) => (
                     <div
                         key={index}
-                        className="w-full border-b pb-3 border-black last:border-none grid grid-cols-6 items-stretch"
+                        className="w-full border-b pb-3 border-black/20 last:border-none grid grid-cols-6 items-stretch"
                     >
                         <div className='col-span-4'>
                             <p data-para-effect className=" aeonik   leading-24  text-8xl">
@@ -70,7 +72,7 @@ const MacroPicture = () => {
                         </div>
 
                         <div className=" col-span-2 flex flex-col justify-between">
-                            <p className=" font-medium uppercase ">
+                            <p className="  uppercase ">
                                 {item.title}
                             </p>
 

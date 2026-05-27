@@ -62,7 +62,7 @@ const ApproachHero = () => {
     <div className=" content_box w-full bg-black">
       <div className='container h-[70vh]! items-end grid grid-cols-6  pt-32 pb-16'>
         <div className="space-y-5 col-span-4">
-          <DotButton text="Our approach" className={"blink_btn opacity-0 text-[#C4BAB0]!" } />
+          <DotButton text="Our approach" className={"blink_btn opacity-0 text-[#FFFFFF]!"} />
           <h1 className=' heading_split leading-none capitalize'>An operating system for profitable scale.</h1>
         </div>
         <div className="col-span-2"></div>

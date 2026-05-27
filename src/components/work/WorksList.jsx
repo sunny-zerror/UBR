@@ -19,7 +19,7 @@ export const WorksList = () => {
                                 <p className='leading-tight text-lg w-[80%]'>{item.description}</p>
                                 <div className="relative flex flex-wrap gap-2">
                                     {item.services.map((tag, i) => (
-                                        <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-black">
+                                        <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-[#0D1738] text-white">
                                             <p className=" text-xs aeonik uppercase">
                                                 {tag}
                                             </p>

@@ -11,9 +11,10 @@ import {
 
 export const modelCards = [
     {
-        title: "UBR Brings The P&L Rigour.",
+        brand: "UBR Brings",
+        title: " The P&L Rigour.",
         desc: "Disciplined capital, enterprise scaling, a proven playbook for turning revenue into profit. The operator side of the model, anchored by Binoy Khimji and the Cornerstone ecosystem. Governance, unit economics, and the patience to compound.",
-
+        img:"/images/home/ubr_bg.png",
         tags: [
             {
                 label: "CAPITAL",
@@ -31,9 +32,10 @@ export const modelCards = [
     },
 
     {
-        title: "DISRPTVE brings the audience.",
+        brand: "DISRPTVE brings ",
+        title: "the audience.",
         desc: "Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. Led by Ashish Chowdhry and Kaushik Sundararajan, with a decade of running culture-first agencies behind them. Trust as the unfair advantage.",
-
+        img:"/images/home/disrptve_bg.png",
         tags: [
             {
                 label: "TALENT",
@@ -53,12 +55,17 @@ export const modelCards = [
 
 const WhoWeAre = () => {
     return (
-        <div className='py-24 border-b border-black space-y-16'>
+        <div className='py-24 space-y-16'>
             <SectionHeading
                 btnText={"Who we are"}
                 heading={
-                    "Two operators. One model. UBR and DISRPTVE combine brand-building expertise with operational depth to solve the two biggest challenges most consumer brands."
+                    <>
+                        Two operators.
+                        <br />
+                        One model.
+                    </>
                 }
+                desc="UBR and DISRPTVE come from opposite ends of the consumer ventures spectrum. Together, they fix the two things most consumer brands get wrong at once."
             />
             <div className="w-[75%] mx-auto overflow-hidden">
 
@@ -66,47 +73,13 @@ const WhoWeAre = () => {
                     {modelCards.map((card, index) => (
                         <div
                             key={index}
-                            className="group relative bg-black rounded-lg p-8 md:p-10 overflow-hidden"
+                            className="group relative border border-black/20  rounded-lg p-8 md:p-10 overflow-hidden"
                         >
-                            <div
-                                // style={{
-                                //     maskImage:
-                                //         "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.33) 100%)",
-                                //     WebkitMaskImage:
-                                //         "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.33) 100%)",
-                                // }}
-                                className="absolute inset-0 z-10 pointer-events-none">
-
-                                {/* Vertical Lines */}
-                                <div
-                                    className="absolute inset-0 flex justify-evenly"
-                                >
-                                    {[...Array(8)].map((_, i) => (
-                                        <div
-                                            key={i}
-                                            className="  w-px h-full bg-[#C4BAB030]  origin-top scale-y-0  group-hover:scale-y-100  transition-transform duration-300  "
-                                            style={{
-                                                transitionDelay: `${i * 80}ms`,
-                                            }}
-                                        />
-                                    ))}
-                                </div>
-
-                                {/* Horizontal Lines */}
-                                <div
-                                    className="absolute inset-0 flex flex-col justify-evenly">
-                                    {[...Array(4)].map((_, i) => (
-                                        <div
-                                            key={i}
-                                            className="h-px w-full bg-[#C4BAB030]  origin-left scale-x-0  group-hover:scale-x-100  transition-transform duration-300  "
-                                            style={{
-                                                transitionDelay: `${i * 120}ms`,
-                                            }}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
+                            <img className=' cover absolute inset-0 opacity-50' src={card.img} alt="" />
                             <div className="relative">
+                                <h4 className="leading-none capitalize font-semibold">
+                                    {card.brand}
+                                </h4>
                                 <h4 className="leading-none capitalize font-semibold">
                                     {card.title}
                                 </h4>
@@ -123,7 +96,7 @@ const WhoWeAre = () => {
                                     return (
                                         <div
                                             key={i}
-                                            className={`rounded-md font-medium text-sm p-3 border bg-[#C4BAB0] text-black`}
+                                            className={`rounded-md font-medium text-sm p-3 border border-black/50 bg-[#FFFFFF] text-black`}
                                         >
                                             <div className="flex items-center gap-2">
                                                 <Icon size={16} />

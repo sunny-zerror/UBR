@@ -77,10 +77,10 @@ const ContactHero = () => {
   });
 
   return (
-    <div className='container pt-32  bg-black'>
+    <div className='container pt-32  night_bg text-white'>
       <div className="  content_box pb-16 border-b border-white/50">
         <div className="space-y-5">
-          <h1 className=' heading_split capitalize '>Get In Touch <br /> <span className=' normal-case hover:underline cursor-pointer transition-all duration-300'>info@ubr.com</span></h1>
+          <h1 className=' heading_split capitalize leading-none '>Get In Touch <br /> <span className=' normal-case hover:underline cursor-pointer transition-all duration-300'>info@ubr.com</span></h1>
         </div>
       </div>
       <div className=" w-full pt-16 pb-24 grid grid-cols-6 ">
@@ -92,9 +92,9 @@ const ContactHero = () => {
             {foundersData.map((item, index) => (
               <div
                 key={index}
-                className=" hover:px-3 transition-all duration-300 pb-2 border-b flex items-center justify-between group cursor-pointer border-white/10 "
+                className=" transition-all duration-300 pb-2 border-b flex items-center justify-between group cursor-pointer border-white/10 "
               >
-                <div className="space-y-5">
+                <div className="space-y-10">
                   <div className="">
                     <h5 className="">
                       {item.name}
@@ -112,7 +112,7 @@ const ContactHero = () => {
                     {item.email}
                   </a>
                 </div>
-                <div className={`size-10 center rounded-full border border-white/10 group-hover:bg-[#C4BAB0] group-hover:text-[#000000] transition-all duration-300`}>
+                <div className={`size-10 center rounded-full border border-white/10 group-hover:bg-[#FFFFFF] group-hover:text-[#000000] transition-all duration-300`}>
                   <RiArrowDownLine size={18} className='-rotate-[135deg] group-hover:-rotate-90 transition-all duration-300' />
                 </div>
               </div>

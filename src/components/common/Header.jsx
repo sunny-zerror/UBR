@@ -41,47 +41,29 @@ const Header = () => {
       duration: .6,
       ease: "expo.out",
     });
-    tl.to('.navLinkBar', {
-      backgroundColor: "black",
-      ease: "expo.out",
-    }, 0);
-    tl.to('.navLink', {
-      color: "black",
-      fontWeight: "bold",
-      ease: "expo.out",
-    }, 0);
-    tl.to('.logo_white', {
-      opacity: 0,
-      ease: "expo.out",
-    }, 0);
-    tl.to('.logo_black', {
-    opacity:1,
-      ease: "expo.out",
-    }, 0);
   })
 
   return (
     <div className='header w-full  z-100 fixed'>
       <div className=" container py-3  flex items-center justify-between   ">
-        <div className="header_bg absolute bg-[#C4BAB0] pointer-events-none z-[-1] w-full h-full left-0 -translate-y-full"></div>
+        <div className="header_bg absolute bg-[#FFFFFF] pointer-events-none z-[-1] w-full h-full left-0 -translate-y-full"></div>
         <div className="flex items-end w-[75%] gap-x-20">
           <Link href="/" className='block  w-fit relative'>
-            <img className='w-20 logo_white' src="/logo_white.png" alt="logo" />
-            <img className='w-20 logo_black opacity-0 absolute inset-0' src="/logo_black.png" alt="logo" />
+            <img className='w-20 logo_black ' src="/logo_black.png" alt="logo" />
           </Link>
           <div className="flex items-center gap-x-5">
             {navLinks.map((link, i) => {
               const isActive = pathname === link.href;
 
               return (
-                <div key={i} className=" navLink text-[#C4BAB0] w-fit  text-sm uppercase aeonik  group cursor-pointer">
+                <div key={i} className=" navLink font-semibold w-fit  text-sm uppercase aeonik  group cursor-pointer">
                   <Link href={link.href} className="relative  leading-none">
                     {link.label}
 
                     <span
                       className={`
                         navLinkBar
-              absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#C4BAB0]
+              absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-black
               transition-transform duration-300 ease-out
               ${isActive ? "scale-x-100 origin-left" : "scale-x-0 origin-left group-hover:scale-x-100"}
             `}

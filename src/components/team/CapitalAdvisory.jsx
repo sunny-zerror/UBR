@@ -4,14 +4,16 @@ import SectionHeading from '../common/SectionHeading'
 
 const CapitalAdvisory = () => {
     return (
-        <div className='py-24   border-t border-black mt-24 space-y-16'>
+        <div className='py-24    border-t  border-black mt-24 space-y-16'>
             <SectionHeading
                 btnText="Capital advisors"
-                heading="Capital with operator-level access — leveraging deep relationships across VCs, family offices, and angel networks to help ambitious ventures raise strategically, scale confidently, and move faster across global markets." />
-            <div className="container grid grid-cols-2 gap-x-5">
-                <div className="bg-black items-stretch gap-x-5 rounded-xl flex  p-8">
-                    <div className="rounded-lg aspect-3/4 w-[35%] overflow-hidden">
-                        <div data-img-effect className="w-full h-full">
+                heading="Capital, on tap." 
+                desc="Ex-bankers with deep relationships across VCs, family offices and angel syndicates in India, the GCC and the USA. The fundraise track is theirs to run."
+                />
+            <div className="container text-black grid grid-cols-2 gap-x-5">
+                <div className=" bg-[#0D1738] text-white items-stretch gap-x-5 rounded-xl flex  p-8">
+                    <div className="rounded-lg aspect-3/4 w-[35%]   border-white/50 border overflow-hidden">
+                        <div data-img-effect className="w-full   h-full">
                             <img className='cover' src="/images/team/akshi.png" alt="" />
                         </div>
                     </div>
@@ -23,9 +25,9 @@ const CapitalAdvisory = () => {
                         <p className='leading-tight text-lg  '>A Chartered Accountant and ex-banker with strong investor relationships and 25+ successfully closed fundraise mandates for early-stage D2C brands, tech companies and B2B SaaS, across VCs, family offices and angel syndicates.</p>
                     </div>
                 </div>
-                <div className="bg-black items-stretch gap-x-5 rounded-xl flex  p-8">
-                    <div className="rounded-lg aspect-3/4 w-[35%] overflow-hidden">
-                        <div data-img-effect className="w-full h-full">
+                <div className=" bg-[#0D1738] text-white items-stretch gap-x-5 rounded-xl flex  p-8">
+                    <div className="rounded-lg aspect-3/4 w-[35%]   border-white/50 border overflow-hidden">
+                        <div data-img-effect className="w-full  h-full">
                             <img className='cover' src="/images/team/ankur.png" alt="" />
                         </div>
                     </div>

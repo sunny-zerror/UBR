@@ -82,14 +82,18 @@ const Playbook = () => {
 
     return (
         <>
-            <div className="w-full border-b bg-black ">
+            <div className="w-full border-b night_bg text-white ">
                 <div className=" py-24  w-full space-y-16">
 
                     <SectionHeading
                         btnText={"The Playbook"}
                         heading={
-                            "Five pillars. One playbook. An embedded operating model built to move the metrics that matter, combining strategy, execution, capital, culture, and distribution into one integrated consumer growth."
-                        } />
+                            <>
+                                Five pillars. <br /> One playbook.
+                            </>
+                        }
+                        desc={"Not concepts. Integrated capabilities delivered by an embedded team. Each pillar moves a specific metric."}
+                    />
 
                     <div className="container ">
                         <div className="  grid grid-cols-6 items-stretch w-full">
@@ -97,7 +101,7 @@ const Playbook = () => {
                                 {pillarsData.map((item, index) => (
                                     <div
                                         key={item.id}
-                                        className={`size-[16rem] absolute border border-[#C4BAB0] rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-20"
+                                        className={`size-[16rem] absolute border border-[#FFFFFF] rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-20"
                                             }`}
                                         style={{
                                             transform: `translateX(${(index - 2) * 3}rem)`,
@@ -112,20 +116,20 @@ const Playbook = () => {
                                             setOpenId((prev) => (prev === item.id ? null : item.id))
                                         }
                                         key={item.id}
-                                        className={`border-b cursor-pointer group border-[#C4BAB050] transition-all duration-300  `}>
+                                        className={`border-b cursor-pointer group border-[#FFFFFF50] transition-all duration-300  `}>
                                         <div className="  mb-2 mt-8 flex w-full justify-between items-center">
                                             <div className="">
                                                 <h4 data-para-effect className="">{item.title}</h4>
                                                 <p className=" text-xs aeonik uppercase opacity-80">{item.subtitle}</p>
                                             </div>
-                                            <div className={`size-10 center rounded-full border border-[#C4BAB0] group-hover:bg-[#C4BAB0] group-hover:text-black ${openId === item.id ? "rotate-180 bg-[#C4BAB0] text-black " : ""}  transition-all duration-300`}>
+                                            <div className={`size-10 center rounded-full border border-[#FFFFFF] group-hover:bg-[#FFFFFF] group-hover:text-black ${openId === item.id ? "rotate-180 bg-[#FFFFFF] text-black " : ""}  transition-all duration-300`}>
                                                 <RiArrowDownLine />
                                             </div>
                                         </div>
                                         <div className={`h-0 pl-5 ${openId === item.id ? "h-42 opacity-100 pt-5" : "h-0 opacity-0 pt-0"} transition-all duration-300 overflow-hidden capitalize space-y-2`}>
                                             {item.items.map((subItem, i) => (
                                                 <div key={i} className="flex items-center gap-x-2">
-                                                    <div className="size-1.75 bg-[#C4BAB0]"></div>
+                                                    <div className="size-1.75 bg-[#FFFFFF]"></div>
                                                     <p key={subItem}> {subItem}</p>
                                                 </div>
                                             ))}

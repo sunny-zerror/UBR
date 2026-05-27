@@ -10,6 +10,7 @@ import SectionHeading from '../common/SectionHeading'
 import { useParams } from 'next/navigation'
 import { WorkData } from '@/store/WorkData'
 import { Link } from 'next-view-transitions'
+import SectionHero from '../common/SectionHero'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const WorkDetail = () => {
@@ -72,19 +73,12 @@ const WorkDetail = () => {
 
   return (
     <>
-      <div className=" content_box w-full bg-black">
-        <div className='container h-[70vh]! items-end grid grid-cols-6  pt-32 pb-16'>
-          <div className="space-y-5 col-span-4">
-            <DotButton text={work.engagement} className={"blink_btn opacity-0 text-[#C4BAB0]!"} />
-            <h1 className=' heading_split leading-none capitalize'>{work.title}</h1>
-          </div>
-          <div className="col-span-2"></div>
-          <div className="col-span-4"></div>
-          <div className="w-full col-span-2 flex flex-col justify-end">
-            <p className=' paragraph_split leading-tight'>{work.description}</p>
-          </div>
-        </div>
-      </div>
+       <SectionHero
+        btnText={work.engagement}
+        heading={work.title}
+        desc={work.description}
+      />
+  
       <div className={`w-full  center aspect-video ${work.classname}`}>
         <img src={work.image} alt="" />
       </div>
@@ -109,7 +103,7 @@ const WorkDetail = () => {
             </div>
             <div className='flex flex-wrap gap-2'>
               {work.services.map((tag, i) => (
-                <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-black">
+                <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-[#0D1738] text-white w-fit]">
                   <p className=" text-xs aeonik uppercase">
                     {tag}
                   </p>
@@ -132,7 +126,8 @@ const WorkDetail = () => {
       <div className='pt-24 space-y-16  border-t border-black'>
         <SectionHeading
           btnText="More work"
-heading="Strategic partnerships spanning beauty, fashion, and sport — combining capital, influence, and cultural reach to help visionary brands expand with credibility, momentum, and long-term market relevance."        />
+          heading="Other partnerships."
+          desc="Capital, advisory and ambassador signings across beauty, fashion and sports." />
         <div className="container grid grid-cols-3 gap-x-3 gap-y-10">
           {remainingWorks.map((item, i) => (
             <Link key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
@@ -143,7 +138,7 @@ heading="Strategic partnerships spanning beauty, fashion, and sport — combinin
               </div>
               <div className="">
                 <h6 className=''>{item.engagement}</h6>
-                <h4 className='capitalize font-semibold flex items-center gap-x-2 leading-none mt-1'>{item.title}</h4>
+                <h5 className='capitalize font-semibold flex items-center gap-x-2 leading-none mt-1'>{item.title}</h5>
               </div>
             </Link>
           ))}

@@ -121,7 +121,8 @@ const PlaybookDetail = () => {
             <div className="w-full py-24 relative  pb-0">
                 <SectionHeading
                     btnText="The playbook in detail"
-                    heading="Five deeply integrated pillars engineered to accelerate growth, sharpen execution, and unlock measurable outcomes through a unified operating system built around strategy, systems, and scale." />
+                    heading="Five pillars. In depth."
+                    desc="Each pillar moves a specific metric and brings its own capabilities. Together they form one integrated operating system, delivered by an embedded team." />
 
                 <div className="playbook_sticky_paren container h-[250vh]! ">
                     <div className="sticky pt-18 top-0 left-0">
