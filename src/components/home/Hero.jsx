@@ -84,6 +84,7 @@ const Hero = () => {
   return (
     <div className=" hero_section w-full h-screen overflow-hidden content_box relative ">
       <div className='container flex items-end pb-16'>
+                <div className="gradient h-full w-full absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent from-[80%] to-white to-[100%]"></div>
         <div className="absolute inset-0 z-[-1] hero_bg opacity-0">
           <ColorBends
             colors={[ "#111184","#111184","#111184","#111184"]}
