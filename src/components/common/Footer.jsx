@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react'
 import Button from './Button';
 import { Link } from 'next-view-transitions';
+import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger)
 
 const navLinks = [
@@ -34,10 +35,10 @@ const Footer = () => {
   const skipBlackBox = pathname === '/contact'
 
   const images = [
-    "https://images.unsplash.com/photo-1563906267088-b029e7101114?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1509130298739-651801c76e96?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1434296159862-a6c213a9316f?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1557180295-76eee20ae8aa?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "/images/footer/img1.jpeg",
+    "/images/footer/img2.jpeg",
+    "/images/footer/img3.jpeg",
+    "/images/footer/img4.jpeg",
   ]
 
   useGSAP(() => {
@@ -77,7 +78,7 @@ const Footer = () => {
       scrollTrigger: {
         trigger: ".sticky_box",
         endTrigger: ".box_left",
-        start: "top center",
+        start: "center center",
         end: "bottom center",
         scrub: true,
       },
@@ -97,7 +98,7 @@ const Footer = () => {
       opacity: 1,
       ease: "none",
     });
-  });
+  },[pathname]);
 
   return (
     <div className='mt-24'>
@@ -105,11 +106,12 @@ const Footer = () => {
         <div className=" sticky_box_paren w-full  h-[75vw] relative">
           <div className="w-full h-full center absolute inset-0 overflow-hidden -z-10">
             {images.map((img, i) => (
-              <img
+              <Image
+                fill
                 key={i}
                 src={img}
                 alt=""
-                className={`footer_img footer_img_item_${i} cover absolute inset-0 h-full w-full object-cover ${i === 0 ? "opacity-100" : "opacity-0"
+                className={`footer_img footer_img_item_${i} cover object-bottom absolute inset-0  ${i === 0 ? "opacity-100" : "opacity-0"
                   }`}
                 style={{ zIndex: i }}
               />

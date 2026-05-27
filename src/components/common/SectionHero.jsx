@@ -80,7 +80,7 @@ const SectionHero = ({ btnText, heading, desc }) => {
     })
     return (
         <div className=" content_box w-full ">
-            <div className='container h-[75vh]! overflow-hidden items-end flex pb-16'>
+            <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
                 <div className="gradient h-full w-full absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent from-[80%] to-white to-[100%]"></div>
                 <div className="w-full h-full hero_bg opacity-0 absolute inset-0 z-[-1] ">
                     <ColorBends
@@ -100,9 +100,9 @@ const SectionHero = ({ btnText, heading, desc }) => {
                         autoRotate={0}
                     />
                 </div>
-                <div className="space-y-5 w-1/2 relative z-10 ">
-                    <h1 className=' heading_split leading-none capitalize'>{heading}</h1>
-                    <p className=' paragraph_split w-[80%] leading-tight'>{desc}</p>
+                <div className="space-y-5 w-full  relative z-10 ">
+                    <h1 className=' heading_split w-[80%] leading-none capitalize'>{heading}</h1>
+                    <p className=' paragraph_split w-[45%] leading-tight'>{desc}</p>
                 </div>
             </div>
         </div>

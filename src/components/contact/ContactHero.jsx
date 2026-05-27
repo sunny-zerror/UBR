@@ -77,8 +77,8 @@ const ContactHero = () => {
   });
 
   return (
-    <div className='container pt-32  night_bg text-white'>
-      <div className="  content_box pb-16 border-b border-white/50">
+    <div className=' contact_hero container   night_bg text-white'>
+      <div className="  content_box h-[60vh] flex items-end pb-5 border-b border-white/50">
         <div className="space-y-5">
           <h1 className=' heading_split capitalize leading-none '>Get In Touch <br /> <span className=' normal-case hover:underline cursor-pointer transition-all duration-300'>info@ubr.com</span></h1>
         </div>

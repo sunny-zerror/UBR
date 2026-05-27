@@ -94,16 +94,14 @@ const TheOs = () => {
   });
 
   return (
-    <div className="w-full  night_bg text-white pb-10 ">
+    <div className="w-full  pt-24 night_bg text-white ">
+      <SectionHeading
+        btnText="The OS"
+        heading="A phase-gated journey from vision to velocity."
+        desc="Five phases. Clear outputs. We don’t just advise, we co-create." />
 
       <div ref={containerRef} className=" w-full h-[300vh]">
-        <div className=" py-24 w-screen sticky top-0 h-screen flex flex-col gap-y-16 justify-center overflow-hidden">
-          <div className="">
-          <SectionHeading
-            btnText="The OS"
-            heading="A phase-gated journey from vision to velocity."
-            desc="Five phases. Clear outputs. We don’t just advise, we co-create." />
-          </div>
+        <div className=" w-screen sticky top-0 h-screen flex flex-col gap-y-16 justify-center overflow-hidden">
           <div
             ref={sliderRef}
             className="slider flex gap-x-10 px-24"
@@ -111,9 +109,10 @@ const TheOs = () => {
             {processData.map((item, i) => (
               <div
                 key={i}
-                className="w-[30vw] shrink-0 "
+                className="w-[30vw] aspect-[3/4] relative  shrink-0 "
               >
-                <div className="w-full aspect-[4/3] rounded-sm relative overflow-hidden">
+
+                <div className="w-full h-full relative overflow-hidden">
                   <Image
                     fill
                     src={item.img}
@@ -121,9 +120,10 @@ const TheOs = () => {
                     alt=""
                   />
                 </div>
-
-                <div>
+                <div className="absolute w-full h-full bg-linear-to-b from-transparent from-65% to-100% to-[#000713] inset-0"></div>
+                <div className=' absolute p-8 space-y-5  bottom-0 left-0 w-full'>
                   <h4 className='leading-none mt-5 mb-1'>{item.title}</h4>
+                  <div className="w-24 h-1 rounded-full bg-[#01399a]"></div>
                   <p className=" opacity-80 leading-tight">
                     {item.description}
                   </p>
