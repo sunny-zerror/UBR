@@ -73,9 +73,9 @@ const Clients = () => {
 
   return (
     <>
-      <div className="  py-24 ">
+      <div className="  py-12 md:py-24 ">
 
-        <div className="w-full space-y-16">
+        <div className="w-full space-y-5 md:space-y-16">
           <SectionHeading
             btnText="who trust us"
             heading="Trusted by  visionary brands."
@@ -93,7 +93,7 @@ const Clients = () => {
                   <img
                     className="client-icon invert-100 group-hover:scale-80 transition-all duration-150 absolute z-[1] w-[90%] "
                     src={item.icon}
-                    alt="logo" 
+                    alt="logo"
                   />
                   {/* <img
                     className="client-img absolute invert-100 w-full h-full object-cover opacity-0 "

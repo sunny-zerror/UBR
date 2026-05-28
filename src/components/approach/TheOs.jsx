@@ -69,7 +69,11 @@ const TheOs = () => {
       const totalWidth = slider.scrollWidth;
       const viewportWidth = window.innerWidth;
 
-      const maxTranslate = totalWidth - viewportWidth + 96;
+
+  const extraOffset = window.innerWidth >= 768 ? 96 : 15;
+
+  const maxTranslate =
+    totalWidth - viewportWidth + extraOffset;
 
       gsap.to(slider, {
         x: -maxTranslate,
@@ -94,7 +98,7 @@ const TheOs = () => {
   });
 
   return (
-    <div className="w-full  pt-24 night_bg text-white ">
+    <div className="w-full  pt-12 md:pt-24 night_bg text-white ">
       <SectionHeading
         btnText="The OS"
         heading="A phase-gated journey from vision to velocity."
@@ -104,12 +108,12 @@ const TheOs = () => {
         <div className=" w-screen sticky top-0 h-screen flex flex-col gap-y-16 justify-center overflow-hidden">
           <div
             ref={sliderRef}
-            className="slider flex gap-x-10 px-24"
+            className="slider flex gap-x-5 md:gap-x-10 px-4 md:px-24"
           >
             {processData.map((item, i) => (
               <div
                 key={i}
-                className="w-[30vw] aspect-[3/4] relative  shrink-0 "
+                className=" w-[95vw] md:w-[30vw] aspect-[3/4] relative  shrink-0 "
               >
 
                 <div className="w-full h-full relative overflow-hidden">
@@ -117,7 +121,7 @@ const TheOs = () => {
                     fill
                     src={item.img}
                     className="object-cover"
-                    alt=""
+                    alt="img"
                   />
                 </div>
                 <div className="absolute w-full h-full bg-linear-to-b from-transparent from-65% to-100% to-[#000713] inset-0"></div>

@@ -41,6 +41,18 @@
   will-change: transform;
 }
 
+.dusk_bg {
+  background: radial-gradient(
+    102.83% 103.24% at 49.98% 104.51%,
+    #ffb451 0,
+    #efc680 16.73%,
+    #b4d8ff 33.03%,
+    #d2e8ff 43.38%,
+    #fafdff 59.16%,
+    #fdfeff 76.24%,
+    #f8fafd 100%
+  );
+}
 .night_bg {
   background: radial-gradient(
     102.82% 106.44% at 50% 106.44%,

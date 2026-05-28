@@ -83,7 +83,7 @@ const SelectedWork = () => {
     };
 
     return (
-        <div className='py-24 space-y-16  border-b border-black/50 '>
+        <div className='py-12 md:py-24 space-y-5 md:space-y-16  border-b border-black/50  '>
             <div
                 ref={marqueeRef}
                 className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#29227d] px-0 py-1 will-change-transform overflow-hidden"
@@ -98,19 +98,19 @@ const SelectedWork = () => {
                 btnText="Selected work"
                 heading="Brands we have backed."
                 desc={"Capital and celebrity, structured as a single move. Strategic advisory anchored to talent. A full-stack engagement that compounds."} />
-            <div className="container grid grid-cols-2 gap-x-5 gap-y-10">
+            <div className="container grid md:grid-cols-2 gap-x-5 gap-y-10">
                 {WorkData.map((item, i) => (
                     <Link onMouseEnter={(e) => handleMouseEnter(e, item.title)}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave} key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
                         <div className={`w-full center aspect-video overflow-hidden rounded-sm  ${item.classname} `}>
                             <div data-img-effect className="w-full h-full center">
-                                <img className='group-hover:scale-110 transition-all duration-300' src={item.image} alt="" />
+                                <img className=' max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
                             </div>
                         </div>
                         <div className="">
                             <h6 className='opacity-80'>{item.engagement}</h6>
-                            <h5 className='capitalize font-semibold flex items-center gap-x-2'>{item.title}</h5>
+                            <h5 className='capitalize md:font-semibold flex items-center gap-x-2'>{item.title}</h5>
                         </div>
                     </Link>
                 ))}

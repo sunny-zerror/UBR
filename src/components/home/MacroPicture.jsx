@@ -45,44 +45,42 @@ const statsData = [
 ];
 const MacroPicture = () => {
     return (
-        <div className='w-full py-24  pb-10 border-b border-black bg-[#FFFFFF]'>
+        <div className='w-full py-12 md:py-12 md:py-24  pb-10 border-t border-black/50  bg-[#FFFFFF]'>
             <SectionHeading
-                btnText={"The macro picture"}
+                btnText={"The context"}
                 heading={
-                    "All signals point to a once-in-a-generation moment."
+                    "India's consumer market is about to double."
                 }
-                desc={"Five tailwinds are converging to create an unprecedented environment for building consumer brands in India. The next decade will be defined by the model that captures India 1."}
-                 />
+                desc={"The winners will be the brands that built the right operating model before the wave broke."}
+            />
 
-            <div className="container space-y-8 mt-16">
-
+            <div className="container space-y-8 mt-5 md:mt-16">
                 {statsData.flat().map((item, index) => (
                     <div
                         key={index}
                         className="w-full border-b pb-3 border-black/20 last:border-none grid grid-cols-6 items-stretch"
                     >
-                        <div className='col-span-4'>
-                            <p data-para-effect className=" aeonik   leading-24  text-8xl">
+                        <div className=' col-span-2 flex items-center md:col-span-4'>
+                            <p data-para-effect className=" aeonik   md:leading-24 text-4xl md:text-8xl">
                                 {item.value}
 
                                 {item.suffix && (
-                                    <span className="text-5xl">{item.suffix}</span>
+                                    <span className=" text-2xl md:text-5xl">{item.suffix}</span>
                                 )}
                             </p>
                         </div>
 
-                        <div className=" col-span-2 flex flex-col justify-between">
-                            <p className="  uppercase ">
+                        <div className=" col-span-4 md:col-span-2 flex flex-col justify-between">
+                            <p className=" max-sm:mb-2 leading-tight  uppercase ">
                                 {item.title}
                             </p>
 
-                            <p className=" w-[80%] opacity-60 leading-5">
+                            <p className=" md:w-[80%] opacity-60 leading-5">
                                 {item.description}
                             </p>
                         </div>
                     </div>
                 ))}
-
             </div>
         </div>
     )

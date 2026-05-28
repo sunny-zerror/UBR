@@ -1,12 +1,15 @@
 "use client";
 import { Link } from 'next-view-transitions'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from './Button'
 import { usePathname } from 'next/navigation'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+import { Squash as Hamburger } from 'hamburger-react'
+import CustomEase from 'gsap/dist/CustomEase';
+import ViewTransitionLink from '@/hooks/ViewTransitionLink';
+gsap.registerPlugin(CustomEase, ScrollTrigger);
 
 const navLinks = [
   {
@@ -27,7 +30,10 @@ const navLinks = [
   },
 ]
 const Header = () => {
+  CustomEase.create("in-out-quint", "0.83,0,0.17,1");
+  const [isOpen, setOpen] = useState(false)
   const pathname = usePathname();
+
   useGSAP(() => {
     if (pathname === "/contact") return
     const tl = gsap.timeline({
@@ -43,6 +49,7 @@ const Header = () => {
       ease: "expo.out",
     });
   })
+
   useGSAP(() => {
     if (pathname === "/contact") {
       const tl = gsap.timeline({
@@ -101,21 +108,91 @@ const Header = () => {
   }, [pathname])
 
 
+  useEffect(() => {
+
+    if (isOpen) {
+      if (window.lenis) window.lenis.stop();
+      const tl = gsap.timeline()
+      if (pathname === "/contact") {
+        tl.set('.navLink', {
+          color: "black",
+        });
+        tl.set('.logo_white', {
+          opacity: 0,
+        });
+      }
+      tl.to('.mobile_menu', {
+        right: 0,
+        duration: .6,
+        ease: "in-out-quint",
+      });
+      tl.to(".animate-link", {
+        transform: "translateY(0)",
+        stagger: 0.1,
+        duration: 0.6,
+        ease: "expo.out",
+      })
+    } else {
+      if (window.lenis) window.lenis.start();
+      const tl = gsap.timeline()
+      tl.to(".animate-link", {
+        transform: "translateY(-100%)",
+        stagger: 0.1,
+        duration: 0.6,
+        ease: "expo.out",
+      })
+      tl.to('.mobile_menu', {
+        right: "-100%",
+        duration: .6,
+        ease: "in-out-quint",
+      });
+      tl.set(".animate-link", {
+        transform: "translateY(100%)",
+      })
+       if(pathname === "/contact"){
+        tl.set('.navLink', {
+          color: "white",
+        });
+           tl.set('.logo_white', {
+          opacity: 1,
+        });
+      }
+    }
+  }, [isOpen])
+
+
   return (
     <div className='header w-full  z-100 fixed'>
-      <div className=" container py-3  flex items-center justify-between   ">
-        <div className={` ${pathname === "/contact" && "hidden"} header_bg absolute bg-[#FFFFFF] pointer-events-none z-[-1] w-full h-full left-0 -translate-y-full`}></div>
+
+      <div className=" mobile_menu md:hidden center text-center w-full h-screen bg-white z-[10] fixed -right-full top-0">
+        <div className=" gap-y-7 flex flex-col justify-center items-center">
+          {navLinks.map((link, i) => {
+            return (
+              <div key={i} onClick={() => setOpen(false)} className={`navLink font-thin!  w-fit block overflow-hidden  text-4xl text-center uppercase   group cursor-pointer text-black`}>
+                <ViewTransitionLink delay={1700} href={link.href} className="relative  leading-none">
+                  <p className='animate-link translate-y-full'>
+                    {link.label}
+                  </p>
+                </ViewTransitionLink>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className={` ${pathname === "/contact" && "hidden"} header_bg absolute bg-[#FFFFFF] pointer-events-none z-[-1] w-full h-full left-0 -translate-y-full`}></div>
+      <div className=" container py-0 md:py-3  flex items-center justify-between relative z-100   ">
         <div className="flex items-end w-[75%] gap-x-20">
           <Link href="/" className='block  w-fit relative'>
             <img className='w-20 logo_black ' src="/logo_black.png" alt="logo" />
             <img className={`w-20 logo_white absolute inset-0 opacity-0 ${pathname === "/contact" && "opacity-100"} `} src="/logo_white.png" alt="logo" />
           </Link>
-          <div className="flex items-center gap-x-5">
+          <div className="max-sm:hidden flex items-center gap-x-5">
             {navLinks.map((link, i) => {
               const isActive = pathname === link.href;
 
               return (
-                <div key={i} className={`navLink  w-fit  text-sm uppercase aeonik  group cursor-pointer ${pathname === "/contact" ? "text-white" : "font-semibold text-black"}`}>
+                <div key={i} className={`navLink  w-fit  text-sm uppercase aeonik  group cursor-pointer ${pathname === "/contact" ? "text-white" : "md:font-semibold text-black"}`}>
                   <Link href={link.href} className="relative  leading-none">
                     {link.label}
 
@@ -134,10 +211,13 @@ const Header = () => {
             })}
           </div>
         </div>
-        <div className="w-[25%] flex justify-end">
-          <Link href={"/contact"}>
+        <div className="md:w-[25%] flex items-center justify-end">
+          <Link href={"/contact"} onClick={() => setOpen(false)}>
             <Button text={"Get in Touch"} />
           </Link>
+          <div className={` md:hidden navLink  w-fit  text-sm uppercase aeonik  group cursor-pointer ${pathname === "/contact" ? "text-white" : "md:font-semibold text-black"}`}>
+            <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} size={25} />
+          </div>
         </div>
       </div>
     </div>

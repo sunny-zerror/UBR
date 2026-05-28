@@ -83,34 +83,36 @@ const Hero = () => {
 
   return (
     <div className=" hero_section w-full h-screen overflow-hidden content_box relative ">
-      <div className='container flex items-end pb-16'>
-                <div className="gradient h-full w-full absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent from-[80%] to-white to-[100%]"></div>
-        <div className="absolute inset-0 z-[-1] hero_bg opacity-0">
-          <ColorBends
-            colors={[ "#111184","#111184","#111184","#111184"]}
-            rotation={100}
-            speed={0.2}
-            scale={1}
-            frequency={1.5}
-            warpStrength={1}
-            mouseInfluence={1}
-            noise={0}
-            parallax={0.5}
-            iterations={1}
-            intensity={1.5}
-            bandWidth={6}
-            transparent
-            autoRotate={0}
-          />
-        </div>
-        <div className="absolute top-1/2 -translate-y-1/2 z-10 left-24 ">
+      <div className="absolute inset-0 z-[-1] hero_bg opacity-0">
+        <ColorBends
+          colors={["#111184", "#111184", "#111184", "#111184"]}
+          rotation={100}
+          speed={0.2}
+          scale={1}
+          frequency={1.5}
+          warpStrength={1}
+          mouseInfluence={1}
+          noise={0}
+          parallax={0.5}
+          iterations={1}
+          intensity={1.5}
+          bandWidth={6}
+          transparent
+          autoRotate={0}
+        />
+      </div>
+      <div className="gradient h-full w-full absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent from-[80%] to-white to-[100%]"></div>
+      <div className='container flex items-end pb-5  md:pb-16'>
+        <div className="absolute max-sm:hidden top-1/2 -translate-y-1/2 z-10 left-4 xl:left-24 ">
           <DotButton text="A venture builder for India" className={"opacity-0  blink_btn"} />
         </div>
-        <div className="pointer-events-none w-full  relative z-10 grid items-end grid-cols-6">
-          <h1 className=' capitalize leading-24 tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>
+        <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
+          <DotButton text="A venture builder for India" className={"opacity-0 md:hidden  blink_btn"} />
+          <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>
+          <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split col-span-4'>The integrated model  for    non-linear growth.</h1>
           <div className=" pb-4  pointer-events-none relative z-10 w-full col-span-2">
-            <p className=' leading-tight text-lg opacity-60  paragraph_split'>We build consumer brands faster, profitably. Talent, capital, strategy, design and distribution, fused into one operating system that replaces paid CAC with trust.</p>
-            <p className='leading-tight text-lg opacity-60  paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> and  <b>Kaushik Sundararajan.</b></p>
+            <p className='  w-full leading-tight md:text-lg opacity-60  paragraph_split'>We build consumer brands faster, profitably. Talent, capital, strategy, design and distribution, fused into one operating system that replaces paid CAC with trust.</p>
+            <p className='leading-tight w-full md:text-lg opacity-60  paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> and  <b>Kaushik Sundararajan.</b></p>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 import { useGSAP } from '@gsap/react';
-import { RiArrowDownLine, RiArrowDownSLine, RiBriefcaseLine, RiGlobalLine, RiLineChartLine, RiNodeTree, RiUserLine } from '@remixicon/react';
+import { RiArrowDownLine, RiArrowDownSLine, RiBriefcaseLine, RiGlobalLine, RiLineChartLine, RiNodeTree, RiPaletteLine, RiShareForwardLine, RiUserLine } from '@remixicon/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React, { useRef, useState } from 'react'
@@ -13,25 +13,25 @@ const pillarsData = [
     {
         id: "01",
         title: "Talent",
-        subtitle: "Co-ownership",
-        icon: RiUserLine,
+        subtitle: "Co-ownership, not endorsement",
+        metric: "Blended CAC",
         items: [
-            "Co-ownership structuring",
+            "Celebrity co-ownership",
+            "Creator-led storytelling",
             "Performance marketing",
-            "CRM & retention",
-            "Community engagement",
+            "Community & retention",
         ],
     },
 
     {
         id: "02",
         title: "Capital",
-        subtitle: "Investor-ready",
-        icon: RiBriefcaseLine,
+        subtitle: "Brought in warm, on better terms",
+        metric: "Time to close",
         items: [
-            "Investor narrative",
-            "Data room setup",
-            "Warm introductions",
+            "Investor introductions",
+            "Fundraising strategy",
+            "Pitch narrative",
             "Term sheet support",
         ],
     },
@@ -39,38 +39,38 @@ const pillarsData = [
     {
         id: "03",
         title: "Strategy",
-        subtitle: "Operator discipline",
-        icon: RiLineChartLine,
+        subtitle: "P&L first",
+        metric: "Contribution margin",
         items: [
-            "Unit economics & P&L",
-            "GTM & channel strategy",
-            "Pricing & margin analysis",
-            "90-day growth planning",
+            "Unit economics",
+            "Pricing strategy",
+            "Growth planning",
+            "Operational discipline",
         ],
     },
 
     {
         id: "04",
         title: "Design",
-        subtitle: "Brand, social, packaging",
-        icon: RiGlobalLine,
+        subtitle: "Built to convert",
+        metric: "Conversion rate",
         items: [
-            "Identity & positioning",
-            "Packaging design",
-            "PDP & marketplace kits",
-            "Social content engine",
+            "Brand identity",
+            "Packaging systems",
+            "Marketplace creatives",
+            "Conversion-focused design",
         ],
     },
 
     {
         id: "05",
         title: "Distribution",
-        subtitle: "Intelligence",
-        icon: RiNodeTree,
+        subtitle: "Sized for India",
+        metric: "Sell-through velocity",
         items: [
-            "Supply chain & 3PL",
-            "Demand planning",
-            "Retail pilot management",
+            "Retail distribution",
+            "Marketplace expansion",
+            "Supply chain coordination",
             "Omnichannel rollout",
         ],
     },
@@ -83,10 +83,10 @@ const Playbook = () => {
     return (
         <>
             <div className="w-full border-b night_bg text-white ">
-                <div className=" py-24  w-full space-y-16">
+                <div className=" py-12 md:py-24  w-full space-y-5 md:space-y-16">
 
                     <SectionHeading
-                        btnText={"The Playbook"}
+                        btnText={"HOW WE DO IT"}
                         heading={
                             <>
                                 Five pillars. <br /> One playbook.
@@ -96,12 +96,12 @@ const Playbook = () => {
                     />
 
                     <div className="container ">
-                        <div className="  grid grid-cols-6 items-stretch w-full">
-                            <div className=" col-span-3 center pr-24">
+                        <div className="  md:grid grid-cols-6 items-stretch w-full">
+                            <div className=" max-sm:h-64 col-span-3 center md:pr-24">
                                 {pillarsData.map((item, index) => (
                                     <div
                                         key={item.id}
-                                        className={`size-[16rem] absolute border border-[#FFFFFF] rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-20"
+                                        className={` size-56 md:size-64 absolute border border-[#FFFFFF] rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-20"
                                             }`}
                                         style={{
                                             transform: `translateX(${(index - 2) * 3}rem)`,
@@ -109,7 +109,7 @@ const Playbook = () => {
                                     />
                                 ))}
                             </div>
-                            <div className="col-span-3 pl-2.5">
+                            <div className=" w-full col-span-3 md:pl-2.5">
                                 {pillarsData.map((item) => (
                                     <div
                                         onClick={() =>
@@ -120,7 +120,7 @@ const Playbook = () => {
                                         <div className="  mb-2 mt-8 flex w-full justify-between items-center">
                                             <div className="">
                                                 <h4 data-para-effect className="">{item.title}</h4>
-                                                <p className=" text-xs aeonik uppercase opacity-80">{item.subtitle}</p>
+                                                <p className=" text-xs aeonik uppercase opacity-80">{item.metric}</p>
                                             </div>
                                             <div className={`size-10 center rounded-full border border-[#FFFFFF] group-hover:bg-[#FFFFFF] group-hover:text-black ${openId === item.id ? "rotate-180 bg-[#FFFFFF] text-black " : ""}  transition-all duration-300`}>
                                                 <RiArrowDownLine />

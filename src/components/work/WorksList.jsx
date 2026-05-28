@@ -93,7 +93,7 @@ export const WorksList = () => {
                 </Marquee>
             </div>
 
-            <div className="container pt-24 space-y-20">
+            <div className="container pt-12 md:pt-24 space-y-10 md:space-y-20">
                 {WorkData.map((item, i) => (
                     <Link
                         href={`/work/${item.slug}`}
@@ -101,22 +101,22 @@ export const WorksList = () => {
                         onMouseEnter={(e) => handleMouseEnter(e, item.title)}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
-                        className="border-b pb-20 border-black last:border-none w-full items-stretch grid grid-cols-5 gap-x-10"
+                        className="border-b pb-10 md:pb-20 border-black/50 last:border-none w-full items-stretch flex flex-col-reverse md:grid grid-cols-5 gap-x-10"
                     >
-                        <div className="col-span-2 flex flex-col justify-between">
+                        <div className=" max-sm:mt-2 col-span-2 flex flex-col justify-between">
                             <div>
                                 <h6 className="opacity-80">{item.category}</h6>
 
                                 <h3
                                     data-para-effect
-                                    className="font-semibold capitalize leading-15!"
+                                    className="md:font-semibold capitalize leading-tight md:leading-15!"
                                 >
                                     {item.title}
                                 </h3>
                             </div>
 
                             <div className="space-y-4">
-                                <p className="leading-tight text-lg w-[80%]">
+                                <p className="leading-tight md:text-lg opacity-80 md:w-[80%]">
                                     {item.description}
                                 </p>
 
@@ -134,10 +134,10 @@ export const WorksList = () => {
                         </div>
 
                         <div
-                            className={`col-span-3 aspect-video center ${item.classname}`}
+                            className={`col-span-3 overflow-hidden aspect-video center ${item.classname}`}
                         >
-                            <div data-img-effect className="w-full h-full center">
-                                <img src={item.image} alt="" />
+                            <div data-img-effect className="w-full  h-full center">
+                                <img src={item.image} alt="img" className="max-sm:scale-50" />
                             </div>
                         </div>
                     </Link>

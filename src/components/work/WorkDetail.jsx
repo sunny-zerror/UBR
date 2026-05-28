@@ -80,25 +80,25 @@ const WorkDetail = () => {
       />
 
       <div className={`w-full  center aspect-video ${work.classname}`}>
-        <img src={work.image} alt="" />
+        <img src={work.image} alt="img" />
       </div>
-      <div className="container py-24 grid grid-cols-6">
-        <div className="col-span-3 grid grid-cols-2 pr-20 ">
+      <div className="container py-12 md:py-24 md:grid grid-cols-6">
+        <div className="col-span-3 grid grid-cols-2 max-sm:gap-10 md:pr-20 ">
 
-          <div className="pr-10">
-            <div className=" border-b border-black mb-5">
+          <div className="md:pr-10">
+            <div className=" border-b border-black/50 mb-2 md:mb-5">
               <h6 className=''>category</h6>
             </div>
-            <p className='text-lg'>{work.category}</p>
+            <p className='md:text-lg'>{work.category}</p>
           </div>
           <div className="">
-            <div className=" border-b border-black mb-5">
+            <div className=" border-b border-black/50 mb-2 md:mb-5">
               <h6 className=''>Scope</h6>
             </div>
-            <p className='text-lg'>{work.scope}</p>
+            <p className='md:text-lg'>{work.scope}</p>
           </div>
           <div className="col-span-2">
-            <div className=" border-b border-black mb-5">
+            <div className=" border-b border-black/50 mb-2 md:mb-5">
               <h6 className=''>Services deployed</h6>
             </div>
             <div className='flex flex-wrap gap-2'>
@@ -113,9 +113,9 @@ const WorkDetail = () => {
           </div>
 
         </div>
-        <div className="col-span-3 space-y-8">
-          <h3 data-para-effect className=' font-semibold leading-13!'>{work.detailHeading}</h3>
-          <div className="space-y-4 text-lg leading-tight">
+        <div className=" max-sm:mt-10  col-span-3  md:space-y-8">
+          <h3 data-para-effect className=' md:font-semibold leading-13!'>{work.detailHeading}</h3>
+          <div className=" space-y-2 md:space-y-4 md:text-lg leading-tight">
             {work.descArray.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
@@ -123,22 +123,22 @@ const WorkDetail = () => {
         </div>
       </div>
 
-      <div className='pt-24 space-y-16  border-t border-black'>
+      <div className='pt-12 md:pt-24 space-y-5 md:space-y-16  border-t border-black'>
         <SectionHeading
           btnText="More work"
           heading="Other partnerships."
           desc="Capital, advisory and ambassador signings across beauty, fashion and sports." />
-        <div className="container grid grid-cols-3 gap-x-3 gap-y-10">
+        <div className="container grid grid-cols-1 md:grid-cols-3 gap-x-3 gap-y-10">
           {remainingWorks.map((item, i) => (
             <Link key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
               <div className={`w-full center aspect-4/3 overflow-hidden rounded-xs  ${item.classname}`}>
                 <div data-img-effect className="w-full h-full center">
-                  <img className='group-hover:scale-110 transition-all duration-300' src={item.image} alt="" />
+                  <img className=' max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
                 </div>
               </div>
               <div className="">
                 <h6 className=''>{item.engagement}</h6>
-                <h5 className='capitalize font-semibold flex items-center gap-x-2 leading-none mt-1'>{item.title}</h5>
+                <h5 className='capitalize md:font-semibold flex items-center gap-x-2 leading-none mt-1'>{item.title}</h5>
               </div>
             </Link>
           ))}

@@ -98,36 +98,36 @@ const Footer = () => {
       opacity: 1,
       ease: "none",
     });
-  },[pathname]);
+  }, [pathname]);
 
   return (
-    <div className='mt-24'>
+    <div className='mt-12 md:mt-24 w-full overflow-hidden'>
       {!skipBlackBox && (
-        <div className=" sticky_box_paren w-full  h-[75vw] relative">
+        <div className=" sticky_box_paren w-full  h-[150vw] md:h-[75vw] relative">
           <div className="w-full h-full center absolute inset-0 overflow-hidden -z-10">
             {images.map((img, i) => (
               <Image
                 fill
                 key={i}
                 src={img}
-                alt=""
+                alt="img"
                 className={`footer_img footer_img_item_${i} cover object-bottom absolute inset-0  ${i === 0 ? "opacity-100" : "opacity-0"
                   }`}
                 style={{ zIndex: i }}
               />
             ))}
           </div>
-          <div className=" absolute top-0 w-[calc(50%-12.5vw)] h-[50vw] left-0 ">
+          <div className=" absolute top-0 w-[calc(50%-30vw)] md:w-[calc(50%-12.5vw)] h-[120vw] md:h-[50vw] left-0 ">
             <div className="w-full h-1/2 bg-[#FFFFFF]"></div>
             <div className=" box_left w-full h-1/2 "></div>
           </div>
-          <div className="absolute top-0 w-[calc(50%-12.5vw)] h-[25vw] right-0 bg-[#FFFFFF]"></div>
-          <div className=" sticky_box aspect-square relative left-1/2 -translate-x-1/2 h-[25vw] w-[25vw] bg-[#FFFFFF]">
+          <div className="absolute top-0 w-[calc(50%-30vw)] md:w-[calc(50%-12.5vw)] h-[60vw] md:h-[25vw] right-0 bg-[#FFFFFF]"></div>
+          <div className=" sticky_box aspect-square relative left-1/2 -translate-x-1/2 h-[60vw] md:h-[25vw] w-[60vw] md:w-[25vw] bg-[#FFFFFF]">
             <div className="size-2 aspect-square z-10 bg-black absolute -top-1 -left-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -top-1 -right-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -bottom-1 -right-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -bottom-1 -left-1 "></div>
-            <div className="w-full h-full border-2 flex flex-col justify-between border-black  p-6">
+            <div className="w-full h-full border-2 flex flex-col justify-between border-black/50 p-4 md:p-6">
               <div className="space-y-5">
                 <h4 data-para-effect className='leading-none!'>Let’s build India’s next iconic brand. Together.</h4>
                 <p data-para-effect className='leading-tight opacity-80'>We are looking for our next cohort of partners. Founders, talent, investors and retailers, all welcome.</p>
@@ -142,10 +142,10 @@ const Footer = () => {
           </div>
         </div>
       )}
-      <div className=" main_footer -translate-y-px night_bg  text-[#FFFFFF]  pt-14">
-        <div className="container h-[35vh]! grid  grid-cols-6">
+      <div className=" main_footer -translate-y-px night_bg overflow-hidden w-full  text-[#FFFFFF]  pt-14">
+        <div className="container h-[35vh]! grid   md:grid-cols-6">
           <div className="space-y-5 h-full  col-span-3">
-            <img className='w-[25%]' src="/logo_white.png" alt="" />
+            <img className='w-[25%]' src="/logo_white.png" alt="img" />
           </div>
           <div className=" h-full space-y-5">
             <p className=' uppercase text-sm aeonik'>Sitemap</p>
@@ -171,7 +171,7 @@ const Footer = () => {
               })}
             </div>
           </div>
-          <div className=" h-full space-y-5">
+          <div className=" h-full space-y-5 max-sm:pl-5">
             <p className=' uppercase text-sm aeonik'>Contact</p>
             <div className=" space-y-2">
               <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
@@ -202,7 +202,7 @@ const Footer = () => {
                 kaushik@disrptve.com</div>
             </div>
           </div>
-          <div className=" h-full space-y-5 pl-12">
+          <div className=" h-full space-y-5 md:*:pl-12">
             <p className=' uppercase text-sm aeonik' >Socials</p>
             <div className=" capitalize space-y-2">
               <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>

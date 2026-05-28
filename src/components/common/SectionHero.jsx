@@ -79,30 +79,30 @@ const SectionHero = ({ btnText, heading, desc }) => {
         });
     })
     return (
-        <div className=" content_box w-full ">
+        <div className=" content_box w-full relative overflow-hidden ">
+            <div className="gradient h-full w-full absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent from-[80%] to-white to-[100%]"></div>
+            <div className="w-full h-full hero_bg opacity-0 absolute inset-0 z-[-1] ">
+                <ColorBends
+                    colors={["#111184", "#111184", "#111184", "#111184"]}
+                    rotation={100}
+                    speed={0.2}
+                    scale={1}
+                    frequency={1.5}
+                    warpStrength={1}
+                    mouseInfluence={1}
+                    noise={0}
+                    parallax={0.5}
+                    iterations={1}
+                    intensity={1.5}
+                    bandWidth={6}
+                    transparent
+                    autoRotate={0}
+                />
+            </div>
             <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
-                <div className="gradient h-full w-full absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent from-[80%] to-white to-[100%]"></div>
-                <div className="w-full h-full hero_bg opacity-0 absolute inset-0 z-[-1] ">
-                    <ColorBends
-                        colors={["#111184", "#111184", "#111184", "#111184"]}
-                        rotation={100}
-                        speed={0.2}
-                        scale={1}
-                        frequency={1.5}
-                        warpStrength={1}
-                        mouseInfluence={1}
-                        noise={0}
-                        parallax={0.5}
-                        iterations={1}
-                        intensity={1.5}
-                        bandWidth={6}
-                        transparent
-                        autoRotate={0}
-                    />
-                </div>
                 <div className="space-y-5 w-full  relative z-10 ">
-                    <h1 className=' heading_split w-[80%] leading-none capitalize'>{heading}</h1>
-                    <p className=' paragraph_split w-[45%] leading-tight'>{desc}</p>
+                    <h1 className=' heading_split md:w-[80%] leading-none capitalize'>{heading}</h1>
+                    <p className=' paragraph_split md:w-[45%] leading-tight'>{desc}</p>
                 </div>
             </div>
         </div>

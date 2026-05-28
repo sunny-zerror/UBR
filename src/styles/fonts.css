@@ -6,15 +6,42 @@
   font-family: aeonik;
   src: url(../../public/fonts/aeonik-regular.B7F5ivrz.woff2);
 }
-.aeonik{
+.aeonik {
   font-family: aeonik, "Times New Roman", Times, serif;
 }
 html,
 body {
   font-size: 14px;
+  letter-spacing: -0.04em;
   font-style: normal;
   font-family: habitus, Arial, Helvetica, sans-serif;
   font-display: swap;
+}
+
+h1 {
+  font-size: 2.75rem;     
+}
+
+h2 {
+  font-size: 2.5rem; 
+}
+
+h3 {
+  font-size: 2rem;   
+}
+
+h4 {
+  font-size: 1.5rem;  
+}
+
+h5 {
+  font-size: 1.25rem;    
+}
+
+h6 {
+  font-size: 0.75rem;   
+  font-family: aeonik, "Times New Roman", Times, serif;
+  text-transform: uppercase;
 }
 
 @media (min-width: 1440px) {
@@ -22,31 +49,25 @@ body {
   body {
     font-size: 16px;
   }
-}
-
-h1 {
-  font-size: 5rem;
-}
-h2 {
-  font-size: 3.5rem;
-  line-height: 4rem;
-}
-h3 {
-  font-size: 3rem;
-}
-h4 {
-  font-size: 2rem;
-}
-h5 {
-  font-size: 1.5rem;
-}
-h6 {
-  font-size: 0.75rem;
-  font-family: aeonik, "Times New Roman", Times, serif;
-  text-transform: uppercase;
-}
-@media (max-width: 750px) {
   h1 {
-    font-size: 2.6rem;
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.5rem;
+  }
+  h6 {
+    font-size: 0.75rem;
+    font-family: aeonik, "Times New Roman", Times, serif;
+    text-transform: uppercase;
   }
 }

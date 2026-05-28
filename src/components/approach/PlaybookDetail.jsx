@@ -103,22 +103,22 @@ const PlaybookDetail = () => {
 
         tl.to(".dec_h_01", {
             height: "0px",
-            ease:"none"
+            ease: "none"
         }).to(".dec_h_02", {
             height: "0px",
-            ease:"none"
+            ease: "none"
         }).to(".dec_h_03", {
             height: "0px",
-            ease:"none"
+            ease: "none"
         }).to(".dec_h_04", {
             height: "0px",
-            ease:"none"
-    })
+            ease: "none"
+        })
     })
 
     return (
         <>
-            <div className="w-full py-24 relative  pb-0">
+            <div className="w-full py-12 md:py-24 relative  pb-0">
                 <SectionHeading
                     btnText="The playbook in detail"
                     heading="Five pillars. In depth."
@@ -132,16 +132,16 @@ const PlaybookDetail = () => {
                                     setOpenId((prev) => (prev === item.id ? null : item.id))
                                 }
                                 key={item.id}
-                                className={` border-t cursor-pointer group border-black   `}>
+                                className={` border-t cursor-pointer group border-black/50   `}>
                                 <div className="flex items-center h-14">
-                                    <h5 data-para-effect className="font-semibold">{item.title}</h5>
+                                    <h5 data-para-effect className="md:font-semibold">{item.title}</h5>
                                 </div>
-                                <div className={`dec_h_${item.id} h-10`}></div>
-                                <div className={`dec_h_${item.id} overflow-hidden grid grid-cols-6`}>
-                                    <div className="col-span-3">
+                                <div className={`dec_h_${item.id} max-sm:hidden h-10`}></div>
+                                <div className={`dec_h_${item.id} overflow-hidden flex flex-col-reverse md:grid grid-cols-6`}>
+                                    <div className="col-span-3 max-sm:mt-5">
                                         <div className={` capitalize space-y-1`}>
                                             {item.services.map((subItem, i) => (
-                                                <div key={i} className="flex  items-center gap-x-2">
+                                                <div key={i} className="flex max-sm:text-sm  items-center gap-x-2">
                                                     <div className="size-1.5 bg-black"></div>
                                                     <p key={subItem}> {subItem}</p>
                                                 </div>
@@ -150,10 +150,10 @@ const PlaybookDetail = () => {
                                     </div>
                                     <div className="col-span-3 space-y-5">
 
-                                        <div className={`  grid grid-cols-2  gap-x-10 capitalize`}>
+                                        <div className={` max-sm:text-sm  grid grid-cols-2 gap-x-5  md:gap-x-10 capitalize`}>
                                             {item.description.map((desc, i) => (
                                                 <div key={i} className="">
-                                                    <p key={desc} className=''> {desc}</p>
+                                                    <p key={desc} className='leading-tight'> {desc}</p>
                                                 </div>
                                             ))}
                                         </div>

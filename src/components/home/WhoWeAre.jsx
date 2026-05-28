@@ -1,53 +1,46 @@
 import React from 'react'
 import SectionHeading from '../common/SectionHeading'
-import {
-    RiBarChartBoxLine,
-    RiSettings3Line,
-    RiShieldCheckLine,
-    RiTeamLine,
-    RiStarLine,
-    RiFocus3Line,
-} from "@remixicon/react"
+import Image from 'next/image'
 
 export const modelCards = [
     {
         brand: "UBR Brings",
-        title: " The P&L Rigour.",
-        desc: "Disciplined capital, enterprise scaling, a proven playbook for turning revenue into profit. The operator side of the model, anchored by Binoy Khimji and the Cornerstone ecosystem. Governance, unit economics, and the patience to compound.",
-        img:"/images/home/ubr_bg.png",
+        title: "The Capital And The Muscle.",
+        desc: "A capital and operating advisory founded by Binoy Khimji. Institutional capital access, multiple consumer ventures built and scaled, and deep distribution intelligence across India. Anchored in the Cornerstone Group ecosystem.",
+        img: "/images/home/ubr_bg.png",
         tags: [
             {
                 label: "CAPITAL",
-                icon: RiBarChartBoxLine,
+                icon: "/icons/capital.png",
             },
             {
                 label: "OPERATIONS",
-                icon: RiSettings3Line,
+                icon: "/icons/operation.png",
             },
             {
-                label: "GOVERNANCE",
-                icon: RiShieldCheckLine,
-            },
+                label: "DISTRIBUTION",
+                icon: "/icons/distribution.png",
+            }
         ],
     },
 
     {
-        brand: "DISRPTVE brings ",
-        title: "the audience.",
-        desc: "Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. Led by Ashish Chowdhry and Kaushik Sundararajan, with a decade of running culture-first agencies behind them. Trust as the unfair advantage.",
-        img:"/images/home/disrptve_bg.png",
+        brand: "DISRPTVE Brings ",
+        title: "The Brand And The Audience.",
+        desc: "A marketing and communications agency built by Ashish Chowdhry and Kaushik Sundararajan. Over a decade of brand strategy across Indian consumer categories, with deep access to celebrity and creator talent. Built by serial entrepreneurs who have raised capital and scaled multiple businesses themselves.",
+        img: "/images/home/disrptve_bg.png",
         tags: [
             {
                 label: "TALENT",
-                icon: RiTeamLine,
+                icon: "/icons/talent.png",
             },
             {
                 label: "BRAND",
-                icon: RiStarLine,
+                icon: "/icons/brand.png",
             },
             {
                 label: "AUDIENCE",
-                icon: RiFocus3Line,
+                icon: "/icons/audience.png",
             },
         ],
     },
@@ -55,7 +48,7 @@ export const modelCards = [
 
 const WhoWeAre = () => {
     return (
-        <div className='py-24 space-y-16'>
+        <div className=' py-12 md:py-12 md:py-24 space-y-5 md:space-y-16'>
             <SectionHeading
                 btnText={"Who we are"}
                 heading={
@@ -65,43 +58,41 @@ const WhoWeAre = () => {
                         One model.
                     </>
                 }
-                desc="UBR and DISRPTVE come from opposite ends of the consumer ventures spectrum. Together, they fix the two things most consumer brands get wrong at once."
+                desc="A marketing agency with a decade of consumer brand work. A capital firm with a track record of building and scaling consumer ventures. Same team on every engagement."
             />
             <div className="w-full container overflow-hidden">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
                     {modelCards.map((card, index) => (
                         <div
                             key={index}
-                            className="group relative border border-black/20  rounded-lg p-8 md:p-10 overflow-hidden"
+                            className="group relative border flex flex-col justify-between border-black/20  rounded-lg p-7 md:p-10 overflow-hidden"
                         >
-                            <img className=' cover absolute inset-0 group-hover:opacity-100 opacity-50 transition-all duration-300' src={card.img} alt="" />
+                            <img className=' cover absolute inset-0 group-hover:opacity-100 opacity-50 transition-all duration-300' src={card.img} alt="img" />
                             <div className="relative">
-                                <h4 className="leading-none capitalize font-semibold">
+                                <h4 className="leading-none capitalize md:md:font-semibold">
                                     {card.brand}
                                 </h4>
-                                <h4 className="leading-none capitalize font-semibold">
+                                <h4 className="leading-none capitalize md:md:font-semibold">
                                     {card.title}
                                 </h4>
+                                <p className="relative mt-5 md:mt-10 opacity-80  leading-tight md:text-lg">
+                                    {card.desc}
+                                </p>
                             </div>
 
-                            <p className="relative mt-10 w-[85%] leading-6 text-lg">
-                                {card.desc}
-                            </p>
 
-                            <div className="relative mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div className="relative mt-5 md:mt-10 grid grid-cols-3  gap-3">
                                 {card.tags.map((tag, i) => {
-                                    const Icon = tag.icon
-
                                     return (
                                         <div
                                             key={i}
                                             className={`rounded-md font-medium text-sm p-3 border border-black/20  bg-[#FFFFFF80] text-black`}
                                         >
                                             <div className="flex flex-col justify-center items-center gap-5">
-                                                <Icon size={34} />
+                                                <Image height={40} width={40} src={tag.icon} className='' alt='icon' />
 
-                                                <p className=" aeonik font-semibold   uppercase">
+                                                <p className=" max-sm:text-xs aeonik md:md:font-semibold   uppercase">
                                                     {tag.label}
                                                 </p>
                                             </div>
@@ -111,6 +102,10 @@ const WhoWeAre = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="w-full center mt-12 md:mt-12 md:mt-24 text-center">
+                    <h4 data-para-effect className=' md:w-[60%] leading-tight'>Together, UBR × DISRPTVE is a venture builder that installs the operating model behind profitable scaling, whether you are launching a new brand or reigniting an established one.</h4>
                 </div>
             </div>
         </div>
