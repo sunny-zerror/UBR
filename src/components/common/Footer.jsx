@@ -4,7 +4,7 @@ import { RiArrowRightLine } from '@remixicon/react'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { usePathname } from 'next/navigation';
-import React from 'react'
+import React, { useRef } from 'react'
 import Button from './Button';
 import { Link } from 'next-view-transitions';
 import Image from 'next/image';
@@ -32,6 +32,8 @@ const navLinks = [
 const Footer = () => {
   const pathname = usePathname();
 
+  const footerStickyRef = useRef(null)
+
   const skipBlackBox = pathname === '/contact'
 
   const images = [
@@ -55,6 +57,9 @@ const Footer = () => {
         pinSpacing: true,
       },
     });
+  }, { scope: footerStickyRef })
+
+  useGSAP(() => {
 
     gsap.fromTo(
       ".footer_img",
@@ -103,7 +108,7 @@ const Footer = () => {
   return (
     <div className='mt-12 md:mt-24 w-full overflow-hidden'>
       {!skipBlackBox && (
-        <div className=" sticky_box_paren w-full  h-[150vw] md:h-[75vw] relative">
+        <div ref={footerStickyRef} className=" sticky_box_paren w-full  h-[150vw] md:h-[75vw] relative">
           <div className="w-full h-full center absolute inset-0 overflow-hidden -z-10">
             {images.map((img, i) => (
               <Image

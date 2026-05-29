@@ -11,7 +11,7 @@ const CoFounders = () => {
                 desc="UBR brings disciplined capital and operator discipline. DISRPTVE brings audience ownership and brand-building. Together, the two cultures most consumer ventures struggle to combine."
             />
             <div className="container flex overflow-x-scroll scroller_none md:grid grid-cols-3 gap-x-5">
-                <div className=" w-[80vw] shrink-0 space-y-4">
+                <div className=" w-[80vw] md:w-full shrink-0 space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
                         <div data-clip-effect className="w-full h-full">
                             <img className='cover' src="/images/team/binoy.png" alt="img" />
@@ -23,7 +23,7 @@ const CoFounders = () => {
                         <p className='leading-tight  w-full opacity-80 max-sm:mt-4 md:w-[90%] mt-5'>Brings disciplined capital, enterprise scaling, and a proven playbook for turning revenue into profit. The P&L rigour and governance side of the model, anchored by the Cornerstone ecosystem.</p>
                     </div>
                 </div>
-                <div className=" w-[80vw] shrink-0 space-y-4">
+                <div className=" w-[80vw] md:w-full shrink-0 space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
                         <div data-clip-effect className="w-full h-full">
                             <img className='cover' src="/images/team/ashish.png" alt="img" />
@@ -35,7 +35,7 @@ const CoFounders = () => {
                         <p className='leading-tight  w-full opacity-80 max-sm:mt-4 md:w-[90%] mt-5'>Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. The talent and brand side of the operating model.</p>
                     </div>
                 </div>
-                <div className=" w-[80vw] shrink-0 space-y-4">
+                <div className=" w-[80vw] md:w-full shrink-0 space-y-4">
                     <div className="w-full rounded-sm  overflow-hidden aspect-6/7">
                         <div data-clip-effect className="w-full h-full">
                             <img className='cover' src="/images/team/kaushik.png" alt="img" />
