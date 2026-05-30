@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import Marquee from "react-fast-marquee";
 import { Link } from "next-view-transitions";
 import { WorkData } from "@/store/WorkData";
+import Image from "next/image";
 
 export const WorksList = () => {
     const marqueeRef = useRef(null);
@@ -129,8 +130,8 @@ export const WorksList = () => {
                         <div
                             className={`col-span-3 overflow-hidden aspect-video center ${item.classname}`}
                         >
-                            <div data-img-effect className="w-full  h-full center">
-                                <img src={item.image} alt="img" className="max-sm:scale-50" />
+                            <div data-img-effect className="w-full relative  h-full center">
+                                <Image fill src={item.image} alt="img" className=" object-contain max-sm:scale-50" />
                             </div>
                         </div>
                     </Link>

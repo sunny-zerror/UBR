@@ -1,6 +1,5 @@
 "use client";
 import React, { useRef } from 'react'
-import DotButton from '../common/DotButton'
 import SectionHeading from '../common/SectionHeading';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -36,8 +35,13 @@ const HowWeWork = () => {
 
     const workRef = useRef(null);
 
-    useGSAP(()=>{
+    useGSAP(() => {
+
+        const expandSize = window.innerWidth > 750 ? 35 : 18
+        const normalSize = window.innerWidth > 750 ? 16 : 12
+
         const tl = gsap.timeline({
+            defaults: { duration: 0.8, ease: "power3.out" },
             scrollTrigger: {
                 trigger: workRef.current,
                 start: "top top",
@@ -46,41 +50,102 @@ const HowWeWork = () => {
             },
         })
 
-        tl.to(".work_circ_1",{
-
+        tl.to(".work_circ_1", {
+            width: expandSize + "rem",
+            height: expandSize + "rem"
         })
+        tl.to(".inner_circ_1", {
+            background: "linear-gradient(#29227d12, #29227d12), radial-gradient(50% 50%, #29227d00 0%, #29227d08 30%, #29227d12 55%, #29227d20 80%, #29227d35 100%)",
+        }, "<")
+        tl.to(".work_circ_2", {
+            width: expandSize + "rem",
+            height: expandSize + "rem"
+        })
+        tl.to(".work_dt_2", {
+            opacity: 1,
+            transform: "translateY(0)",
+        }, "<")
+        tl.to(".work_dt_1", {
+            opacity: 0,
+            transform: "translateY(-1.25rem)",
+        }, "<")
+        tl.to(".inner_circ_1", {
+            background: "linear-gradient(#29227d00, #29227d00), radial-gradient(50% 50%, #29227d00 0%, #29227d00 30%, #29227d00 55%, #29227d00 80%, #29227d00 100%)",
+        }, "<")
+        tl.to(".inner_circ_2", {
+            background: "linear-gradient(#29227d12, #29227d12), radial-gradient(50% 50%, #29227d00 0%, #29227d08 30%, #29227d12 55%, #29227d20 80%, #29227d35 100%)",
+        }, "<")
+        tl.to(".work_circ_1", {
+            width: normalSize + "rem",
+            height: normalSize + "rem"
+        }, "<")
+        tl.to(".work_circ_3", {
+            width: expandSize + "rem",
+            height: expandSize + "rem"
+        })
+        tl.to(".work_dt_3", {
+            opacity: 1,
+            transform: "translateY(0)",
+        }, "<")
+        tl.to(".work_dt_2", {
+            opacity: 0,
+            transform: "translateY(-1.25rem)",
+        }, "<")
+        tl.to(".inner_circ_2", {
+            background: "linear-gradient(#29227d00, #29227d00), radial-gradient(50% 50%, #29227d00 0%, #29227d00 30%, #29227d00 55%, #29227d00 80%, #29227d00 100%)",
+        }, "<")
+        tl.to(".inner_circ_3", {
+            background: "linear-gradient(#29227d12, #29227d12), radial-gradient(50% 50%, #29227d00 0%, #29227d08 30%, #29227d12 55%, #29227d20 80%, #29227d35 100%)",
+        }, "<")
+        tl.to(".work_circ_2", {
+            width: normalSize + "rem",
+            height: normalSize + "rem"
+        }, "<")
+        tl.to(".work_circ_3", {
+            width: normalSize + "rem",
+            height: normalSize + "rem"
+        })
+        tl.to(".inner_circ_3", {
+            background: "linear-gradient(#29227d00, #29227d00), radial-gradient(50% 50%, #29227d00 0%, #29227d00 30%, #29227d00 55%, #29227d00 80%, #29227d00 100%)",
+        }, "<")
     })
 
     return (
-        <div ref={workRef} className=' night_bg text-white h-[300vh] py-12 md:py-24'>
+        <div className=' border-t border-black/50  py-12 md:py-24'>
             <div className="">
                 <SectionHeading
                     btnText="How we work"
-                    heading="Co-founders, not consultants."
+                    heading={<>Co-founders, <br />not consultants.</>}
                     desc="We embed across all five pillars from day one. Equity-aligned. Vested against KPIs. Same room as the founder, same target on the wall." />
             </div>
-            <div className=" container w-full h-screen! flex sticky!   top-0">
-                <div className=" w-full md:w-1/2 h-[50vh] md:h-full flex flex-col gap-y-5 md:gap-y-20 justify-center">
-                    <div className="space-y-5">
-                        <DotButton text="The Outcome" className={"text-white!"} />
-                        <h3 data-para-effect className='capitalize md:font-semibold leading-tight'>We replace paid CAC <br /> with   trust CAC.</h3>
+            <div ref={workRef} className=" w-full relative h-[300vh]">
+                <div className=" container w-full h-screen! md:flex sticky!   top-0">
+                    <div className=" w-full md:w-1/2 h-[50vh] md:h-full flex items-center">
+                        {valuesData.map((item, index) => (
+                            <div key={index} className={`work_dt_${index + 1} absolute space-y-5 md:space-y-10 ${[1, 2].includes(index) ? "opacity-0 translate-y-5" : ""}`}>
+                                <div className="space-y-2">
+                                    <h6>{item.label}</h6>
+                                    <h3 data-para-effect className='capitalize md:font-semibold leading-tight w-[80%]'>{item.title}</h3>
+                                </div>
+                                <p data-para-effect className=' md:text-lg opacity-60 leading-tight md:w-[80%] '>{item.description}</p>
+                            </div>
+                        ))}
                     </div>
-                    <p data-para-effect className='md:text-lg opacity-60 leading-tight md:w-[80%] '>Paid acquisition gets more expensive every quarter and never pays back. When talent already owns the audience, demand arrives warm. CAC bends. Pricing power compounds. The brand stops renting attention and starts owning it.</p>
-                </div>
-                <div className="w-1/2 relative h-full flex  justify-center items-center ">
-                    <div className="size-[16rem] work_circ_1 opacity-50 transition-all duration-300 shrink-0   relative pointer-events-none  ">
-                        <div className="w-full h-full border border-white translate-x-[8rem] rounded-full center ">
-                            <div className="size-2 bg-white rounded-full"></div>
+                    <div className="-full md:w-1/2 h-[50vh] md:h-full relative flex  justify-center items-center max-sm:overflow-hidden ">
+                        <div className=" size-48 md:size-64 work_circ_1  shrink-0   relative pointer-events-none  ">
+                            <div className=" inner_circ_1 w-full h-full overflow-hidden border border-[#29227d] translate-x-24  md:translate-x-32 rounded-full center ">
+                                <div className="size-3 bg-[#29227d] rounded-full"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="size-[16rem] work_circ_2 opacity-50 transition-all duration-300 shrink-0   relative pointer-events-none ">
-                        <div className="w-full h-full border border-white  rounded-full center ">
-                            <div className="size-2 bg-white rounded-full"></div>
+                        <div className=" size-48 md:size-64 work_circ_2  shrink-0   relative pointer-events-none ">
+                            <div className=" inner_circ_2 w-full h-full overflow-hidden border border-[#29227d]  rounded-full center ">
+                                <div className="size-3 bg-[#29227d] rounded-full"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="size-[16rem] work_circ_3 opacity-50 transition-all duration-300 shrink-0   relative pointer-events-none ">
-                        <div className="w-full h-full border border-white  -translate-x-[8rem] rounded-full center ">
-                            <div className="size-2 bg-white rounded-full"></div>
+                        <div className=" size-48 md:size-64 work_circ_3  shrink-0   relative pointer-events-none ">
+                            <div className=" inner_circ_3 w-full h-full overflow-hidden border border-[#29227d] -translate-x-24  md:-translate-x-32 rounded-full center ">
+                                <div className="size-3 bg-[#29227d] rounded-full"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

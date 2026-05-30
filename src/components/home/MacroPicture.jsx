@@ -1,5 +1,4 @@
 import React from 'react'
-import DotButton from '../common/DotButton'
 import SectionHeading from '../common/SectionHeading';
 
 const statsData = [

@@ -3,6 +3,8 @@ import { RiArrowDownLine, RiArrowDownSLine } from '@remixicon/react';
 import React, { useState } from 'react'
 import DotButton from '../common/DotButton';
 import Button from '../common/Button';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const foundersData = [
     {
@@ -80,11 +82,101 @@ const serviceOptions = [
 ];
 
 const ContactForm = () => {
-    const [inquiry, setInquiry] = useState("General Inquiry");
-    const [stage, setStage] = useState("");
-    const [service, setService] = useState("");
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        company: "",
+        stage: "",
+        service: "",
+        message: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async () => {
+        if (!formData.fullName.trim()) {
+            toast.error("Full name is required");
+            return;
+        }
+
+        if (!formData.email.trim()) {
+            toast.error("Email is required");
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(formData.email)) {
+            toast.error("Enter a valid email");
+            return;
+        }
+
+        if (!formData.company.trim()) {
+            toast.error("Company or brand is required");
+            return;
+        }
+
+        if (!formData.stage) {
+            toast.error("Please select a stage");
+            return;
+        }
+
+        if (!formData.service) {
+            toast.error("Please select a service");
+            return;
+        }
+
+        if (!formData.message.trim()) {
+            toast.error("Please enter a message");
+            return;
+        }
+
+        try {
+            setIsSubmitting(true);
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                toast.success("Message sent successfully 🚀");
+
+                setFormData({
+                    fullName: "",
+                    email: "",
+                    company: "",
+                    stage: "",
+                    service: "",
+                    message: "",
+                });
+            } else {
+                toast.error(data.message || "Something went wrong");
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error("Server error");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     return (
         <>
+            <ToastContainer position="top-right" autoClose={3000} />
+
             <div className="container my-12 md:my-24">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2">
                     <div className=" md:pr-32 space-y-5">
@@ -132,8 +224,11 @@ const ContactForm = () => {
 
                                     <input
                                         type="text"
+                                        name="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleChange}
                                         placeholder="John Anderson"
-                                        className="mt-2  heading-font w-full border-b border-black/20  placeholder:text-[#0f121980]  outline-none  focus:border-black/20 "
+                                        className="mt-2 heading-font w-full border-b border-black/20 placeholder:text-[#0f121980] outline-none focus:border-black/20"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -143,8 +238,11 @@ const ContactForm = () => {
 
                                     <input
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         placeholder="john.anderson@gmail.com"
-                                        className="mt-2  heading-font w-full border-b border-black/20  placeholder:text-[#0f121980]  outline-none  focus:border-black/20 "
+                                        className="mt-2 heading-font w-full border-b border-black/20 placeholder:text-[#0f121980] outline-none focus:border-black/20"
                                     />
                                 </div>
                             </div>
@@ -157,8 +255,11 @@ const ContactForm = () => {
 
                                     <input
                                         type="text"
-                                        placeholder="john.anderson@gmail.com"
-                                        className=" mt-2 heading-font w-full border-b border-black/20  placeholder:text-[#0f121980]  outline-none  focus:border-black/20 "
+                                        name="company"
+                                        value={formData.company}
+                                        onChange={handleChange}
+                                        placeholder="Acme Inc."
+                                        className="mt-2 heading-font w-full border-b border-black/20 placeholder:text-[#0f121980] outline-none focus:border-black/20"
                                     />
                                 </div>
 
@@ -169,9 +270,10 @@ const ContactForm = () => {
 
                                     <div className="relative mt-2">
                                         <select
-                                            value={stage}
-                                            onChange={(e) => setStage(e.target.value)}
-                                            className={`cursor-pointer heading-font w-full appearance-none border-b border-black/20 outline-none focus:border-black/20 ${stage ? "text-[#111827]" : "text-[#0f121980] "
+                                            name="stage"
+                                            value={formData.stage}
+                                            onChange={handleChange}
+                                            className={`cursor-pointer heading-font w-full appearance-none border-b border-black/20 outline-none focus:border-black/20 ${formData.stage ? "text-[#111827]" : "text-[#0f121980]"
                                                 }`}
                                         >
                                             <option value="" disabled>
@@ -179,11 +281,7 @@ const ContactForm = () => {
                                             </option>
 
                                             {stageOptions.map((option) => (
-                                                <option
-                                                    key={option.value}
-                                                    value={option.value}
-                                                    className="text-[#111827]"
-                                                >
+                                                <option key={option.value} value={option.value}>
                                                     {option.label}
                                                 </option>
                                             ))}
@@ -204,9 +302,10 @@ const ContactForm = () => {
 
                                 <div className="relative mt-2">
                                     <select
-                                        value={service}
-                                        onChange={(e) => setService(e.target.value)}
-                                        className={`cursor-pointer heading-font w-full appearance-none border-b border-black/20 outline-none focus:border-black/20 ${service ? "text-[#111827]" : "text-[#0f121980] "
+                                        name="service"
+                                        value={formData.service}
+                                        onChange={handleChange}
+                                        className={`cursor-pointer heading-font w-full appearance-none border-b border-black/20 outline-none focus:border-black/20 ${formData.service ? "text-[#111827]" : "text-[#0f121980]"
                                             }`}
                                     >
                                         <option value="" disabled>
@@ -214,11 +313,7 @@ const ContactForm = () => {
                                         </option>
 
                                         {serviceOptions.map((option) => (
-                                            <option
-                                                key={option.value}
-                                                value={option.value}
-                                                className="text-[#111827]"
-                                            >
+                                            <option key={option.value} value={option.value}>
                                                 {option.label}
                                             </option>
                                         ))}
@@ -238,14 +333,20 @@ const ContactForm = () => {
 
                                 <textarea
                                     rows={7}
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     placeholder="Category, traction, what you need, etc."
-                                    required
-                                    className=" mt-2 heading-font w-full resize-none border-b border-black/20  placeholder:text-[#0f121980]   outline-none  focus:border-black/20 "
+                                    className="mt-2 heading-font w-full resize-none border-b border-black/20 placeholder:text-[#0f121980] outline-none focus:border-black/20"
                                 />
                             </div>
 
                         </form>
-                        <Button text='Send Message' />
+                        <Button
+                            onClick={handleSubmit}
+                            className={`${isSubmitting ? "pointer-events-none opacity-50" : ""}`}
+                            text={isSubmitting ? "Sending..." : "Send Message"}
+                        />
                     </div>
                 </div>
             </div>

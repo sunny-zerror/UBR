@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import DotButton from '../common/DotButton'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'

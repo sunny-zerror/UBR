@@ -108,12 +108,12 @@ const TheOs = () => {
         <div className=" w-screen sticky top-0 h-screen flex flex-col gap-y-16 justify-center overflow-hidden">
           <div
             ref={sliderRef}
-            className="slider flex gap-x-5 md:gap-x-10 px-4 md:px-24"
+            className="slider flex gap-x-5  px-4 md:px-24"
           >
             {processData.map((item, i) => (
               <div
                 key={i}
-                className=" w-[95vw] md:w-[30vw] aspect-[3/4] text-white relative  shrink-0 "
+                className=" w-[95vw] md:w-[40vw] lg:w-[30vw] aspect-[3/4] text-white relative  shrink-0 "
               >
 
                 <div className="w-full h-full relative overflow-hidden">

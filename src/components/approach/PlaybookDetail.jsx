@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from 'react'
+import React from 'react'
 import SectionHeading from '../common/SectionHeading'
-import { RiArrowDownLine } from '@remixicon/react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';

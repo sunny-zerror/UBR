@@ -1,17 +1,15 @@
 "use client"
 import React, { useRef } from 'react'
-import DotButton from '../common/DotButton'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import { useGSAP } from '@gsap/react'
-import { RiCloseLine } from '@remixicon/react'
 import SectionHeading from '../common/SectionHeading'
 import { useParams } from 'next/navigation'
 import { WorkData } from '@/store/WorkData'
 import { Link } from 'next-view-transitions'
-import SectionHero from '../common/SectionHero'
 import Marquee from 'react-fast-marquee'
+import Image from 'next/image'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const WorkDetail = () => {
@@ -210,8 +208,8 @@ const WorkDetail = () => {
         </div>
       </div>
 
-      <div className={`w-full  center aspect-video ${work.classname}`}>
-        <img src={work.image} alt="img" />
+      <div className={`w-full relative  center aspect-video ${work.classname}`}>
+        <Image fill className='object-contain scale-50' src={work.image} alt="img" />
       </div>
       <div className="container py-12 md:py-24 md:grid grid-cols-6">
         <div className="col-span-3 grid grid-cols-2 max-sm:gap-10 md:pr-20 ">

@@ -46,21 +46,55 @@ const Footer = () => {
     "/images/footer/img3.jpeg",
   ]
 
-  useGSAP(() => {
-    gsap.to(".sticky_box", {
-      ease: "none",
-      transformOrigin: "50% 50%",
-      scrollTrigger: {
-        trigger: ".sticky_box",
-        endTrigger: ".box_left",
-        start: "center center",
-        end: "center center",
-        scrub: true,
-        pin: true,
-        pinSpacing: true,
-      },
-    });
-  }, { scope: footerStickyRef })
+  useGSAP(
+    () => {
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger?.classList?.contains("sticky_box")) {
+          st.kill();
+        }
+      });
+
+      if (pathname === "/contact") return;
+
+      gsap.to(".sticky_box", {
+        ease: "none",
+        transformOrigin: "50% 50%",
+        scrollTrigger: {
+          trigger: ".sticky_box",
+          endTrigger: ".box_left",
+          start: "center center",
+          end: "center center",
+          scrub: true,
+          pin: true,
+        },
+      });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".sticky_box",
+          endTrigger: ".box_left",
+          start: "center center",
+          end: "bottom center",
+          scrub: true,
+        },
+      });
+
+      tl.to(".footer_img_item_0", {
+        opacity: 0,
+        ease: "none",
+      });
+      tl.to(".footer_img_item_1", {
+        opacity: 1,
+        ease: "none",
+      }, 0);
+
+      ScrollTrigger.refresh();
+    },
+    {
+      dependencies: [pathname],
+      revertOnUpdate: true,
+      scope: footerStickyRef,
+    }
+  );
 
   useGSAP(() => {
 
@@ -82,30 +116,6 @@ const Footer = () => {
       }
     );
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".sticky_box",
-        endTrigger: ".box_left",
-        start: "center center",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
-
-    tl.to(".footer_img_item_1", {
-      opacity: 1,
-      ease: "none",
-    });
-
-    tl.to(".footer_img_item_2", {
-      opacity: 1,
-      ease: "none",
-    });
-
-    tl.to(".footer_img_item_3", {
-      opacity: 1,
-      ease: "none",
-    });
   }, [pathname]);
 
   return (
@@ -138,7 +148,7 @@ const Footer = () => {
             <div className="w-full h-full border-2 flex flex-col justify-between border-black/50 p-4 md:p-6">
               <div className="space-y-5">
                 <h4 data-para-effect className='leading-none!'>Let’s build India’s next iconic brand. Together.</h4>
-                <p data-para-effect className='leading-tight opacity-80'>We are looking for our next cohort of partners. Founders, talent, investors and retailers, all welcome.</p>
+                <p data-para-effect className='leading-tight md:hidden lg:block opacity-80'>We are looking for our next cohort of partners. Founders, talent, investors and retailers, all welcome.</p>
               </div>
               <div className="w-full flex items-center justify-between">
                 <Link href={"/contact"} className={`group block w-fit  text-[#FFFFFF] uppercase aeonik text-xs px-4 border hover:text-[#000000] border-transparent hover:border-[#000000] py-2.5 leading-none relative overflow-hidden  transition-all duration-300 `}>

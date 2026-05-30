@@ -1,10 +1,8 @@
 "use client";
-import { useGSAP } from '@gsap/react';
-import { RiArrowDownLine, RiArrowDownSLine, RiBriefcaseLine, RiGlobalLine, RiLineChartLine, RiNodeTree, RiPaletteLine, RiShareForwardLine, RiUserLine } from '@remixicon/react';
+import { RiArrowDownLine } from '@remixicon/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import React, { useRef, useState } from 'react'
-import DotButton from '../common/DotButton';
+import React, { useState } from 'react'
 import SectionHeading from '../common/SectionHeading';
 gsap.registerPlugin(ScrollTrigger);
 

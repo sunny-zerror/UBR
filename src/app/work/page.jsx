@@ -1,5 +1,4 @@
 import SectionHero from '@/components/common/SectionHero'
-import WorkListingHero from '@/components/work/WorkListingHero'
 import { WorksList } from '@/components/work/WorksList'
 import React from 'react'
 

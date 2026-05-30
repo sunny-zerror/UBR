@@ -1,15 +1,15 @@
 "use client";
-import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React, { useEffect, useRef } from 'react'
 import DotButton from '../common/DotButton';
+import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const OurThesis = () => {
     const containerRef = useRef();
 
-    useEffect(() => {
+    useGSAP(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
@@ -55,7 +55,7 @@ const OurThesis = () => {
             transform: "translateY(0%)"
         }, "<")
 
-    }, []);
+    }, { scope: containerRef });
 
     return (
         <div ref={containerRef} className=' night_bg text-white w-full h-[300vh] relative'>

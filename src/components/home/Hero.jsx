@@ -5,7 +5,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
-import Image from 'next/image';
 import ColorBends from './../animation/ColorBends';
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -106,7 +105,7 @@ const Hero = () => {
         </div>
         <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
           <DotButton text="A venture builder for India" className={"opacity-0 md:hidden  text-white!  blink_btn"} />
-          <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>
+          <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 lg:leading-24 tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>
           <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split col-span-4'>The integrated model  for    non-linear growth.</h1>
           <div className=" pb-4  pointer-events-none relative z-10 w-full col-span-2">
             <p className='  w-full leading-tight md:text-lg   paragraph_split'>Built for entrepreneurs chasing meaningful outcomes.</p>

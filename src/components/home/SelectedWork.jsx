@@ -1,7 +1,5 @@
 "use client";
-import { RiCloseLine } from '@remixicon/react'
-import React, { useRef, useState } from 'react'
-import DotButton from '../common/DotButton'
+import React, { useRef } from 'react'
 import SectionHeading from '../common/SectionHeading'
 import { Link } from 'next-view-transitions'
 import { WorkData } from '@/store/WorkData'
