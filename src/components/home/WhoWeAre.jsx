@@ -5,6 +5,7 @@ import Image from 'next/image'
 export const modelCards = [
     {
         brand: "UBR Brings",
+        logo: "/images/logo-ubrxdisrptve.png",
         title: "The Capital And The Muscle.",
         desc: "A capital and operating advisory founded by Binoy Khimji. Institutional capital access, multiple consumer ventures built and scaled, and deep distribution intelligence across India. Anchored in the Cornerstone Group ecosystem.",
         img: "/images/home/ubr_bg.png",
@@ -26,6 +27,7 @@ export const modelCards = [
 
     {
         brand: "DISRPTVE Brings ",
+        logo: "/images/logo-disrptve-dark.png",
         title: "The Brand And The Audience.",
         desc: "A marketing and communications agency built by Ashish Chowdhry and Kaushik Sundararajan. Over a decade of brand strategy across Indian consumer categories, with deep access to celebrity and creator talent. Built by serial entrepreneurs who have raised capital and scaled multiple businesses themselves.",
         img: "/images/home/disrptve_bg.png",
@@ -70,6 +72,13 @@ const WhoWeAre = () => {
                         >
                             <img className=' cover absolute inset-0 group-hover:opacity-100 opacity-50 transition-all duration-300' src={card.img} alt="img" />
                             <div className="relative">
+                                <div className="relative h-10 mb-5  ">
+                                    <img
+                                        src={card.logo}
+                                        alt="logo"
+                                        className="h-full"
+                                    />
+                                </div>
                                 <h4 className="leading-none capitalize md:md:font-semibold">
                                     {card.brand}
                                 </h4>

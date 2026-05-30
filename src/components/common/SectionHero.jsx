@@ -31,7 +31,7 @@ const SectionHero = ({ btnText, heading, desc }) => {
         gsap.set([heading_split.lines, paragraph_split.lines], { yPercent: 100 });
 
         const tl = gsap.timeline({
-            delay: .5
+            delay: 1
         })
         tl.to(".content_box", {
             opacity: 1,
@@ -61,30 +61,18 @@ const SectionHero = ({ btnText, heading, desc }) => {
     });
 
     useGSAP(() => {
-
         gsap.to(".hero_bg", {
             opacity: 1,
-            delay: 1.5
+            delay: 0.5
         })
-
-        gsap.to(".hero_bg", {
-            scrollTrigger: {
-                trigger: ".content_box",
-                start: "top top",
-                end: "bottom top",
-                scrub: true,
-            },
-            y: 200,
-            ease: "none"
-        });
     })
     return (
-        <div className=" content_box w-full relative overflow-hidden ">
+        <div className=" content_box w-full relative overflow-hidden text-white ">
             <div className="gradient h-full w-full absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent from-[80%] to-white to-[100%]"></div>
-            <div className="w-full h-full hero_bg opacity-0 absolute inset-0 z-[-1] ">
+            <div className="w-full h-full hero_bg opacity-0 night_bg absolute inset-0 z-[-1] ">
                 <ColorBends
-                    colors={["#111184", "#111184", "#111184", "#111184"]}
-                    rotation={100}
+                    colors={["#ffffff", "#ffffff", "#ffffff", "#ffffff"]}
+                    rotation={170}
                     speed={0.2}
                     scale={1}
                     frequency={1.5}

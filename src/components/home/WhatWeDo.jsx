@@ -109,7 +109,7 @@ const WhatWeDo = () => {
                                     {item.tags.map((tag, i) => (
                                         <span
                                             key={i}
-                                            className="px-2 py-1 text-xs uppercase  aeonik bg-[#29227d] text-white"
+                                            className="px-2 py-1 text-xs uppercase  aeonik bg-[#000063] text-white"
                                         >
                                             {tag}
                                         </span>

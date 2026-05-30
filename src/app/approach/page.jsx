@@ -8,12 +8,7 @@ import React from 'react'
 const page = () => {
   return (
     <>
-      <SectionHero
-        btnText={"Our approach"}
-        heading={"An operating system for profitable scale."}
-        desc={"In India's complex market, long-term value isn't created by venture capital alone. It is created by venture building. Five convictions, five phases, five pillars."}
-      />
-      <TheMindset />
+    <ApproachHero/>
       <TheOs />
       <PlaybookDetail />
     </>

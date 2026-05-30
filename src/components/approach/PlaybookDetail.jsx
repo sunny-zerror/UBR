@@ -113,12 +113,15 @@ const PlaybookDetail = () => {
         }).to(".dec_h_04", {
             height: "0px",
             ease: "none"
+        }).to(".dec_h_05", {
+            height: "0px",
+            ease: "none"
         })
     })
 
     return (
         <>
-            <div className="w-full py-12 md:py-24 relative  pb-0">
+            <div className="w-full pt-0 md:pt-12 relative">
                 <SectionHeading
                     btnText="The playbook in detail"
                     heading="Five pillars. In depth."
@@ -132,7 +135,7 @@ const PlaybookDetail = () => {
                                     setOpenId((prev) => (prev === item.id ? null : item.id))
                                 }
                                 key={item.id}
-                                className={` border-t cursor-pointer group border-black/50   `}>
+                                className={` border-t cursor-pointer group border-black/50 last:border-b   `}>
                                 <div className="flex items-center h-14">
                                     <h5 data-para-effect className="md:font-semibold">{item.title}</h5>
                                 </div>

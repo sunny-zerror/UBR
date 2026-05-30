@@ -4,7 +4,7 @@ import SectionHeading from '../common/SectionHeading'
 
 const CoFounders = () => {
     return (
-        <div className='space-y-5 md:space-y-16 pt-12 md:pt-24'>
+        <div className='space-y-5 md:space-y-16 py-12 md:py-24 border-t border-white/50'>
             <SectionHeading
                 btnText="Co Founders"
                 heading={<>Three operators. <br /> One model.</>}

@@ -28,6 +28,11 @@ const navLinks = [
     href: "/team"
   },
 ]
+const emails = [
+  "binoykhimji@gmail.com",
+  "ashish@disrptve.com",
+  "kaushik@disrptve.com",
+];
 
 const Footer = () => {
   const pathname = usePathname();
@@ -38,9 +43,7 @@ const Footer = () => {
 
   const images = [
     "/images/footer/img1.jpeg",
-    "/images/footer/img2.jpeg",
     "/images/footer/img3.jpeg",
-    "/images/footer/img4.jpeg",
   ]
 
   useGSAP(() => {
@@ -139,7 +142,7 @@ const Footer = () => {
               </div>
               <div className="w-full flex items-center justify-between">
                 <Link href={"/contact"} className={`group block w-fit  text-[#FFFFFF] uppercase aeonik text-xs px-4 border hover:text-[#000000] border-transparent hover:border-[#000000] py-2.5 leading-none relative overflow-hidden  transition-all duration-300 `}>
-                  <span className='absolute w-full h-full z-[-1] bg-[#29227d]  inset-0 group-hover:-top-full transition-all duration-300'></span>
+                  <span className='absolute w-full h-full z-[-1] bg-[#000063]  inset-0 group-hover:-top-full transition-all duration-300'></span>
                   get in touch
                 </Link>
               </div>
@@ -178,33 +181,21 @@ const Footer = () => {
           </div>
           <div className=" h-full space-y-5 max-sm:pl-5">
             <p className=' uppercase text-sm aeonik'>Contact</p>
-            <div className=" space-y-2">
-              <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
-                <span
-                  className={`
-                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]
-                            transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100
-                            `}
-                ></span>
-                binoykhimji@gmail.com</div>
-              <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
-                <span
-                  className={`
-                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]
-                            transition-transform duration-300 ease-out
-                            scale-x-0 origin-left group-hover:scale-x-100
-                          `}
-                ></span>
-                ashish@disrptve.com</div>
-              <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
-                <span
-                  className={`
-                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]
-                            transition-transform duration-300 ease-out
-                            scale-x-0 origin-left group-hover:scale-x-100
-                          `}
-                ></span>
-                kaushik@disrptve.com</div>
+            <div className="space-y-2">
+              {emails.map((email) => (
+                <Link
+                  key={email}
+                  href={`mailto:${email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group"
+                >
+                  <span
+                    className="absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]  transition-transform duration-300 ease-out   scale-x-0 origin-left group-hover:scale-x-100    "
+                  />
+                  {email}
+                </Link>
+              ))}
             </div>
           </div>
           <div className=" h-full space-y-5 md:*:pl-12">
@@ -212,17 +203,11 @@ const Footer = () => {
             <div className=" capitalize space-y-2">
               <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
                 <span
-                  className={`
-                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]
-                            transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100
-                            `}
+                  className={` absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF] transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100 `}
                 ></span>
                 LinkedIn</div> <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
                 <span
-                  className={`
-                            absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]
-                            transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100
-                            `}
+                  className={`  absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]   transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100   `}
                 ></span>
                 Instagram</div>
             </div>

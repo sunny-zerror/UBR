@@ -98,7 +98,7 @@ const TheOs = () => {
   });
 
   return (
-    <div className="w-full  pt-12 md:pt-24 night_bg text-white ">
+    <div className="w-full  pt-12 md:pt-24 ">
       <SectionHeading
         btnText="The OS"
         heading="A phase-gated journey from vision to velocity."
@@ -113,7 +113,7 @@ const TheOs = () => {
             {processData.map((item, i) => (
               <div
                 key={i}
-                className=" w-[95vw] md:w-[30vw] aspect-[3/4] relative  shrink-0 "
+                className=" w-[95vw] md:w-[30vw] aspect-[3/4] text-white relative  shrink-0 "
               >
 
                 <div className="w-full h-full relative overflow-hidden">
@@ -127,7 +127,7 @@ const TheOs = () => {
                 <div className="absolute w-full h-full bg-linear-to-b from-transparent from-65% to-100% to-[#000713] inset-0"></div>
                 <div className=' absolute p-8 space-y-5  bottom-0 left-0 w-full'>
                   <h4 className='leading-none mt-5 mb-1'>{item.title}</h4>
-                  <div className="w-24 h-1 rounded-full bg-[#01399a]"></div>
+                  <div className="w-24 h-1 rounded-full bg-[#ffffff]"></div>
                   <p className=" opacity-80 leading-tight">
                     {item.description}
                   </p>

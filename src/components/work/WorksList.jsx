@@ -9,8 +9,6 @@ import { WorkData } from "@/store/WorkData";
 export const WorksList = () => {
     const marqueeRef = useRef(null);
 
-    const [activeTitle, setActiveTitle] = useState("Project");
-
     const xTo = useRef(null);
     const yTo = useRef(null);
 
@@ -18,22 +16,18 @@ export const WorksList = () => {
         x: 0,
         y: 0,
     });
-
     const handleMouseEnter = (e, title) => {
-        setActiveTitle(title);
 
         if (!marqueeRef.current) return;
 
-        // set current mouse position instantly
-        mouse.current.x = e.clientX + 20;
-        mouse.current.y = e.clientY - 20;
+        mouse.current.x = e.clientX + 5;
+        mouse.current.y = e.clientY - 25;
 
         gsap.set(marqueeRef.current, {
             x: mouse.current.x,
             y: mouse.current.y,
         });
 
-        // create smooth followers once
         if (!xTo.current || !yTo.current) {
             xTo.current = gsap.quickTo(marqueeRef.current, "x", {
                 duration: 0.4,
@@ -59,8 +53,8 @@ export const WorksList = () => {
     const handleMouseMove = (e) => {
         if (!marqueeRef.current) return;
 
-        mouse.current.x = e.clientX + 20;
-        mouse.current.y = e.clientY - 20;
+        mouse.current.x = e.clientX + 5;
+        mouse.current.y = e.clientY - 25;
 
         xTo.current?.(mouse.current.x);
         yTo.current?.(mouse.current.y);
@@ -81,14 +75,13 @@ export const WorksList = () => {
 
     return (
         <>
-            {/* cursor marquee */}
             <div
                 ref={marqueeRef}
-                className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#29227d] px-0 py-1 will-change-transform overflow-hidden"
+                className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#000063] px-0 py-1 will-change-transform overflow-hidden"
             >
                 <Marquee speed={40}>
                     <p className="mr-1 whitespace-nowrap">
-                        View {activeTitle} |
+                        View CaseStudy |
                     </p>
                 </Marquee>
             </div>
@@ -124,7 +117,7 @@ export const WorksList = () => {
                                     {item.services.map((tag, i) => (
                                         <div
                                             key={i}
-                                            className="font-medium px-4 py-2 bg-[#29227d] text-white"
+                                            className="font-medium px-4 py-2 bg-[#000063] text-white"
                                         >
                                             <p className="text-xs aeonik uppercase">{tag}</p>
                                         </div>

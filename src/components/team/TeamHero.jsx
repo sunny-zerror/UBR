@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import { useGSAP } from '@gsap/react'
+import CoFounders from './CoFounder'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const TeamHero = () => {
@@ -59,19 +60,20 @@ const TeamHero = () => {
 
   });
   return (
-    <div className=" content_boxw-full bg-black">
-      <div className='container h-[70vh]! items-end grid grid-cols-6  pt-32 pb-16'>
-        <div className="space-y-5 col-span-4">
-          <DotButton text="The team" className={"blink_btn opacity-0 text-[#FFFFFF]!"} />
-          <h1 className=' heading_split leading-none capitalize'>An embedded<br /> operating  team.</h1>
-        </div>
-        <div className="col-span-2"></div>
-        <div className="col-span-4"></div>
-        <div className="w-full col-span-2 flex flex-col justify-end">
-          <p className=' paragraph_split leading-tight'>Operators, strategists and capital advisors, assembled to solve India’s specific challenges. Three co-founders. Two capital partners. One operating system.</p>
+   <>
+   <div className=" content_box w-full night_bg text-white">
+      <div className=" content_box w-full relative overflow-hidden ">
+        <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
+          <div className="space-y-5 w-full  relative z-10 ">
+            <h1 className=' heading_split md:w-[80%] leading-none capitalize'>An operating system for profitable scale.</h1>
+            <p className=' paragraph_split md:w-[45%] leading-tight'>In India's complex market, long-term value isn't created by venture capital alone. It is created by venture building. Five convictions, five phases, five pillars.</p>
+          </div>
         </div>
       </div>
+             <CoFounders/>
+     
     </div>
+   </>
   )
 }
 
