@@ -1,6 +1,7 @@
 import CapitalAdvisory from '@/components/team/CapitalAdvisory'
 import HowWeWork from '@/components/team/HowWeWork'
 import TeamHero from '@/components/team/TeamHero'
+import WhoWePartner from '@/components/team/WhoWePartner'
 import { createPageMetadata } from '@/lib/seo'
 import React from 'react'
 
@@ -9,7 +10,7 @@ const page = () => {
     <>
 
       <TeamHero/>
-        
+        <WhoWePartner/>
         {/* <HowWeWork/> */}
     </>
   )
