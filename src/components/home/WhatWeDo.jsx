@@ -53,71 +53,69 @@ const engagementData = [
 const WhatWeDo = () => {
 
     useGSAP(() => {
-        gsap.to(".card", {
-            transform: "translateY(0)",
-            opacity: 1,
-            stagger: 0.2,
+        const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".card",
-                start: "top 80%",
-                toggleActions: "play none none reverse",
+                trigger: ".what_we_do_paren",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true
             }
+        })
+        tl.from([".do_card_0"], {
+            transform: "translateY(180%)",
+            ease:"linear"
+        })
+        tl.from([".do_card_1"], {
+            transform: "translateY(180%)",
+            ease:"linear"
+        })
+        tl.from([".do_card_2"], {
+            transform: "translateY(180%)",
+            ease:"linear"
         })
     })
 
     return (
-        <section className="relative overflow-hidden space-y-5 md:space-y-16 py-12 md:py-24 ">
+        <section className="what_we_do_paren h-[300vh]  relative">
+            <div className="sticky top-0 space-y-5 md:space-y-16 h-screen w-full flex flex-col justify-center overflow-hidden">
+                <div className="">
+                    <SectionHeading
+                        btnText={"what we do"}
+                        heading={"We build consumer brands. Three ways to engage."}
+                        desc={"Built for founders who need capital, influence, execution, or all three at once."}
+                    />
+                </div>
+                <div className="">
+                    <div className="container">
 
-            <SectionHeading
-                btnText={"what we do"}
-                heading={"We build consumer brands. Three ways to engage."}
-                desc={"Built for founders who need capital, influence, execution, or all three at once."}
-            />
-            <div className="container">
+                        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                            {engagementData.map((item, index) => {
+                                const Icon = item.icon;
 
-                <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
-                    {engagementData.map((item, index) => {
-                        const Icon = item.icon;
-
-                        return (
-                            <div
-                                key={index}
-                                className=" card group translate-y-10 opacity-0   relative flex h-full flex-col justify-between overflow-hidden rounded-xs border border-black/50  p-5"
-                            >
-                                <div className=" items-stretch">
-                                    <div className="relative z-10 flex justify-between">
-                                        <h3 className="md:font-semibold">
-                                            {item.number}
-                                        </h3>
-
-                                        <div className="">
-                                            <Image width={40} height={40} src={item.icon} alt="icon" />
+                                return (
+                                    <div
+                                        key={index}
+                                        className={`do_card_${index} group translate-y-10 aspect-4/3  relative  grid grid-cols-3 rounded-lg  overflow-hidden  border border-black/50  p-5`}
+                                    >
+                                        <div className=" col-span-1 w-full relative z-10 flex justify-between">
+                                            <h2 className="md:font-semibold leading-none  ">
+                                                {item.number}
+                                            </h2>
                                         </div>
-                                    </div>
-                                    <div className=" items-stretch">
-                                        <h6>{item.sub}</h6>
-                                        <h4 className="mt-2 h-16 leading-none">
-                                            {item.title}
-                                        </h4>
-                                        <p className=" mt-5  leading-tight opacity-80">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                </div>
+                                        <div className=" col-span-2 flex flex-col justify-between ">
+                                            <h4 className=" leading-none">
+                                                {item.title}
+                                            </h4>
+                                            <p className=" leading-tight opacity-80">
+                                                {item.desc}
+                                            </p>
+                                        </div>
 
-                                <div className="mt-3 flex flex-wrap gap-1">
-                                    {item.tags.map((tag, i) => (
-                                        <span
-                                            key={i}
-                                            className="px-2 py-1 text-xs uppercase  aeonik bg-[#000063] text-white"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        );
-                    })}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

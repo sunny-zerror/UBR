@@ -1,5 +1,6 @@
 import SectionHero from '@/components/common/SectionHero'
 import { WorksList } from '@/components/work/WorksList'
+import { createPageMetadata } from '@/lib/seo'
 import React from 'react'
 
 const page = () => {
@@ -16,3 +17,7 @@ const page = () => {
 }
 
 export default page
+
+export async function generateMetadata() {
+  return createPageMetadata("/work");
+}

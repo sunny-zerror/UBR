@@ -10,8 +10,8 @@ const CapitalAdvisory = () => {
                 heading="Capital, on tap."
                 desc="Ex-bankers with deep relationships across VCs, family offices and angel syndicates in India, the GCC and the USA. The fundraise track is theirs to run."
             />
-            <div className="container text-black grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="   border border-black/10 items-stretch gap-x-5 rounded-xl flex p-4  md:p-8">
+            <div className="container  grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="   border border-white/50 items-stretch gap-x-5 rounded-xl flex p-4  md:p-8">
                     <div className="rounded-lg aspect-3/4 w-[35%]   overflow-hidden">
                         <div data-clip-effect className="w-full relative   h-full">
                             <Image fill className='cover' src="/images/team/akshi.png" alt="img" />
@@ -25,7 +25,7 @@ const CapitalAdvisory = () => {
                         <p className='leading-tight text-sm md:text-lg  '>A Chartered Accountant and ex-banker with strong investor relationships and 25+ successfully closed fundraise mandates for early-stage D2C brands, tech companies and B2B SaaS, across VCs, family offices and angel syndicates.</p>
                     </div>
                 </div>
-                <div className="  border  border-black/10 items-stretch gap-x-5 rounded-xl flex p-4  md:p-8">
+                <div className="  border  border-white/50 items-stretch gap-x-5 rounded-xl flex p-4  md:p-8">
                     <div className="rounded-lg aspect-3/4 w-[35%]   overflow-hidden">
                         <div data-clip-effect className="w-full relative  h-full">
                             <Image fill className='cover' src="/images/team/ankur.png" alt="img" />

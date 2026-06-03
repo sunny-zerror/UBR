@@ -5,6 +5,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import { useGSAP } from '@gsap/react'
 import CoFounders from './CoFounder'
+import CapitalAdvisory from './CapitalAdvisory'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const TeamHero = () => {
@@ -70,7 +71,7 @@ const TeamHero = () => {
         </div>
       </div>
              <CoFounders/>
-     
+     <CapitalAdvisory/>
     </div>
    </>
   )

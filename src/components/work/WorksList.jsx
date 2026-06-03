@@ -6,6 +6,7 @@ import Marquee from "react-fast-marquee";
 import { Link } from "next-view-transitions";
 import { WorkData } from "@/store/WorkData";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
 
 export const WorksList = () => {
     const marqueeRef = useRef(null);
@@ -74,6 +75,29 @@ export const WorksList = () => {
         });
     };
 
+    const container = useRef(null);
+
+    useGSAP(
+        () => {
+            gsap.utils.toArray(".proj_img").forEach((img) => {
+                gsap.fromTo(
+                    img,
+                    { y: -200 },
+                    {
+                        y: 200,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: img.parentElement,
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: true,
+                        },
+                    }
+                );
+            });
+        },
+        { scope: container }
+    );
     return (
         <>
             <div
@@ -87,53 +111,20 @@ export const WorksList = () => {
                 </Marquee>
             </div>
 
-            <div className="container pt-12 md:pt-24 space-y-10 md:space-y-20">
+            <div ref={container} className=" pt-12 md:pt-24">
                 {WorkData.map((item, i) => (
                     <Link
-                        href={`/work/${item.slug}`}
-                        key={i}
                         onMouseEnter={(e) => handleMouseEnter(e, item.title)}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
-                        className="border-b pb-10 md:pb-20 border-black/50 last:border-none w-full items-stretch flex flex-col-reverse md:grid grid-cols-5 gap-x-10"
-                    >
-                        <div className=" max-sm:mt-2 col-span-2 flex flex-col justify-between">
-                            <div>
-                                <h6 className="opacity-80">{item.category}</h6>
+                        href={`/work/${item.slug}`} key={i} className={`proj_paren w-full rounded-xl aspect-video center text-white relative overflow-hidden ${item.classname}`}>
 
-                                <h3
-                                    data-para-effect
-                                    className="md:font-semibold capitalize leading-tight md:leading-15!"
-                                >
-                                    {item.title}
-                                </h3>
-                            </div>
-
-                            <div className="space-y-4">
-                                <p className="leading-tight md:text-lg opacity-80 md:w-[80%]">
-                                    {item.description}
-                                </p>
-
-                                <div className="relative flex flex-wrap gap-2">
-                                    {item.services.map((tag, i) => (
-                                        <div
-                                            key={i}
-                                            className="font-medium px-4 py-2 bg-[#000063] text-white"
-                                        >
-                                            <p className="text-xs aeonik uppercase">{tag}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            className={`col-span-3 overflow-hidden aspect-video center ${item.classname}`}
+                        <Image fill src={item.image} className={` proj_img cover scale-50`} alt="" />
+                        <h3
+                            className="md:font-semibold mix-blend-difference  absolute z-10 uppercase text-center"
                         >
-                            <div data-img-effect className="w-full relative  h-full center">
-                                <Image fill src={item.image} alt="img" className=" object-contain max-sm:scale-50" />
-                            </div>
-                        </div>
+                            {item.title}
+                        </h3>
                     </Link>
                 ))}
             </div>

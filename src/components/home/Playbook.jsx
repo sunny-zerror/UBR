@@ -80,7 +80,7 @@ const Playbook = () => {
 
     return (
         <>
-            <div className="w-full border-b night_bg text-white ">
+            <div className="w-full border-b border-t ">
                 <div className=" py-12 md:py-24  w-full space-y-5 md:space-y-16">
 
                     <SectionHeading
@@ -99,7 +99,7 @@ const Playbook = () => {
                                 {pillarsData.map((item, index) => (
                                     <div
                                         key={item.id}
-                                        className={` size-56 md:size-64 absolute border border-[#FFFFFF] rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-20"
+                                        className={` size-56 md:size-64 absolute border border-[#000063] rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-20"
                                             }`}
                                         style={{
                                             transform: `translateX(${(index - 2) * 3}rem)`,
@@ -114,20 +114,20 @@ const Playbook = () => {
                                             setOpenId((prev) => (prev === item.id ? null : item.id))
                                         }
                                         key={item.id}
-                                        className={`border-b cursor-pointer group border-[#FFFFFF50] transition-all duration-300  `}>
+                                        className={`border-b cursor-pointer group border-[#00000050] transition-all duration-300  `}>
                                         <div className="  mb-2 mt-8 flex w-full justify-between items-center">
                                             <div className="">
                                                 <h4 data-para-effect className="">{item.title}</h4>
                                                 <p className=" text-xs aeonik uppercase opacity-80">{item.metric}</p>
                                             </div>
-                                            <div className={`size-10 center rounded-full border border-[#FFFFFF] group-hover:bg-[#FFFFFF] group-hover:text-black ${openId === item.id ? "rotate-180 bg-[#FFFFFF] text-black " : ""}  transition-all duration-300`}>
+                                            <div className={`size-10 center rounded-full border border-[#000063] group-hover:bg-[#000063] group-hover:text-white ${openId === item.id ? "rotate-180 bg-[#000063] text-white " : ""}  transition-all duration-300`}>
                                                 <RiArrowDownLine />
                                             </div>
                                         </div>
                                         <div className={`h-0 pl-5 ${openId === item.id ? "h-42 opacity-100 pt-5" : "h-0 opacity-0 pt-0"} transition-all duration-300 overflow-hidden capitalize space-y-2`}>
                                             {item.items.map((subItem, i) => (
                                                 <div key={i} className="flex items-center gap-x-2">
-                                                    <div className="size-1.75 bg-[#FFFFFF]"></div>
+                                                    <div className="size-1.75 bg-[#000000]"></div>
                                                     <p key={subItem}> {subItem}</p>
                                                 </div>
                                             ))}

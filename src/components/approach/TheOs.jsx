@@ -70,10 +70,10 @@ const TheOs = () => {
       const viewportWidth = window.innerWidth;
 
 
-  const extraOffset = window.innerWidth >= 768 ? 96 : 15;
+      const extraOffset = window.innerWidth >= 768 ? 96 : 15;
 
-  const maxTranslate =
-    totalWidth - viewportWidth + extraOffset;
+      const maxTranslate =
+        totalWidth - viewportWidth + extraOffset;
 
       gsap.to(slider, {
         x: -maxTranslate,
@@ -98,14 +98,16 @@ const TheOs = () => {
   });
 
   return (
-    <div className="w-full  pt-12 md:pt-24 ">
-      <SectionHeading
-        btnText="The OS"
-        heading="A phase-gated journey from vision to velocity."
-        desc="Five phases. Clear outputs. We don’t just advise, we co-create." />
+    <div ref={containerRef} className=" w-full  h-[300vh]">
+      <div className="sticky top-0 w-full  h-screen flex flex-col justify-between py-12 md:py-24">
+        <div className="">
+          <SectionHeading
+            btnText="The OS"
+            heading="A phase-gated journey from vision to velocity."
+            desc="Five phases. Clear outputs. We don’t just advise, we co-create." />
+        </div>
 
-      <div ref={containerRef} className=" w-full h-[300vh]">
-        <div className=" w-screen sticky top-0 h-screen flex flex-col gap-y-16 justify-center overflow-hidden">
+        <div className="">
           <div
             ref={sliderRef}
             className="slider flex gap-x-5  px-4 md:px-24"
@@ -113,22 +115,20 @@ const TheOs = () => {
             {processData.map((item, i) => (
               <div
                 key={i}
-                className=" w-[95vw] md:w-[40vw] lg:w-[30vw] aspect-[3/4] text-white relative  shrink-0 "
+                className=" w-[95vw] md:w-[40vw] lg:w-[30vw] relative  shrink-0 "
               >
 
-                <div className="w-full h-full relative overflow-hidden">
+                <div className="w-full  relative aspect-4/3 rounded-xl overflow-hidden">
                   <Image
                     fill
                     src={item.img}
-                    className="object-cover"
+                    className="cover"
                     alt="img"
                   />
                 </div>
-                <div className="absolute w-full h-full bg-linear-to-b from-transparent from-65% to-100% to-[#000713] inset-0"></div>
-                <div className=' absolute p-8 space-y-5  bottom-0 left-0 w-full'>
+                <div className='space-y-5 w-full'>
                   <h4 className='leading-none mt-5 mb-1'>{item.title}</h4>
-                  <div className="w-24 h-1 rounded-full bg-[#ffffff]"></div>
-                  <p className=" opacity-80 leading-tight">
+                  <p className=" opacity-80 leading-tight w-[80%]">
                     {item.description}
                   </p>
                 </div>
