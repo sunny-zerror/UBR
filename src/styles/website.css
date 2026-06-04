@@ -53,6 +53,14 @@
     #f8fafd 100%
   );
 }
+.night_bg_vc {
+  background: radial-gradient(
+    102.82% 106.44% at 50% 106.44%,
+    #0000fe 60%,
+    #0000b3 80%,
+    #000066 100%
+  );
+}
 .night_bg {
   background: radial-gradient(
     102.82% 106.44% at 50% 106.44%,

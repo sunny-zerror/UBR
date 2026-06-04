@@ -140,7 +140,7 @@ const Footer = () => {
             <div className=" box_left w-full h-1/2 "></div>
           </div>
           <div className="absolute top-0 w-[calc(50%-30vw)] md:w-[calc(50%-12.5vw)] h-[60vw] md:h-[25vw] right-0 bg-[#FFFFFF]"></div>
-          <div className=" sticky_box aspect-square relative left-1/2 -translate-x-1/2 h-[60vw] md:h-[25vw] w-[60vw] md:w-[25vw] bg-[#FFFFFF]">
+          <div className="group hover:bg-[#000063] hover:text-white sticky_box aspect-square relative left-1/2 -translate-x-1/2 h-[60vw] md:h-[25vw] w-[60vw] md:w-[25vw] bg-[#FFFFFF] transition-colors duration-300">
             <div className="size-2 aspect-square z-10 bg-black absolute -top-1 -left-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -top-1 -right-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -bottom-1 -right-1 "></div>
@@ -151,8 +151,7 @@ const Footer = () => {
                 <p data-para-effect className='leading-tight md:hidden lg:block opacity-80'>We are looking for our next cohort of partners. Founders, talent, investors and retailers, all welcome.</p>
               </div>
               <div className="w-full flex items-center justify-between">
-                <Link href={"/contact"} className={`group block w-fit  text-[#FFFFFF] uppercase aeonik text-xs px-4 border hover:text-[#000000] border-transparent hover:border-[#000000] py-2.5 leading-none relative overflow-hidden  transition-all duration-300 `}>
-                  <span className='absolute w-full h-full z-[-1] bg-[#000063]  inset-0 group-hover:-top-full transition-all duration-300'></span>
+                <Link href={"/contact"} className={` hover:underline group-hover:bg-white group-hover:text-[#000063] bg-[#000063] block w-fit  text-[#FFFFFF] uppercase aeonik text-xs px-4 border rounded-sm hover:text-[#000000] border-transparent hover:border-[#000000] py-2.5 leading-none relative overflow-hidden  transition-all duration-300 `}>
                   get in touch
                 </Link>
               </div>
@@ -160,7 +159,7 @@ const Footer = () => {
           </div>
         </div>
       )}
-      <div className=" main_footer -translate-y-px night_bg overflow-hidden w-full  text-[#FFFFFF]  pt-14">
+      <div className=" main_footer -translate-y-px night_bg_vc overflow-hidden w-full  text-[#FFFFFF]  pt-14">
         <div className="container h-[35vh]! grid   md:grid-cols-6">
           <div className="space-y-5 h-full  col-span-3">
             <img className='w-[25%]' src="/logo_white.png" alt="img" />
@@ -224,7 +223,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="container">
-          <div className="w-full  border-t border-white/10 mt-3 py-3">
+          <div className="w-full  border-t border-white/50 mt-3 py-3">
             <p className=' opacity-60 text-xs aeonik'>© 2026 UBR × DISRPTVE</p>
           </div>
         </div>

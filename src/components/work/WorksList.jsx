@@ -111,7 +111,7 @@ export const WorksList = () => {
                 </Marquee>
             </div>
 
-            <div ref={container} className=" pt-12 md:pt-24">
+            <div ref={container} className="">
                 {WorkData.map((item, i) => (
                     <Link
                         onMouseEnter={(e) => handleMouseEnter(e, item.title)}

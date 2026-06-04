@@ -56,7 +56,7 @@ const WhoWePartner = () => {
       <div className="container md:pt-16">
 
         {audiencesData.map((item, index) => (
-          <div key={index} className=" group border-b pt-10 border-black/30 w-full grid grid-cols-6">
+          <div key={index} className=" group border-b pt-10 last:border-none border-black/30 w-full grid grid-cols-6">
             <div className="col-span-2 space-y-5">
               <h6>{item.id} </h6>
               <h6> {item.group}</h6>

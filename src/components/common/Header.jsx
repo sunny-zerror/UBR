@@ -70,6 +70,11 @@ const Header = () => {
       backgroundColor: "#000000",
       duration: .6,
     }, 0);
+    tl.to('.btn_paren', {
+      backgroundColor: "transparent",
+      color:"white",
+      duration: .6,
+    }, 0);
   })
 
 
@@ -163,7 +168,10 @@ const Header = () => {
         </div>
         <div className="md:w-[25%] flex items-center justify-end">
           <Link href={"/contact"} onClick={() => setOpen(false)}>
-            <Button text={"Get in Touch"} />
+            <button className={` btn_paren aeonik whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  bg-white  px-2 md:px-4 border hover:text-[#000000]! border-transparent hover:border-[#000000] hover:bg-[#FFFFFF] py-2 md:py-2.5 relative overflow-hidden rounded-md  transition-border duration-300 `}>
+              <span className='  absolute w-full h-full z-[-1] bg-[#000063]  inset-0 group-hover:-top-full transition-all duration-300'></span>
+              Get in Touch
+            </button>
           </Link>
           <div className={` md:hidden navLink  w-fit  text-sm uppercase aeonik  group cursor-pointer text-white`}>
             <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} size={25} />

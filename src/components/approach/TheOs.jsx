@@ -127,8 +127,8 @@ const TheOs = () => {
                   />
                 </div>
                 <div className='space-y-5 w-full'>
-                  <h4 className='leading-none mt-5 mb-1'>{item.title}</h4>
-                  <p className=" opacity-80 leading-tight w-[80%]">
+                  <h4 className='leading-none font-semibold mt-5 mb-2'>{item.title}</h4>
+                  <p className=" opacity-60 leading-tight w-[80%]">
                     {item.description}
                   </p>
                 </div>

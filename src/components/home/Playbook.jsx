@@ -80,7 +80,7 @@ const Playbook = () => {
 
     return (
         <>
-            <div className="w-full border-b border-t ">
+            <div className="w-full  border-t ">
                 <div className=" py-12 md:py-24  w-full space-y-5 md:space-y-16">
 
                     <SectionHeading

@@ -199,7 +199,7 @@ const WorkDetail = () => {
           </p>
         </Marquee>
       </div>
-      <div className=" content_box w-full relative overflow-hidden text-white night_bg ">
+      <div className=" content_box w-full relative overflow-hidden text-white night_bg_vc ">
         <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
           <div className="space-y-5 w-full  relative z-10 ">
             <h1 className=' heading_split md:w-[80%] leading-none capitalize'>{work.title}</h1>
@@ -263,8 +263,8 @@ const WorkDetail = () => {
               onMouseEnter={(e) => handleMouseEnter(e, item.title)}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
-              <div className={`w-full center aspect-4/3 overflow-hidden rounded-xs  ${item.classname}`}>
+              key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer ">
+              <div className={`w-full center aspect-4/3 overflow-hidden rounded-md  ${item.classname}`}>
                 <div data-img-effect className="w-full h-full center">
                   <img className=' max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
                 </div>

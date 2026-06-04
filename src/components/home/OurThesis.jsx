@@ -58,7 +58,7 @@ const OurThesis = () => {
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className=' night_bg text-white w-full h-[300vh] relative'>
+        <div ref={containerRef} className=' border-b border-white/50  text-white w-full h-[300vh] relative'>
             <div className="container h-screen sticky! overflow-hidden top-0 md:flex ">
                 {/* <img className=' absolute inset-0 cover opacity-50  object-top' src="https://images.stripeassets.com/fzn2n1nzq965/5dQAw5oJf3TOO1Jt6IKDRH/f391594c11f38d821259acdd3412a7a6/platform-graphic-background_2x.png?w=2460&fm=webp&q=90" alt="img" /> */}
                 <div className=" w-full md:w-1/2 h-[50vh] md:h-screen flex flex-col gap-y-5 md:gap-y-20 justify-center">

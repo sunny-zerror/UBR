@@ -11,6 +11,7 @@ const statsData = [
         value: "$4.3",
         suffix: "T",
         title: "Consumer market by 2030",
+        img: "/images/home/scroll_img/img1.webp",
         description:
             "India's spending becomes the world's second largest, expanding 46% from 2024.",
     },
@@ -18,6 +19,7 @@ const statsData = [
         value: "$600",
         suffix: "B",
         title: "Brand unlock",
+        img: "/images/home/scroll_img/img2.webp",
         description:
             "Structural shift from unbranded retail creates white space for new players.",
     },
@@ -25,6 +27,7 @@ const statsData = [
         value: "28",
         suffix: "",
         title: "Median age",
+        img: "/images/home/scroll_img/img3.webp",
         description:
             "Versus 39 in China. A young, aspirational population drives global consumption.",
     },
@@ -32,6 +35,7 @@ const statsData = [
         value: "3",
         suffix: "X",
         title: "E-commerce users by 2030",
+        img: "/images/home/scroll_img/img4.webp",
         description:
             "Online shoppers more than triple, building a vast accessible marketplace.",
     },
@@ -39,28 +43,114 @@ const statsData = [
         value: "$350",
         suffix: "B",
         title: "Digital GMV by 2030",
+        img: "/images/home/scroll_img/img5.webp",
         description:
             "Reaches the same scale as Brazil's full retail sector today.",
     },
 ];
+
 const MacroPicture = () => {
 
-     const containerRef = useRef();
+    const cardRef = useRef();
+    const imageRefs = useRef([]);
+    const containerRef = useRef();
 
     useGSAP(() => {
-        const tl = gsap.timeline({
+        const card = cardRef.current;
+
+        const maxRotate = 8;
+
+        const handleMove = (e) => {
+            const rect = card.getBoundingClientRect();
+
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+
+            const rotateY = -6 + (x - 0.5) * maxRotate;
+            const rotateX = 15 - (y - 0.5) * maxRotate;
+
+            gsap.to(card, {
+                rotateX,
+                rotateY,
+                duration: 0.6,
+                ease: "power3.out",
+            });
+
+            gsap.to(imageRefs.current, {
+                x: (x - 0.5),
+                y: (y - 0.5),
+                duration: 0.8,
+                ease: "power3.out",
+            });
+        };
+
+        const handleLeave = () => {
+            gsap.to(card, {
+                rotateX: 15,
+                rotateY: -6,
+                duration: 1,
+                ease: "elastic.out(1,0.4)",
+            });
+
+            gsap.to(imageRefs.current, {
+                x: 0,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+            });
+        };
+
+        containerRef.current.addEventListener("mousemove", handleMove);
+        containerRef.current.addEventListener("mouseleave", handleLeave);
+
+        return () => {
+            containerRef.current.removeEventListener("mousemove", handleMove);
+            containerRef.current.removeEventListener("mouseleave", handleLeave);
+        };
+    }, { scope: containerRef });
+
+    useGSAP(() => {
+        const total = statsData.length - 1;
+
+        gsap.set(imageRefs.current, {
+            opacity: 0,
+        });
+
+        gsap.set(imageRefs.current[0], {
+            opacity: 1,
+        });
+
+        gsap.to(".anim_y", {
+            yPercent: -80,
+            ease: "none",
+
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top top",
-                end: "bottom bottom",
+                end: `bottom bottom`,
                 scrub: true,
-            },
-        })
-        tl.to(".anim_y", {
-           yPercent:-80,
-           ease:"none"
-        })
 
+                snap: {
+                    snapTo: 1 / total,
+                    duration: 0.4,
+                    ease: "power2.inOut",
+                },
+
+                onUpdate: (self) => {
+                    const index = Math.round(
+                        self.progress * total
+                    );
+
+                    imageRefs.current.forEach((img, i) => {
+                        gsap.to(img, {
+                            opacity: i === index ? 1 : 0,
+                            duration: 0.5,
+                            overwrite: true,
+                        });
+                    });
+                },
+            },
+        });
     }, { scope: containerRef });
 
     return (
@@ -69,7 +159,7 @@ const MacroPicture = () => {
                 <SectionHeading
                     btnText={"The context"}
                     heading={
-                        "India's consumer market is about to double."
+                        <>India's consumer market <br/> is about to double.</>
                     }
                     desc={"The winners will be the brands that built the right operating model before the wave broke."}
                 />
@@ -78,13 +168,13 @@ const MacroPicture = () => {
                 <div className=" sticky top-0 w-full h-screen  center ">
 
                     <div className=" absolute left-1/2 top-1/2 text-center -translate-x-1/2">
-                    <div className="anim_y">
+                        <div className="anim_y">
 
-                        {statsData.map((row, rowIndex) => (
-                            <div key={rowIndex} className="">
-                                <p className=' text-9xl h-56'>{row.value}</p>
-                            </div>
-                        ))}
+                            {statsData.map((row, rowIndex) => (
+                                <div key={rowIndex} className="">
+                                    <p className=' text-9xl h-56'>{row.value}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
@@ -94,7 +184,7 @@ const MacroPicture = () => {
                                 <div className="anim_y">
                                     {statsData.map((row, rowIndex) => (
                                         <div key={rowIndex} className=" h-28 center">
-                                            <h3 className=' leading-none'>{row.title}</h3>
+                                            <h3 className=' leading-none capitalize font-semibold'>{row.title}</h3>
                                         </div>
                                     ))}
                                 </div>
@@ -102,8 +192,23 @@ const MacroPicture = () => {
                         </div>
                         <div className=" col-span-4 relative  ">
                             <div className="perspective-[40rem] transform-3d">
-                                <div className="w-full aspect-4/3 rotate-x-15 -rotate-y-6 transform-3d center  rounded-xl overflow-hidden">
-                                    <img src="/images/footer/img1.jpeg" className='cover' alt="" />
+                                <div
+                                    ref={cardRef}
+                                    className="w-full aspect-4/3 transform-3d rounded-xl overflow-hidden relative"
+                                    style={{
+                                        transform:
+                                            "rotateX(15deg) rotateY(-6deg)",
+                                    }}
+                                >
+                                    {statsData.map((item, i) => (
+                                        <img
+                                            key={i}
+                                            ref={(el) => (imageRefs.current[i] = el)}
+                                            src={item.img}
+                                            alt=""
+                                            className="absolute inset-0 w-full h-full object-cover will-change-transform"
+                                        />
+                                    ))}
                                 </div>
                             </div>
 
@@ -124,7 +229,7 @@ const MacroPicture = () => {
                                 <div className="anim_y">
                                     {statsData.map((row, rowIndex) => (
                                         <div key={rowIndex} className=" h-16 center w-[80%] mx-auto">
-                                            <p className=' text-lg leading-none'>{row.description}</p>
+                                            <p className=' text-lg leading-none opacity-80'>{row.description}</p>
                                         </div>
                                     ))}
                                 </div>

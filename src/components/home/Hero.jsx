@@ -5,8 +5,8 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
-import ColorBends from './../animation/ColorBends';
 import Image from 'next/image';
+import GradientBlinds from '../animation/GradientBlinds';
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const modelCards = [
@@ -118,12 +118,10 @@ const Hero = () => {
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".hero_section",
+        trigger: ".story_wrapper",
         start: "top top",
-        end:"+=300%",
-        pin: true,
+        end: "bottom bottom",
         scrub: true,
-        pinSpacing: true,
       }
     })
 
@@ -141,53 +139,62 @@ const Hero = () => {
       top: "0%",
       ease: "linear",
     })
-    tl.to(".over_txt", {
-      top: "-100%",
-      ease: "linear",
+    tl.to(".anim_par", {
+      opacity:0,
+      ease: "expo.out",
     })
     tl.to(".card_paren", {
       top: "0%",
       ease: "linear",
-    }, "<")
+   }, "<")
     tl.from(".card_1", {
-      opacity:0,
+      opacity: 0,
       transform: "translateY(105%)",
       ease: "linear",
     })
   })
 
   return (
-    <div className=" hero_section w-full h-screen perspective-distant center  overflow-hidden text-white content_box relative ">
-      <div className="absolute inset-0 z-[-1] hero_bg night_bg  opacity-0">
-        <ColorBends
-          colors={["#ffffff", "#ffffff", "#ffffff", "#ffffff"]}
-          rotation={180}
-          speed={0.2}
-          scale={1}
-          frequency={1.5}
-          warpStrength={1}
-          mouseInfluence={1}
-          noise={0}
-          parallax={0.5}
-          iterations={1}
-          intensity={1.5}
-          bandWidth={6}
-          transparent
-          autoRotate={0}
+    <div className='story_wrapper relative h-[500vh]'>
+    <div className=" sticky top-0   hero_section w-full h-screen perspective-[30rem] center  overflow-hidden text-white content_box ">
+
+      <div className="absolute inset-0 z-[-1] hero_bg night_bg_vc  opacity-0">
+        <GradientBlinds
+          gradientColors={['#FD0816', '#5227FF']}
+          angle={0}
+          noise={0.1}
+          blindCount={25}
+          blindMinWidth={60}
+          spotlightRadius={0.8}
+          spotlightSoftness={1}
+          spotlightOpacity={0.5}
+          mouseDampening={0.5}
+          distortAmount={0}
+          shineDirection="right"
+          // mixBlendMode="darken"
+          color1="#FD0816"
+          color2="#5227FF"
         />
       </div>
 
-      <div
-        className="video_section opacity-0 rotate-x-20 w-[30vw] h-[20vw]  absolute  z-[-1] rounded-xl overflow-hidden"
-        style={{
-          transformStyle: "preserve-3d",
-        }}
-      >
+      <div className="video_section opacity-0 rotate-x-20 w-[30vw] h-[20vw] transform-3d  absolute  z-[-1] rounded-xl overflow-hidden">
         <video src="https://cdn.sanity.io/files/5uq66tk5/production/4fee2d6b505315287e75383bb655905060cdcb06.mp4" loop autoPlay muted playsInline className='cover'></video>
       </div>
 
-      <div className=" top-full absolute w-full h-full text-center center  over_txt bg-[#000063]">
-        <h1 className=' font-semibold  leading-tight  text-white'>Together, UBR × DISRPTVE is a venture builder that installs the operating model behind profitable scaling, whether you are launching a new brand or reigniting an established one.</h1>
+      <div className="top-full absolute w-full h-full center over_txt night_bg_vc">
+        <p
+          className="anim_par text-[4rem] font-semibold  w-[80%] text-center  leading-tight  text-transparent  bg-clip-text  bg-center  bg-cover  "
+          style={{
+            backgroundImage:
+              "url('/videos/hero_v.gif')",
+               WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+          }}
+        >
+          Together, UBR × DISRPTVE is a venture builder that installs the operating
+          model behind profitable scaling, whether you are launching a new brand or
+          reigniting an established one.
+        </p>
       </div>
 
       <div className=' hero_content container h-screen flex items-end pb-10  md:pb-16'>
@@ -201,7 +208,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className=" card_paren top-full absolute w-full h-full inset-0 bg-[#000063]">
+      <div className=" card_paren top-full absolute w-full h-full inset-0 ">
         <div className="w-full container flex h-full items-center overflow-hidden">
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
@@ -253,6 +260,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }

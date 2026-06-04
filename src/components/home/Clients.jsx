@@ -2,6 +2,7 @@
 import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react'
 import SectionHeading from '../common/SectionHeading';
+import { Link } from 'next-view-transitions';
 
 const Clients = () => {
 
@@ -38,9 +39,6 @@ const Clients = () => {
     },
     {
       icon: "/images/clients/19_Ellementry.png"
-    },
-    {
-      icon: "/images/clients/20_Dalhousie.png"
     },
   ]
 
@@ -95,13 +93,18 @@ const Clients = () => {
                     src={item.icon}
                     alt="logo"
                   />
-                  {/* <img
-                    className="client-img absolute invert-100 w-full h-full object-cover opacity-0 "
-                    src="/images/clients/clientsBg.jpg"
-                    alt="logo" 
-                  /> */}
                 </div>
               ))}
+              <Link href="/contact" className="w-full h-full bg-[#000063] p-5 hover:scale-90 tranition-transform duration-300 flex flex-col justify-between text-white">
+                  <p className="uppercase text-xs  opacity-70">
+      Join the list
+    </p>
+    <h5 className="  leading-none">
+      Ready to become our next success story?
+    </h5>
+
+              </Link>
+              
           </div>
         </div>
       </div>
