@@ -95,16 +95,16 @@ const Clients = () => {
                   />
                 </div>
               ))}
-              <Link href="/contact" className="w-full h-full bg-[#000063] p-5 hover:scale-90 tranition-transform duration-300 flex flex-col justify-between text-white">
-                  <p className="uppercase text-xs  opacity-70">
-      Join the list
-    </p>
-    <h5 className="  leading-none">
-      Ready to become our next success story?
-    </h5>
+            <Link href="/contact" className="w-full h-full bg-[#0a369d] p-5 hover:scale-90 tranition-transform duration-300 flex flex-col justify-between text-white">
+              <p className="uppercase text-xs  opacity-70">
+                Join the list
+              </p>
+              <h5 className="  leading-none">
+                Ready to become our next success story?
+              </h5>
 
-              </Link>
-              
+            </Link>
+
           </div>
         </div>
       </div>

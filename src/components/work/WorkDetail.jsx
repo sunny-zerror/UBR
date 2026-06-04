@@ -191,7 +191,7 @@ const WorkDetail = () => {
     <>
       <div
         ref={marqueeRef}
-        className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#000063] px-0 py-1 will-change-transform overflow-hidden"
+        className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#0a369d] px-0 py-1 will-change-transform overflow-hidden"
       >
         <Marquee speed={40}>
           <p className="mr-1 whitespace-nowrap">
@@ -199,7 +199,7 @@ const WorkDetail = () => {
           </p>
         </Marquee>
       </div>
-      <div className=" content_box w-full relative overflow-hidden text-white night_bg_vc ">
+      <div className=" content_box w-full relative overflow-hidden text-white bg-[#0a369d]  ">
         <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
           <div className="space-y-5 w-full  relative z-10 ">
             <h1 className=' heading_split md:w-[80%] leading-none capitalize'>{work.title}</h1>
@@ -232,7 +232,7 @@ const WorkDetail = () => {
             </div>
             <div className='flex flex-wrap gap-2'>
               {work.services.map((tag, i) => (
-                <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-[#000063] text-white w-fit]">
+                <div key={i} className="rounded-sm font-medium  px-4 py-2 bg-[#0a369d] text-white w-fit]">
                   <p className=" text-xs aeonik uppercase">
                     {tag}
                   </p>

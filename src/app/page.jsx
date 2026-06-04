@@ -9,14 +9,14 @@ import { createPageMetadata } from "@/lib/seo";
 const HomePage = () => {
   return (
     <>
-    <Hero />
-    <MacroPicture/>
-    <div className="night_bg">
-    <OurThesis/>
-    <WhatWeDo/>
-    </div>
-    <SelectedWork/>
-    <Clients/>
+      <Hero />
+      <MacroPicture />
+      <div className="bg-[#0a369d] ">
+        <OurThesis />
+        <WhatWeDo />
+      </div>
+      <SelectedWork />
+      <Clients />
     </>
   );
 };

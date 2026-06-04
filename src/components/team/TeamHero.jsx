@@ -60,20 +60,20 @@ const TeamHero = () => {
 
   });
   return (
-   <>
-   <div className=" content_box w-full night_bg text-white">
-      <div className=" content_box w-full relative overflow-hidden ">
-        <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
-          <div className="space-y-5 w-full  relative z-10 ">
-            <h1 className=' heading_split md:w-[80%] leading-none capitalize'>An operating system for profitable scale.</h1>
-            <p className=' paragraph_split md:w-[45%] leading-tight'>In India's complex market, long-term value isn't created by venture capital alone. It is created by venture building. Five convictions, five phases, five pillars.</p>
+    <>
+      <div className=" content_box w-full bg-[#0a369d]  text-white">
+        <div className=" content_box w-full relative overflow-hidden ">
+          <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
+            <div className="space-y-5 w-full  relative z-10 ">
+              <h1 className=' heading_split md:w-[80%] leading-none capitalize'>An operating system for profitable scale.</h1>
+              <p className=' paragraph_split md:w-[45%] leading-tight'>In India's complex market, long-term value isn't created by venture capital alone. It is created by venture building. Five convictions, five phases, five pillars.</p>
+            </div>
           </div>
         </div>
+        <CoFounders />
+        <CapitalAdvisory />
       </div>
-             <CoFounders/>
-     <CapitalAdvisory/>
-    </div>
-   </>
+    </>
   )
 }
 

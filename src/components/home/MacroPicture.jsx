@@ -161,7 +161,7 @@ const MacroPicture = () => {
                     heading={
                         <>India's consumer market <br/> is about to double.</>
                     }
-                    desc={"The winners will be the brands that built the right operating model before the wave broke."}
+                    desc={"The doubling market will not save the current playbook. CAC is broken, margins are leaking, 90% of new D2C brands fail in year one. The winners will be the brands that find a different model before the wave breaks."}
                 />
             </div>
             <div ref={containerRef} className=' container w-full  relative h-[250vh]! '>

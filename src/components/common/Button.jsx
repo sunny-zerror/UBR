@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Button = ({ text, className , ...props }) => {
+const Button = ({ text, className, ...props }) => {
   return (
     <>
-      <button {...props} className={`aeonik whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  text-[#FFFFFF]  px-2 md:px-4 border hover:text-[#000000] border-transparent hover:border-[#000000] hover:bg-[#FFFFFF] py-2 md:py-2.5 relative overflow-hidden  transition-all duration-300 ${className}`}>
-        <span className='  absolute w-full h-full z-[-1] bg-[#000063]  inset-0 group-hover:-top-full transition-all duration-300'></span>
+      <button {...props} className={`aeonik whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  text-[#FFFFFF]  px-2 md:px-4 border hover:text-[#000000] border-transparent hover:border-[#000000] hover:bg-[#FFFFFF] py-2 md:py-2.5 relative overflow-hidden rounded-md  transition-all duration-300 ${className}`}>
+        <span className='  absolute w-full h-full z-[-1] bg-[#0a369d]  inset-0 group-hover:-top-full transition-all duration-300'></span>
         {text}
       </button>
     </>

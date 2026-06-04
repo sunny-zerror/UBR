@@ -69,24 +69,24 @@ const SectionHero = ({ btnText, heading, desc }) => {
     })
     return (
         <div className=" content_box w-full relative overflow-hidden text-white ">
-              <div className="absolute inset-0 z-[-1] hero_bg night_bg_vc  opacity-0">
-        <GradientBlinds
-          gradientColors={['#FD0816', '#5227FF']}
-          angle={0}
-          noise={0.1}
-          blindCount={25}
-          blindMinWidth={60}
-          spotlightRadius={0.8}
-          spotlightSoftness={1}
-          spotlightOpacity={0.5}
-          mouseDampening={0.5}
-          distortAmount={0}
-          shineDirection="right"
-          // mixBlendMode="darken"
-          color1="#FD0816"
-          color2="#5227FF"
-        />
-      </div>
+            <div className="absolute inset-0 z-[-1] hero_bg bg-[#0a369d]   opacity-0">
+                <GradientBlinds
+                    gradientColors={['#FD0816', '#0a369d']}
+                    angle={0}
+                    noise={0.1}
+                    blindCount={25}
+                    blindMinWidth={60}
+                    spotlightRadius={0.8}
+                    spotlightSoftness={1}
+                    spotlightOpacity={0.5}
+                    mouseDampening={0.5}
+                    distortAmount={0}
+                    shineDirection="right"
+                    // mixBlendMode="darken"
+                    color1="#FD0816"
+                    color2="#0a369d"
+                />
+            </div>
             <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
                 <div className="space-y-5 w-full  relative z-10 ">
                     <h1 className=' heading_split md:w-[80%] leading-none capitalize'>{heading}</h1>

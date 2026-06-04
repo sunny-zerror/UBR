@@ -99,7 +99,7 @@ const Playbook = () => {
                                 {pillarsData.map((item, index) => (
                                     <div
                                         key={item.id}
-                                        className={` size-56 md:size-64 absolute border border-[#000063] rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-20"
+                                        className={` size-56 md:size-64 absolute border border-[#0a369d] rounded-full center transition-opacity duration-300 ${openId === item.id ? "opacity-100" : "opacity-20"
                                             }`}
                                         style={{
                                             transform: `translateX(${(index - 2) * 3}rem)`,
@@ -120,7 +120,7 @@ const Playbook = () => {
                                                 <h4 data-para-effect className="">{item.title}</h4>
                                                 <p className=" text-xs aeonik uppercase opacity-80">{item.metric}</p>
                                             </div>
-                                            <div className={`size-10 center rounded-full border border-[#000063] group-hover:bg-[#000063] group-hover:text-white ${openId === item.id ? "rotate-180 bg-[#000063] text-white " : ""}  transition-all duration-300`}>
+                                            <div className={`size-10 center rounded-full border border-[#0a369d] group-hover:bg-[#0a369d] group-hover:text-white ${openId === item.id ? "rotate-180 bg-[#0a369d] text-white " : ""}  transition-all duration-300`}>
                                                 <RiArrowDownLine />
                                             </div>
                                         </div>

@@ -187,7 +187,7 @@ const ContactForm = () => {
                                     key={index}
                                     className=" relative transition-all duration-300  border-b pb-2 md:p-5 flex w-full  justify-between group cursor-pointer border-black/10  hover:text-white  "
                                 >
-                                    <div className="absolute bg-[#473eae] group-hover:h-full w-full z-[-1] left-0 h-0 bottom-0 transition-all duration-300"></div>
+                                    <div className="absolute bg-[#0a369d] group-hover:h-full w-full z-[-1] left-0 h-0 bottom-0 transition-all duration-300"></div>
                                     <div className="space-y-5">
                                         <div className="">
                                             <h6 className="flex items-center gap-2  text-sm uppercase ">
@@ -206,7 +206,7 @@ const ContactForm = () => {
                                             {item.email}
                                         </a>
                                     </div>
-                                    <div className={`size-10 center rounded-full border border-black/10 group-hover:bg-[#ffffff] group-hover:text-[#000063] transition-all duration-300`}>
+                                    <div className={`size-10 center rounded-full border border-black/10 group-hover:bg-[#ffffff] group-hover:text-[#0a369d] transition-all duration-300`}>
                                         <RiArrowDownLine size={18} className='group-hover:-rotate-[135deg] -rotate-90 transition-all duration-300' />
                                     </div>
                                 </div>

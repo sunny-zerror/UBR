@@ -81,8 +81,8 @@ const WhatWeDo = () => {
                 <div className="">
                     <SectionHeading
                         btnText={"what we do"}
-                        heading={<>We build consumer brands. <br/> Three ways to engage.</>}
-                        desc={"Built for founders who need capital, influence, execution, or all three at once."}
+                        heading={<> Three ways to engage.</>}
+                        desc={"Five capabilities, deployed at different depths. Pick what fits where you are. Add more when you're ready."}
                     />
                 </div>
                 <div className="">
