@@ -78,7 +78,7 @@ const SelectedWork = () => {
     };
 
     return (
-        <div className='py-12 md:py-24 space-y-5 md:space-y-16  border-b border-black/50  '>
+        <div className='py-12 md:py-24 space-y-5 md:space-y-16 '>
             <div
                 ref={marqueeRef}
                 className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#0a369d] px-0 py-1 will-change-transform overflow-hidden"

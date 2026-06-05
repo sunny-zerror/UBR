@@ -16,7 +16,6 @@ const HomePage = () => {
         <WhatWeDo />
       </div>
       <SelectedWork />
-      <Clients />
     </>
   );
 };
