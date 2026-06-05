@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import SectionHeading from '../common/SectionHeading';
 import { useGSAP } from '@gsap/react';
+import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 const statsData = [
@@ -11,7 +12,7 @@ const statsData = [
         value: "$4.3",
         suffix: "T",
         title: "Consumer market by 2030",
-        img: "/images/home/scroll_img/img1.webp",
+        img: "/images/home/scroll_img/img1.avif",
         description:
             "India's spending becomes the world's second largest, expanding 46% from 2024.",
     },
@@ -19,7 +20,7 @@ const statsData = [
         value: "$600",
         suffix: "B",
         title: "Brand unlock",
-        img: "/images/home/scroll_img/img2.webp",
+        img: "/images/home/scroll_img/img2.avif",
         description:
             "Structural shift from unbranded retail creates white space for new players.",
     },
@@ -27,7 +28,7 @@ const statsData = [
         value: "28",
         suffix: "",
         title: "Median age",
-        img: "/images/home/scroll_img/img3.webp",
+        img: "/images/home/scroll_img/img3.avif",
         description:
             "Versus 39 in China. A young, aspirational population drives global consumption.",
     },
@@ -35,7 +36,7 @@ const statsData = [
         value: "3",
         suffix: "X",
         title: "E-commerce users by 2030",
-        img: "/images/home/scroll_img/img4.webp",
+        img: "/images/home/scroll_img/img4.avif",
         description:
             "Online shoppers more than triple, building a vast accessible marketplace.",
     },
@@ -43,7 +44,7 @@ const statsData = [
         value: "$350",
         suffix: "B",
         title: "Digital GMV by 2030",
-        img: "/images/home/scroll_img/img5.webp",
+        img: "/images/home/scroll_img/img5.avif",
         description:
             "Reaches the same scale as Brazil's full retail sector today.",
     },
@@ -144,7 +145,7 @@ const MacroPicture = () => {
                     imageRefs.current.forEach((img, i) => {
                         gsap.to(img, {
                             opacity: i === index ? 1 : 0,
-                            duration: 0.5,
+                            duration: 0.2,
                             overwrite: true,
                         });
                     });
@@ -172,7 +173,7 @@ const MacroPicture = () => {
 
                             {statsData.map((row, rowIndex) => (
                                 <div key={rowIndex} className="">
-                                    <p className=' text-9xl h-56'>{row.value}</p>
+                                    <p className=' text-9xl h-56 font-bold'>{row.value}</p>
                                 </div>
                             ))}
                         </div>
@@ -194,18 +195,19 @@ const MacroPicture = () => {
                             <div className="perspective-[40rem] transform-3d">
                                 <div
                                     ref={cardRef}
-                                    className="w-full aspect-4/3 transform-3d rounded-xl overflow-hidden relative"
+                                    className="w-full aspect-4/3 transform-3d rounded-xl overflow-hidden relative bg-[#4688F0]"
                                     style={{
                                         transform:
                                             "rotateX(15deg) rotateY(-6deg)",
                                     }}
                                 >
                                     {statsData.map((item, i) => (
-                                        <img
+                                        <Image
+                                        fill
                                             key={i}
                                             ref={(el) => (imageRefs.current[i] = el)}
                                             src={item.img}
-                                            alt=""
+                                            alt={item.title}
                                             className="absolute inset-0 w-full h-full object-cover will-change-transform"
                                         />
                                     ))}
@@ -217,7 +219,7 @@ const MacroPicture = () => {
                                     <div className="anim_y">
                                         {statsData.map((row, rowIndex) => (
                                             <div key={rowIndex} className=" h-56 center">
-                                                <p className=' text-9xl leading-none'>{row.value}</p>
+                                                <p className=' text-9xl leading-none font-bold'>{row.value}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -229,7 +231,7 @@ const MacroPicture = () => {
                                 <div className="anim_y">
                                     {statsData.map((row, rowIndex) => (
                                         <div key={rowIndex} className=" h-16 center w-[80%] mx-auto">
-                                            <p className=' text-lg leading-none opacity-80'>{row.description}</p>
+                                            <p className=' text-xl leading-none opacity-80'>{row.description}</p>
                                         </div>
                                     ))}
                                 </div>

@@ -101,7 +101,7 @@ const WhoWeAre = () => {
                                             <div className="flex flex-col justify-center items-center gap-5">
                                                 <Image height={40} width={40} src={tag.icon} className='' alt='icon' />
 
-                                                <p className=" max-sm:text-xs aeonik md:md:font-semibold   uppercase">
+                                                <p className=" max-sm:text-xs diagramm md:md:font-semibold   uppercase">
                                                     {tag.label}
                                                 </p>
                                             </div>

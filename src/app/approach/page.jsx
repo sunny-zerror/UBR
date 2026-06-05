@@ -1,5 +1,6 @@
 import ApproachHero from '@/components/approach/ApproachHero'
 import PlaybookDetail from '@/components/approach/PlaybookDetail'
+import TheMindset from '@/components/approach/TheMindset'
 import TheOs from '@/components/approach/TheOs'
 import Playbook from '@/components/home/Playbook'
 import { createPageMetadata } from '@/lib/seo'
@@ -9,6 +10,7 @@ const page = () => {
   return (
     <>
       <ApproachHero />
+      <TheMindset />
       <TheOs />
       <Playbook/>
     </>

@@ -58,7 +58,7 @@ const ContactHero = () => {
   });
 
   return (
-    <div className=' contact_hero w-full   bg-[#0a369d]  text-white'>
+    <div className=' contact_hero w-full   bg-[#4688F0]  text-white'>
       <div className=" container  content_box h-[60vh]! w-full flex items-end pb-5">
         <div className="space-y-5 w-full  relative z-10 ">
           <h1 className=' heading_split md:w-[80%] leading-none capitalize'>Get In Touch</h1>

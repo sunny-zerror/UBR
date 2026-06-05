@@ -102,7 +102,7 @@ export const WorksList = () => {
         <>
             <div
                 ref={marqueeRef}
-                className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#0a369d] px-0 py-1 will-change-transform overflow-hidden"
+                className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase diagramm text-xs bg-[#4688F0] px-0 py-1 will-change-transform overflow-hidden"
             >
                 <Marquee speed={40}>
                     <p className="mr-1 whitespace-nowrap">

@@ -38,7 +38,7 @@ const Header = () => {
 
     gsap.to(".header", {
       opacity: 1,
-      delay: 1
+      delay: 3
     })
 
     const tl = gsap.timeline({
@@ -119,7 +119,7 @@ const Header = () => {
   return (
     <div className='header opacity-0 w-full  z-100 fixed'>
 
-      <div className=" mobile_menu md:hidden center text-center w-full h-screen bg-[#0a369d]  text-white z-[10] fixed -right-full top-0">
+      <div className=" mobile_menu md:hidden center text-center w-full h-screen bg-[#4688F0]  text-white z-[10] fixed -right-full top-0">
         <div className=" gap-y-7 flex flex-col justify-center items-center">
           {navLinks.map((link, i) => {
             return (
@@ -147,7 +147,7 @@ const Header = () => {
               const isActive = pathname === link.href;
 
               return (
-                <div key={i} className={`navLink  w-fit  text-sm uppercase aeonik  group cursor-pointer text-white`}>
+                <div key={i} className={`navLink  w-fit  text-sm uppercase diagramm  group cursor-pointer text-white`}>
                   <Link href={link.href} className="relative  leading-none">
                     {link.label}
 
@@ -168,12 +168,12 @@ const Header = () => {
         </div>
         <div className="md:w-[25%] flex items-center justify-end">
           <Link href={"/contact"} onClick={() => setOpen(false)}>
-            <button className={` btn_paren aeonik whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  bg-white  px-2 md:px-4 border hover:text-[#000000]! border-transparent hover:border-[#000000] hover:bg-[#FFFFFF] py-2 md:py-2.5 relative overflow-hidden rounded-md  transition-border duration-300 `}>
-              <span className='  absolute w-full h-full z-[-1] bg-[#0a369d]  inset-0 group-hover:-top-full transition-all duration-300'></span>
+            <button className={` btn_paren diagramm whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  bg-white  px-2 md:px-4 border hover:text-[#000000]! border-transparent hover:border-[#000000] hover:bg-[#FFFFFF] py-2 md:py-2.5 relative overflow-hidden rounded-md  transition-border duration-300 `}>
+              <span className='  absolute w-full h-full z-[-1] bg-[#4688F0]  inset-0 group-hover:-top-full transition-all duration-300'></span>
               Get in Touch
             </button>
           </Link>
-          <div className={` md:hidden navLink  w-fit  text-sm uppercase aeonik  group cursor-pointer text-white`}>
+          <div className={` md:hidden navLink  w-fit  text-sm uppercase diagramm  group cursor-pointer text-white`}>
             <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} size={25} />
           </div>
         </div>

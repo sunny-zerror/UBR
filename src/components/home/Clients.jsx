@@ -95,7 +95,7 @@ const Clients = () => {
                   />
                 </div>
               ))}
-            <Link href="/contact" className="w-full h-full bg-[#0a369d] p-5 hover:scale-90 tranition-transform duration-300 flex flex-col justify-between text-white">
+            <Link href="/contact" className="w-full h-full bg-[#4688F0] p-5 hover:scale-90 tranition-transform duration-300 flex flex-col justify-between text-white">
               <p className="uppercase text-xs  opacity-70">
                 Join the list
               </p>

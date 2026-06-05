@@ -67,7 +67,7 @@ const WhoWePartner = () => {
                 <p className='  w-full max-sm:mt-2 md:w-[80%] leading-tight text-sm  md:text-lg'>{item.description}</p>
                 <div className="flex gap-x-2 mt-5 leading-none">
                   {item.tags.map((tag, index) => (
-                    <span key={index} className=' px-2 py-1 text-xs leading-none aeonik uppercase border-black border  transition-all duration-300'>{tag}</span>
+                    <span key={index} className=' px-2 py-1 text-xs leading-none diagramm uppercase border-black border  transition-all duration-300'>{tag}</span>
                   ))}
                 </div>
               </div>

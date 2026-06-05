@@ -61,7 +61,7 @@ const TeamHero = () => {
   });
   return (
     <>
-      <div className=" content_box w-full bg-[#0a369d]  text-white">
+      <div className=" content_box w-full bg-[#4688F0]  text-white">
         <div className=" content_box w-full relative overflow-hidden ">
           <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
             <div className="space-y-5 w-full  relative z-10 ">
@@ -70,8 +70,6 @@ const TeamHero = () => {
             </div>
           </div>
         </div>
-        <CoFounders />
-        <CapitalAdvisory />
       </div>
     </>
   )

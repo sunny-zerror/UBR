@@ -11,7 +11,7 @@ const HomePage = () => {
     <>
       <Hero />
       <MacroPicture />
-      <div className="bg-[#0a369d] ">
+      <div className="bg-[#4688F0] ">
         <OurThesis />
         <WhatWeDo />
       </div>

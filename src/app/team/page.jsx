@@ -1,4 +1,5 @@
 import CapitalAdvisory from '@/components/team/CapitalAdvisory'
+import CoFounders from '@/components/team/CoFounder'
 import HowWeWork from '@/components/team/HowWeWork'
 import TeamHero from '@/components/team/TeamHero'
 import WhoWePartner from '@/components/team/WhoWePartner'
@@ -10,6 +11,8 @@ const page = () => {
     <>
 
       <TeamHero/>
+       <CoFounders />
+        <CapitalAdvisory />
         <WhoWePartner/>
         {/* <HowWeWork/> */}
     </>

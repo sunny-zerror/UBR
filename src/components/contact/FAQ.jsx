@@ -57,7 +57,7 @@ const FAQ = () => {
                                 <RiCloseLine className={`transition-all duration-300 ${openFaqId === item.id ? "rotate-0" : "rotate-45"}`} />
                             </div>
                             <div className={` w-full h-0 transition-all duration-300 ${openFaqId === item.id ? "h-20" : "h-0"} overflow-hidden`}>
-                                <p className=' leading-tight opacity-80 w-[80%]'>{item.answer}</p>
+                                <p className=' leading-tight text-lg opacity-80 w-[80%]'>{item.answer}</p>
                             </div>
                         </div>
                     ))}

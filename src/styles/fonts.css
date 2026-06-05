@@ -1,23 +1,31 @@
 @font-face {
-  font-family: habitus;
-  src: url(../../public/fonts/habitus-book.C_msFUnG.woff2);
+  font-family: diagramm;
+  src: url(../../public/fonts/Diagramm-SemiBold.woff2);
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: aeonik;
-  src: url(../../public/fonts/aeonik-regular.B7F5ivrz.woff2);
+  font-family: ibm;
+  src: url(../../public/fonts/IBMPlexSans-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-.aeonik {
-  font-family: aeonik, "Times New Roman", Times, serif;
+.diagramm{
+  font-family: diagramm, Arial, Helvetica, sans-serif;
 }
 html,
 body {
   font-size: 14px;
   letter-spacing: -0.04em;
   font-style: normal;
-  font-family: habitus, Arial, Helvetica, sans-serif;
+  font-family: ibm, Arial, Helvetica, sans-serif;
   font-display: swap;
 }
-
+h1,h2,h3,h4,h5,h6{
+  font-family: diagramm, Arial, Helvetica, sans-serif;
+}
 h1 {
   font-size: 2.75rem;     
 }
@@ -40,7 +48,6 @@ h5 {
 
 h6 {
   font-size: 0.75rem;   
-  font-family: aeonik, "Times New Roman", Times, serif;
   text-transform: uppercase;
 }
 
@@ -50,7 +57,7 @@ h6 {
     font-size: 16px;
   }
   h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
   h2 {
     font-size: 3.5rem;
@@ -67,7 +74,5 @@ h6 {
   }
   h6 {
     font-size: 0.75rem;
-    font-family: aeonik, "Times New Roman", Times, serif;
-    text-transform: uppercase;
   }
 }
