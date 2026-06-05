@@ -100,3 +100,9 @@
   -webkit-mask-image: radial-gradient(#000 0, #000 30%, transparent 75%);
   mask-image: radial-gradient(#000 0, #000 30%, transparent 75%);
 }
+
+
+.anim_par .char {
+  display: inline-block;
+  white-space: pre; /* preserve spacing */
+}

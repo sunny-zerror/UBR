@@ -168,12 +168,11 @@ const MacroPicture = () => {
             <div ref={containerRef} className=' container w-full  relative h-[250vh]! '>
                 <div className=" sticky top-0 w-full h-screen  center ">
 
-                    <div className=" absolute left-1/2 top-1/2 text-center -translate-x-1/2">
+                    <div className=" absolute left-1/2 top-1/2 -translate-y-30 text-center -translate-x-1/2">
                         <div className="anim_y">
-
                             {statsData.map((row, rowIndex) => (
-                                <div key={rowIndex} className="">
-                                    <p className=' text-9xl h-56 font-bold'>{row.value}</p>
+                                <div key={rowIndex} className=" h-60 center">
+                                    <p className=' text-9xl leading-none font-bold'>{row.value}</p>
                                 </div>
                             ))}
                         </div>
@@ -192,7 +191,7 @@ const MacroPicture = () => {
                             </div>
                         </div>
                         <div className=" col-span-4 relative  ">
-                            <div className="perspective-[40rem] transform-3d">
+                            <div className="perspective-[40rem]  transform-3d">
                                 <div
                                     ref={cardRef}
                                     className="w-full aspect-4/3 transform-3d rounded-xl overflow-hidden relative bg-[#4688F0]"
@@ -215,10 +214,10 @@ const MacroPicture = () => {
                             </div>
 
                             <div className=" absolute w-full aspect-4/3 inset-0 z-[99] text-white center text-center">
-                                <div className="w-full h-56 text-center overflow-hidden">
+                                <div className="w-full h-60 text-center overflow-hidden">
                                     <div className="anim_y">
                                         {statsData.map((row, rowIndex) => (
-                                            <div key={rowIndex} className=" h-56 center">
+                                            <div key={rowIndex} className=" h-60 center">
                                                 <p className=' text-9xl leading-none font-bold'>{row.value}</p>
                                             </div>
                                         ))}

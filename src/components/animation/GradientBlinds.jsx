@@ -35,7 +35,6 @@ const GradientBlinds = ({
   spotlightOpacity = 1,
   distortAmount = 0,
   shineDirection = 'left',
-  mixBlendMode = 'lighten'
 }) => {
   const containerRef = useRef(null);
   const rafRef = useRef(null);
@@ -172,11 +171,21 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
   float spot = (1.0 - 2.0 * pow(dn, uSpotlightSoftness)) * uSpotlightOpacity;
   vec3 cir = vec3(spot);
   float stripe = fract(uvMod.x * max(uBlindCount, 1.0));
-  if (uShineFlip > 0.5) stripe = 1.0 - stripe;
-    vec3 ran = vec3(stripe);
 
-    vec3 col = cir + base - ran;
-    col += (rand(gl_FragCoord.xy + iTime) - 0.5) * uNoise;
+if (uShineFlip > 0.5)
+    stripe = 1.0 - stripe;
+
+// smooth white strips
+float blinds = smoothstep(0.0, 0.8, stripe);
+
+// mix toward white instead of subtracting
+vec3 col = mix(base, vec3(1.0), blinds * 0.45);
+
+// keep spotlight
+col += cir;
+
+// subtle noise
+col += (rand(gl_FragCoord.xy + iTime) - 0.5) * uNoise;
 
     fragColor = vec4(col, 1.0);
 }
@@ -335,11 +344,6 @@ void main() {
     <div
       ref={containerRef}
       className={`w-full h-full overflow-hidden relative ${className}`}
-      style={{
-        ...(mixBlendMode && {
-          mixBlendMode: mixBlendMode
-        })
-      }}
     />
   );
 };

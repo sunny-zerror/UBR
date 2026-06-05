@@ -140,14 +140,14 @@ const Header = () => {
         <div className="flex items-end w-[75%] gap-x-20">
           <Link href="/" className='block  w-fit relative'>
             <img className={`w-20 logo_white   `} src="/logo_white.png" alt="logo" />
-            <img className='w-20 logo_black absolute inset-0 opacity-0 ' src="/logo_black.png" alt="logo" />
+            <img className='w-20 logo_black absolute inset-0  ' src="/logo_black.png" alt="logo" />
           </Link>
           <div className="max-sm:hidden flex items-center gap-x-5">
             {navLinks.map((link, i) => {
               const isActive = pathname === link.href;
 
               return (
-                <div key={i} className={`navLink  w-fit  text-sm uppercase diagramm  group cursor-pointer text-white`}>
+                <div key={i} className={`navLink  w-fit  text-sm uppercase diagramm  group cursor-pointer `}>
                   <Link href={link.href} className="relative  leading-none">
                     {link.label}
 

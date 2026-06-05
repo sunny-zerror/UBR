@@ -106,14 +106,10 @@ const Hero = () => {
       duration: 1,
       ease: "in-out-quint",
     }, "<");
-    tl.to(["content_box", ".hero_bg", ".video_section"], {
+    tl.to(["content_box", ".hero_content", ".hero_bg", ".video_section"], {
       opacity: 1,
-      stagger: 1
+      stagger: 0.5
     })
-    tl.to(".border_bar", {
-      height: "100%",
-      stagger: 0.2
-    });
     tl.to(heading_split.lines, {
       yPercent: 0,
       duration: 0.8,
@@ -136,9 +132,14 @@ const Hero = () => {
   useGSAP(() => {
 
     const anim_chars = SplitText.create(".anim_par", {
-      type: "chars",
+      type: "words,chars",
+      charsClass: "char",
+      reduceWhiteSpace: false, // preserve spaces
     })
-    gsap.set(anim_chars.chars, { opacity: 0.1 })
+
+    gsap.set(anim_chars.chars, {
+      opacity: 0.1,
+    })
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -195,20 +196,21 @@ const Hero = () => {
 
         <div className=" sticky top-0   hero_section w-full h-screen perspective-[30rem] center  overflow-hidden  content_box ">
 
-          <div className="absolute inset-0 z-[-1] hero_bg bg-[#4688F0]  opacity-0">
+          <div className="absolute inset-0 z-[-1] hero_bg bg-white   opacity-0">
             <GradientBlinds
-              gradientColors={['#cd6b78', '#ffffff']}
+              gradientColors={['#ffffff', '#FD0916']}
               angle={0}
               noise={0}
               blindCount={30}
               blindMinWidth={60}
-              spotlightRadius={0.8}
+              spotlightRadius={2}
               spotlightSoftness={1}
               spotlightOpacity={0.5}
               mouseDampening={0.5}
               distortAmount={0}
               shineDirection="right"
-            // mixBlendMode="overlay"
+              // mixBlendMode='darken'
+
             />
           </div>
 
@@ -218,19 +220,25 @@ const Hero = () => {
 
           <div className="top-full absolute w-full h-full center over_txt bg-[#4688F0] ">
             <p
-              className="anim_par diagramm  text-[4rem] font-semibold  w-[80%] text-center  leading-tight  text-white  "
+              className="anim_par diagramm text-[4rem] font-semibold w-[82%] text-center leading-tight text-white whitespace-normal"
             >
-              UBR DISRPTVE is a venture builder for consumer brands that want to scale profitably. We back founders launching new ventures and operators reigniting established ones.
+              UBR DISRPTVE is a venture builder for consumer brands that want to scale
+              profitably. We back founders launching new ventures and operators reigniting
+              established ones.
             </p>
           </div>
 
-          <div className=' hero_content container h-screen flex items-end pb-10  md:pb-16'>
+          <div className=' hero_content opacity-0 container h-screen flex items-end pb-10  md:pb-16'>
+
             <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
-              <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 lg:leading-24 tracking-tighter heading_split col-span-4'>The integrated model <br /> for    non-linear growth.</h1>
-              <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split col-span-4'>The integrated model  for    non-linear growth.</h1>
-              <div className=" pb-4  pointer-events-none relative z-10 w-full col-span-2">
-                <p className='  w-full leading-tight md:text-xl   paragraph_split'>Built for Entrepreneurs chasing meaningful outcomes.</p>
-                <p className='leading-tight w-full md:text-xl   paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> and  <b>Kaushik Sundararajan.</b></p>
+              <div className="col-span-4">
+                <p className="md:text-xl paragraph_split mb-2 capitalize ">The integrated model  for    non-linear growth.</p>
+
+                <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 lg:leading-20 tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
+                <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split '>The integrated model  for    non-linear growth.</h1>
+              </div>
+              <div className=" pb-4 text-right flex justify-end pointer-events-none relative z-10 w-full col-span-2">
+                <p className='leading-tight  md:text-xl   paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
               </div>
             </div>
           </div>
