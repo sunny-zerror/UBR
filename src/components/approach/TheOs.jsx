@@ -99,7 +99,7 @@ const TheOs = () => {
 
   return (
     <div ref={containerRef} className=" w-full  h-[300vh]">
-      <div className="sticky top-0 w-full  h-screen flex flex-col justify-between py-12 md:py-24">
+      <div className="sticky top-0 w-full  h-screen flex flex-col justify-center max-sm:space-y-12 md:justify-between py-12 md:py-24 overflow-hidden">
         <div className="">
           <SectionHeading
             btnText="The OS"

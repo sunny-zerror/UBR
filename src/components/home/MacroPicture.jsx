@@ -57,6 +57,9 @@ const MacroPicture = () => {
     const containerRef = useRef();
 
     useGSAP(() => {
+
+            if(window.innerWidth<750) return
+
         const card = cardRef.current;
 
         const maxRotate = 8;
@@ -168,7 +171,7 @@ const MacroPicture = () => {
             <div ref={containerRef} className=' container w-full  relative h-[250vh]! '>
                 <div className=" sticky top-0 w-full h-screen  center ">
 
-                    <div className=" absolute left-1/2 top-1/2 -translate-y-30 text-center -translate-x-1/2">
+                    <div className=" max-sm:hidden absolute left-1/2 top-1/2 -translate-y-30 text-center -translate-x-1/2">
                         <div className="anim_y">
                             {statsData.map((row, rowIndex) => (
                                 <div key={rowIndex} className=" h-60 center">
@@ -178,7 +181,7 @@ const MacroPicture = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-12 ">
+                    <div className="grid grid-cols-1 max-sm:gap-y-8 md:grid-cols-12 ">
                         <div className="col-span-4 relative center ">
                             <div className="w-full h-28 text-center overflow-hidden">
                                 <div className="anim_y">
@@ -191,14 +194,10 @@ const MacroPicture = () => {
                             </div>
                         </div>
                         <div className=" col-span-4 relative  ">
-                            <div className="perspective-[40rem]  transform-3d">
+                            <div className="md:perspective-[40rem]  md:transform-3d">
                                 <div
                                     ref={cardRef}
-                                    className="w-full aspect-4/3 transform-3d rounded-xl overflow-hidden relative bg-[#4688F0]"
-                                    style={{
-                                        transform:
-                                            "rotateX(15deg) rotateY(-6deg)",
-                                    }}
+                                    className="w-full aspect-4/3 md:rotate-x-15 md:-rotate-y-6 transform-3d rounded-xl overflow-hidden relative bg-[#4688F0]"
                                 >
                                     {statsData.map((item, i) => (
                                         <Image

@@ -220,7 +220,7 @@ const Hero = () => {
 
           <div className="top-full absolute w-full h-full center over_txt bg-[#4688F0] ">
             <p
-              className="anim_par diagramm text-[4rem] font-semibold w-[82%] text-center leading-tight text-white whitespace-normal"
+              className="anim_par diagramm text-4xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
             >
               UBR DISRPTVE is a venture builder for consumer brands that want to scale
               profitably. We back founders launching new ventures and operators reigniting
@@ -272,15 +272,15 @@ const Hero = () => {
                     </div>
 
 
-                    <div className="relative mt-5 md:mt-10 grid grid-cols-3  gap-3">
+                    <div className=" max-sm:hidden relative mt-5 md:mt-10 grid grid-cols-3  gap-3">
                       {card.tags.map((tag, i) => {
                         return (
                           <div
                             key={i}
                             className={`rounded-md font-medium text-sm p-3 border border-black/20  bg-[#FFFFFF80] text-black`}
                           >
-                            <div className="flex flex-col justify-center items-center gap-5">
-                              <Image height={40} width={40} src={tag.icon} className='' alt='icon' />
+                            <div className="flex flex-col justify-center items-center md:gap-5">
+                              <Image height={40} width={40} src={tag.icon} className=' max-sm:scale-75' alt='icon' />
 
                               <p className=" max-sm:text-xs aeonik md:md:font-semibold   uppercase">
                                 {tag.label}

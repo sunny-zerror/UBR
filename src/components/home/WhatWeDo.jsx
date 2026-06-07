@@ -53,6 +53,9 @@ const engagementData = [
 const WhatWeDo = () => {
 
     useGSAP(() => {
+
+            if(window.innerWidth<750) return
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".what_we_do_paren",
@@ -76,8 +79,8 @@ const WhatWeDo = () => {
     })
 
     return (
-        <section className="what_we_do_paren h-[300vh] text-white  relative">
-            <div className="sticky top-0 space-y-5 md:space-y-16 h-screen w-full flex flex-col justify-center overflow-hidden">
+        <section className="what_we_do_paren md:h-[300vh] max-sm:py-12 text-white  relative">
+            <div className="md:sticky top-0 space-y-5 md:space-y-16 md:h-screen w-full flex flex-col justify-center overflow-hidden">
                 <div className="">
                     <SectionHeading
                         btnText={"what we do"}
@@ -95,7 +98,7 @@ const WhatWeDo = () => {
                                 return (
                                     <div
                                         key={index}
-                                        className={`do_card_${index} group translate-y-10 aspect-4/3  relative  grid grid-cols-3 rounded-lg  overflow-hidden bg-white text-black  border border-black/50  p-5`}
+                                        className={`do_card_${index} group md:translate-y-10 max-sm:h-[30vh] md:aspect-4/3  relative  grid grid-cols-3 rounded-lg  overflow-hidden bg-white text-black  border border-black/50  p-5`}
                                     >
                                         <div className=" col-span-1 w-full relative z-10 flex justify-between">
                                             <h2 className="md:font-semibold leading-none  ">

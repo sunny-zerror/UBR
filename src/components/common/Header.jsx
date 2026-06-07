@@ -35,11 +35,17 @@ const Header = () => {
   const pathname = usePathname();
 
   useGSAP(() => {
-
-    gsap.to(".header", {
-      opacity: 1,
-      delay: 3
-    })
+    if (pathname === "/") {
+      gsap.to(".header", {
+        opacity: 1,
+        delay: 3
+      })
+    } else {
+      gsap.to(".header", {
+        opacity: 1,
+        delay: 1
+      })
+    }
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -154,7 +160,7 @@ const Header = () => {
                     <span
                       className={`
                         navLinkBar
-                        bg-white
+                        bg-black
               absolute left-0 bottom-0 h-[1.5px] rounded-full w-full
               transition-transform duration-300 ease-out
               ${isActive ? "scale-x-100 origin-left" : "scale-x-0 origin-left group-hover:scale-x-100"}

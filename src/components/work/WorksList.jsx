@@ -117,7 +117,7 @@ export const WorksList = () => {
                         onMouseEnter={(e) => handleMouseEnter(e, item.title)}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
-                        href={`/work/${item.slug}`} key={i} className={`proj_paren w-full rounded-xl aspect-video center text-white relative overflow-hidden ${item.classname}`}>
+                        href={`/work/${item.slug}`} key={i} className={`proj_paren w-full  aspect-square md:aspect-video center text-white relative overflow-hidden ${item.classname}`}>
 
                         <Image fill src={item.image} className={` proj_img cover scale-50`} alt="" />
                         <h3

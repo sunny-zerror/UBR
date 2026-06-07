@@ -63,9 +63,9 @@ const WhoWePartner = () => {
             </div>
             <div className=" max-sm:pb-5 col-span-4 md:col-span-3 capitalize">
               <h4 className=' md:h-20 leading-tight '>{item.title}</h4>
-              <div className="md:h-0 group-hover:h-[10rem] transition-all duration-300 overflow-hidden">
+              <div className="md:h-0 md:group-hover:h-[10rem] transition-all duration-300 overflow-hidden">
                 <p className='  w-full max-sm:mt-2 md:w-[80%] leading-tight text-sm  md:text-lg'>{item.description}</p>
-                <div className="flex gap-x-2 mt-5 leading-none">
+                <div className="flex flex-wrap gap-y-1 gap-x-2 mt-5 leading-none">
                   {item.tags.map((tag, index) => (
                     <span key={index} className=' px-2 py-1 text-xs leading-none diagramm uppercase border-black border  transition-all duration-300'>{tag}</span>
                   ))}
