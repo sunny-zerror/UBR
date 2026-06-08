@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import DotButton from '../common/DotButton'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
@@ -57,6 +57,19 @@ const modelCards = [
 
 const Hero = () => {
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   useGSAP(() => {
     const heading_split = SplitText.create(".heading_split", {
       type: "lines",
@@ -81,11 +94,24 @@ const Hero = () => {
     const tl = gsap.timeline({
       delay: 0
     })
+    tl.to(".itx_1", {
+      transform: "translateY(0)",
+      stagger: 0.05,
+      ease: "in-out-quint",
+    })
+    tl.to(".itx_1", {
+      transform: "translateY(-100%)",
+      stagger: 0.05,
+      ease: "in-out-quint",
+    })
+    tl.to(".load_clip_paren", {
+      opacity: 1,
+      ease: "in-out-quint",
+    })
     tl.to(".load_clip_paren_1", {
       y: 6,
       x: -5,
       duration: 0.5,
-      delay: 0.5,
       ease: "in-out-quint",
     })
     tl.to(".load_clip_paren_2", {
@@ -131,15 +157,20 @@ const Hero = () => {
 
   useGSAP(() => {
 
-    const anim_chars = SplitText.create(".anim_par", {
-      type: "words,chars",
-      charsClass: "char",
-      reduceWhiteSpace: false, // preserve spaces
-    })
+    let anim_chars;
+    if (window.innerWidth > 750) {
+      anim_chars = SplitText.create(".anim_par", {
+        type: "words,chars",
+        charsClass: "char",
+        reduceWhiteSpace: false, // preserve spaces
+      })
+    }
 
-    gsap.set(anim_chars.chars, {
-      opacity: 0.1,
-    })
+    if (window.innerWidth > 750) {
+      gsap.set(anim_chars.chars, {
+        opacity: 0.1,
+      })
+    }
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -159,11 +190,19 @@ const Hero = () => {
       height: "100vh",
       borderRadius: "0px"
     }, "<")
+    if (window.innerWidth < 750) {
+      tl.to(".video_section", {
+        transform: "translateY(0)",
+        ease: "linear"
+      }, "<")
+    }
     tl.to(".over_txt", {
       top: "0%",
       ease: "linear",
     })
-    tl.to(anim_chars.chars, { opacity: 1, stagger: 0.005, duration: 0.001 }, "<+0.2")
+    if (window.innerWidth > 750) {
+      tl.to(anim_chars.chars, { opacity: 1, stagger: 0.005, duration: 0.001 }, "<+0.2")
+    }
 
     tl.to(".anim_par", {
       opacity: 0,
@@ -183,11 +222,16 @@ const Hero = () => {
   return (
     <>
       <div className="  w-full fixed top-0 left-0 z-[100]  h-screen center  overflow-hidden pointer-events-none">
-        <div className="  h-[0%]  load_clip_paren_1 load_clip_paren">
+        <div className="absolute flex">
+          <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>u</p></div>
+          <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>b</p> </div>
+          <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'><p className='translate-y-full itx_1'>r</p></div>
+        </div>
+        <div className="  h-[0%]  load_clip_paren_1 load_clip_paren opacity-0">
           <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bg-[#d70000]"></div>
         </div>
         <div className="w-[0%] shrink-0 load_clip_vid  h-[0%] "></div>
-        <div className=" h-[0%]  load_clip_paren_2 load_clip_paren flex w-14 justify-end items-end">
+        <div className=" h-[0%]  load_clip_paren_2 load_clip_paren opacity-0 flex w-14 justify-end items-end">
           <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
         </div>
       </div>
@@ -196,25 +240,27 @@ const Hero = () => {
 
         <div className=" sticky top-0   hero_section w-full h-screen perspective-[30rem] center  overflow-hidden  content_box ">
 
-          <div className="absolute inset-0 z-[-1] hero_bg bg-white   opacity-0">
-            <GradientBlinds
-              gradientColors={['#ffffff', '#4688F0']}
-              angle={0}
-              noise={0.05}
-              blindCount={30}
-              blindMinWidth={60}
-              spotlightRadius={2}
-              spotlightSoftness={0.9}
-              spotlightOpacity={0.6}
-              mouseDampening={0.1}
-              distortAmount={0}
-              shineDirection="right"
+          {!isMobile && (
+            <div className="  absolute inset-0 z-[-1] hero_bg bg-white   opacity-0">
+              <GradientBlinds
+                gradientColors={['#ffffff', '#4688F0']}
+                angle={0}
+                noise={0.05}
+                blindCount={30}
+                blindMinWidth={60}
+                spotlightRadius={2}
+                spotlightSoftness={0.9}
+                spotlightOpacity={0.6}
+                mouseDampening={0.1}
+                distortAmount={0}
+                shineDirection="right"
               // mixBlendMode='darken'
 
-            />
-          </div>
+              />
+            </div>
+          )}
 
-          <div className="video_section opacity-0 rotate-x-20 w-[30vw] h-[20vw] transform-3d  absolute  z-[-1] rounded-xl overflow-hidden">
+          <div className="video_section max-sm:-translate-y-[80%] w-[80vw] opacity-0 lg:rotate-x-20 md:w-[30vw] aspect-video transform-3d  absolute  z-[-1] rounded-xl overflow-hidden">
             <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='cover'></video>
           </div>
 

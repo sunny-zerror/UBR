@@ -98,6 +98,8 @@ const Footer = () => {
 
   useGSAP(() => {
 
+    if (window.innerWidth < 750) return
+
     gsap.fromTo(
       ".footer_img",
       {
@@ -146,7 +148,7 @@ const Footer = () => {
             <div className="size-2 aspect-square z-10 bg-black absolute -bottom-1 -right-1 "></div>
             <div className="size-2 aspect-square z-10 bg-black absolute -bottom-1 -left-1 "></div>
             <div className="w-full h-full border-2 flex flex-col justify-between border-black/50 p-4 md:p-6">
-              <div className="space-y-5">
+              <div className=" space-y-2 md:space-y-5">
                 <h4 data-para-effect className='leading-none!'>Let’s build India’s next iconic brand. Together.</h4>
                 <p data-para-effect className='leading-tight md:hidden lg:block opacity-80'>We are looking for our next cohort of partners. Founders, talent, investors and retailers, all welcome.</p>
               </div>

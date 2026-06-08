@@ -67,7 +67,7 @@ const OurThesis = () => {
                         <h3 data-para-effect className='capitalize md:font-semibold leading-tight'>Built to scale brands <br /> the right way.</h3>
                     </div>
                     <p data-para-effect className='md:text-xl opacity-60 leading-tight md:w-[80%] '>Old playbook: buy customers, build the brand later. We invert it. The talent we bring into a brand as a co-owner already owns the audience the brand wants to sell to. <br /> <br /> Trust shows up before the spend. CAC bends. Repeat purchase rises. The brand stops renting attention and starts owning it.
-<br /> <br /> But trust alone is not a business. To turn it into profitable scale, five capabilities have to work as one.</p>
+                        <br /> <br /> But trust alone is not a business. To turn it into profitable scale, five capabilities have to work as one.</p>
                 </div>
                 <div className=" w-full md:w-1/2 h-[50vh] md:h-screen center relative">
                     <div className=" circ_1 scale-0 opacity-0 size-40 md:size-72 -translate-x-32 md:-translate-x-56 absolute border border-white rounded-full center">

@@ -40,7 +40,7 @@ const FAQ = () => {
 
     return (
         <>
-            <div className=" container md:grid grid-cols-2">
+            <div className=" pt-12 md:pt-24 container md:grid grid-cols-2">
                 <div className="w-full">
                     <h3 data-para-effect className=' leading-tight md:md:font-semibold capitalize'>FAQs</h3>
                 </div>

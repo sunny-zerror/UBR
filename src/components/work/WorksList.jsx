@@ -121,7 +121,7 @@ export const WorksList = () => {
 
                         <Image fill src={item.image} className={` proj_img cover scale-50`} alt="" />
                         <h3
-                            className="md:font-semibold mix-blend-difference  absolute z-10 uppercase text-center"
+                            className="md:font-semibold mix-blend-difference  absolute bottom-5 leading-none md:bottom-20 z-10 uppercase text-center"
                         >
                             {item.title}
                         </h3>
