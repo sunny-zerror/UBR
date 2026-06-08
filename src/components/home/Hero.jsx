@@ -153,7 +153,7 @@ const Hero = () => {
       stagger: 0.15
     }, "<");
 
-  });
+    },[isMobile]);
 
   useGSAP(() => {
 
@@ -189,9 +189,9 @@ const Hero = () => {
         ease: "linear",
         rotateX: 0,
         height: "100vh",
-      borderRadius: "0px"
-    }, "<")
-  }
+        borderRadius: "0px"
+      }, "<")
+    }
     tl.to(".over_txt", {
       top: "0%",
       ease: "linear",
@@ -215,132 +215,136 @@ const Hero = () => {
         ease: "linear",
       })
     }
-  })
+    },[isMobile]);
 
   return (
     <>
-      <div className="  w-full fixed top-0 left-0 z-[100]  h-screen center  overflow-hidden pointer-events-none">
-        <div className="absolute flex">
-          <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>u</p></div>
-          <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>b</p> </div>
-          <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'><p className='translate-y-full itx_1'>r</p></div>
-        </div>
-        <div className="  h-[0%]  load_clip_paren_1 load_clip_paren opacity-0">
-          <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bg-[#d70000]"></div>
-        </div>
-        <div className="w-[0%] shrink-0 load_clip_vid  h-[0%] "></div>
-        <div className=" h-[0%]  load_clip_paren_2 load_clip_paren opacity-0 flex w-14 justify-end items-end">
-          <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
-        </div>
-      </div>
-      <div className='story_wrapper relative h-[300vh] md:h-[500vh]'>
-
-
-        <div className=" sticky top-0   hero_section w-full h-screen perspective-[30rem] center  overflow-hidden  content_box ">
-
-          {!isMobile && (
-            <div className="  absolute inset-0 z-[-1] hero_bg bg-white   opacity-0">
-              <GradientBlinds
-                gradientColors={['#ffffff', '#4688F0']}
-                angle={0}
-                noise={0.05}
-                blindCount={30}
-                blindMinWidth={60}
-                spotlightRadius={2}
-                spotlightSoftness={0.9}
-                spotlightOpacity={0.6}
-                mouseDampening={0.1}
-                distortAmount={0}
-                shineDirection="right"
-              // mixBlendMode='darken'
-
-              />
+      {!isMobile && (
+        <>
+          <div className="  w-full fixed top-0 left-0 z-[100]  h-screen center  overflow-hidden pointer-events-none">
+            <div className="absolute flex">
+              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>u</p></div>
+              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>b</p> </div>
+              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'><p className='translate-y-full itx_1'>r</p></div>
             </div>
-          )}
-
-          <div className="video_section max-sm:-translate-y-[80%] w-[80vw] opacity-0 lg:rotate-x-20 md:w-[30vw] aspect-video transform-3d  absolute  z-[-1] rounded-xl overflow-hidden">
-            <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='cover'></video>
-          </div>
-
-          <div className="top-full absolute z-[100] w-full h-full center over_txt bg-[#4688F0] ">
-            <p
-              className="anim_par diagramm text-4xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
-            >
-              UBR DISRPTVE is a venture builder for consumer brands that want to scale
-              profitably. We back founders launching new ventures and operators reigniting
-              established ones.
-            </p>
-          </div>
-
-          <div className=' hero_content opacity-0 container h-[100svh] flex items-end pb-10  md:pb-16'>
-
-            <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
-              <div className="col-span-4">
-                <p className="md:text-xl paragraph_split mb-2 capitalize ">The integrated model  for    non-linear growth.</p>
-
-                <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 lg:leading-20 tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
-                <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
-              </div>
-              <div className=" pb-4 text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
-                <p className='leading-tight  md:text-xl   paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
-              </div>
+            <div className="  h-[0%]  load_clip_paren_1 load_clip_paren opacity-0">
+              <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bg-[#d70000]"></div>
+            </div>
+            <div className="w-[0%] shrink-0 load_clip_vid  h-[0%] "></div>
+            <div className=" h-[0%]  load_clip_paren_2 load_clip_paren opacity-0 flex w-14 justify-end items-end">
+              <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
             </div>
           </div>
-
-          <div className=" card_paren top-full absolute z-[200] w-full h-full inset-0 ">
-            <div className="w-full container flex h-full items-center overflow-hidden">
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
-                {modelCards.map((card, index) => (
-                  <div
-                    key={index}
-                    className={` card_${index} group relative  bg-white flex flex-col justify-between text-black  rounded-lg p-7 md:p-10 overflow-hidden `}
-                  >
-                    <div className="relative">
-                      <div className="relative h-10 mb-5  ">
-                        <img
-                          src={card.logo}
-                          alt="logo"
-                          className="h-full"
-                        />
-                      </div>
-                      <h4 className="leading-none capitalize md:md:font-semibold">
-                        {card.brand}
-                      </h4>
-                      <h4 className="leading-none capitalize md:md:font-semibold">
-                        {card.title}
-                      </h4>
-                      <p className="relative mt-5 md:mt-10 opacity-80  leading-tight md:text-lg">
-                        {card.desc}
-                      </p>
-                    </div>
+          <div className='story_wrapper relative h-[300vh] md:h-[500vh]'>
 
 
-                    <div className=" max-sm:hidden relative mt-5 md:mt-10 grid grid-cols-3  gap-3">
-                      {card.tags.map((tag, i) => {
-                        return (
-                          <div
-                            key={i}
-                            className={`rounded-md font-medium text-sm p-3 border border-black/20  bg-[#FFFFFF80] text-black`}
-                          >
-                            <div className="flex flex-col justify-center items-center md:gap-5">
-                              <Image height={40} width={40} src={tag.icon} className=' max-sm:scale-75' alt='icon' />
+            <div className=" sticky top-0   hero_section w-full h-screen perspective-[30rem] center  overflow-hidden  content_box ">
 
-                              <p className=" max-sm:text-xs aeonik md:md:font-semibold   uppercase">
-                                {tag.label}
-                              </p>
-                            </div>
-                          </div>
-                        )
-                      })}
-                    </div>
+
+              <div className="  absolute inset-0 z-[-1] hero_bg bg-white   opacity-0">
+                <GradientBlinds
+                  gradientColors={['#ffffff', '#4688F0']}
+                  angle={0}
+                  noise={0.05}
+                  blindCount={30}
+                  blindMinWidth={60}
+                  spotlightRadius={2}
+                  spotlightSoftness={0.9}
+                  spotlightOpacity={0.6}
+                  mouseDampening={0.1}
+                  distortAmount={0}
+                  shineDirection="right"
+                // mixBlendMode='darken'
+
+                />
+              </div>
+
+
+              <div className="video_section max-sm:-translate-y-[80%] w-[80vw] opacity-0 lg:rotate-x-20 md:w-[30vw] aspect-video transform-3d  absolute  z-[-1] rounded-xl overflow-hidden">
+                <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='cover'></video>
+              </div>
+
+              <div className="top-full absolute z-[100] w-full h-full center over_txt bg-[#4688F0] ">
+                <p
+                  className="anim_par diagramm text-4xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
+                >
+                  UBR DISRPTVE is a venture builder for consumer brands that want to scale
+                  profitably. We back founders launching new ventures and operators reigniting
+                  established ones.
+                </p>
+              </div>
+
+              <div className=' hero_content opacity-0 container h-[100svh] flex items-end pb-10  md:pb-16'>
+
+                <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
+                  <div className="col-span-4">
+                    <p className="md:text-xl paragraph_split mb-2 capitalize ">The integrated model  for    non-linear growth.</p>
+
+                    <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 lg:leading-20 tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
+                    <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
                   </div>
-                ))}
+                  <div className=" pb-4 text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
+                    <p className='leading-tight  md:text-xl   paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className=" card_paren top-full absolute z-[200] w-full h-full inset-0 ">
+                <div className="w-full container flex h-full items-center overflow-hidden">
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
+                    {modelCards.map((card, index) => (
+                      <div
+                        key={index}
+                        className={` card_${index} group relative  bg-white flex flex-col justify-between text-black  rounded-lg p-7 md:p-10 overflow-hidden `}
+                      >
+                        <div className="relative">
+                          <div className="relative h-10 mb-5  ">
+                            <img
+                              src={card.logo}
+                              alt="logo"
+                              className="h-full"
+                            />
+                          </div>
+                          <h4 className="leading-none capitalize md:md:font-semibold">
+                            {card.brand}
+                          </h4>
+                          <h4 className="leading-none capitalize md:md:font-semibold">
+                            {card.title}
+                          </h4>
+                          <p className="relative mt-5 md:mt-10 opacity-80  leading-tight md:text-lg">
+                            {card.desc}
+                          </p>
+                        </div>
+
+
+                        <div className=" max-sm:hidden relative mt-5 md:mt-10 grid grid-cols-3  gap-3">
+                          {card.tags.map((tag, i) => {
+                            return (
+                              <div
+                                key={i}
+                                className={`rounded-md font-medium text-sm p-3 border border-black/20  bg-[#FFFFFF80] text-black`}
+                              >
+                                <div className="flex flex-col justify-center items-center md:gap-5">
+                                  <Image height={40} width={40} src={tag.icon} className=' max-sm:scale-75' alt='icon' />
+
+                                  <p className=" max-sm:text-xs aeonik md:md:font-semibold   uppercase">
+                                    {tag.label}
+                                  </p>
+                                </div>
+                              </div>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   )
 }
