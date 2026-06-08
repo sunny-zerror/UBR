@@ -198,15 +198,15 @@ const Hero = () => {
 
           <div className="absolute inset-0 z-[-1] hero_bg bg-white   opacity-0">
             <GradientBlinds
-              gradientColors={['#ffffff', '#FD0916']}
+              gradientColors={['#ffffff', '#4688F0']}
               angle={0}
-              noise={0}
+              noise={0.05}
               blindCount={30}
               blindMinWidth={60}
               spotlightRadius={2}
-              spotlightSoftness={1}
-              spotlightOpacity={0.5}
-              mouseDampening={0.5}
+              spotlightSoftness={0.9}
+              spotlightOpacity={0.6}
+              mouseDampening={0.1}
               distortAmount={0}
               shineDirection="right"
               // mixBlendMode='darken'
@@ -215,7 +215,7 @@ const Hero = () => {
           </div>
 
           <div className="video_section opacity-0 rotate-x-20 w-[30vw] h-[20vw] transform-3d  absolute  z-[-1] rounded-xl overflow-hidden">
-            <video src="https://cdn.sanity.io/files/5uq66tk5/production/4fee2d6b505315287e75383bb655905060cdcb06.mp4" loop autoPlay muted playsInline className='cover'></video>
+            <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='cover'></video>
           </div>
 
           <div className="top-full absolute w-full h-full center over_txt bg-[#4688F0] ">
@@ -235,9 +235,9 @@ const Hero = () => {
                 <p className="md:text-xl paragraph_split mb-2 capitalize ">The integrated model  for    non-linear growth.</p>
 
                 <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 lg:leading-20 tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
-                <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split '>The integrated model  for    non-linear growth.</h1>
+                <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
               </div>
-              <div className=" pb-4 text-right flex justify-end pointer-events-none relative z-10 w-full col-span-2">
+              <div className=" pb-4 text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
                 <p className='leading-tight  md:text-xl   paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
               </div>
             </div>
