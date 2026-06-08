@@ -180,22 +180,18 @@ const Hero = () => {
         scrub: true,
       }
     })
-    tl.to(".hero_content", {
-      opacity: 0
-    })
-    tl.to(".video_section", {
-      width: "100vw",
-      ease: "linear",
-      rotateX: 0,
-      height: "100vh",
+    if (window.innerWidth > 750) {
+      tl.to(".hero_content", {
+        opacity: 0
+      })
+      tl.to(".video_section", {
+        width: "100vw",
+        ease: "linear",
+        rotateX: 0,
+        height: "100vh",
       borderRadius: "0px"
     }, "<")
-    if (window.innerWidth < 750) {
-      tl.to(".video_section", {
-        transform: "translateY(0)",
-        ease: "linear"
-      }, "<")
-    }
+  }
     tl.to(".over_txt", {
       top: "0%",
       ease: "linear",
@@ -212,11 +208,13 @@ const Hero = () => {
       top: "0%",
       ease: "linear",
     }, "<")
-    tl.from(".card_1", {
-      opacity: 0,
-      transform: "translateY(105%)",
-      ease: "linear",
-    })
+    if (window.innerWidth > 750) {
+      tl.from(".card_1", {
+        opacity: 0,
+        transform: "translateY(105%)",
+        ease: "linear",
+      })
+    }
   })
 
   return (
@@ -235,7 +233,7 @@ const Hero = () => {
           <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
         </div>
       </div>
-      <div className='story_wrapper relative h-[500vh]'>
+      <div className='story_wrapper relative h-[300vh] md:h-[500vh]'>
 
 
         <div className=" sticky top-0   hero_section w-full h-screen perspective-[30rem] center  overflow-hidden  content_box ">
@@ -264,7 +262,7 @@ const Hero = () => {
             <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='cover'></video>
           </div>
 
-          <div className="top-full absolute w-full h-full center over_txt bg-[#4688F0] ">
+          <div className="top-full absolute z-[100] w-full h-full center over_txt bg-[#4688F0] ">
             <p
               className="anim_par diagramm text-4xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
             >
@@ -274,7 +272,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className=' hero_content opacity-0 container h-screen flex items-end pb-10  md:pb-16'>
+          <div className=' hero_content opacity-0 container h-[100svh] flex items-end pb-10  md:pb-16'>
 
             <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
               <div className="col-span-4">
@@ -289,7 +287,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className=" card_paren top-full absolute w-full h-full inset-0 ">
+          <div className=" card_paren top-full absolute z-[200] w-full h-full inset-0 ">
             <div className="w-full container flex h-full items-center overflow-hidden">
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
