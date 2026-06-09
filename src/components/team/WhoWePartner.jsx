@@ -51,7 +51,7 @@ const WhoWePartner = () => {
       <SectionHeading
         heading={"Five seats. One table."}
         btnText={"Who we partner with"}
-        desc={<>Whichever seat you're in, the answer starts the same way — with a <span className='highlight'> direct conversation </span>about what you're building, and what it needs next.</>}
+        desc={<>Whichever seat you're in, the answer starts the same way — with a  direct conversation about what you're building, and what it needs next.</>}
       />
       <div className="container md:pt-16">
 

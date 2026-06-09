@@ -8,8 +8,11 @@ const CoFounders = () => {
             <SectionHeading
                 btnText="Co Founders"
                 heading={<>Three operators. <br /> One model.</>}
-                desc={<>
-                    UBR brings <span className='highlight'>disciplined capital</span> and operator discipline. DISRPTVE brings <span className='highlight'>audience ownership</span> and brand-building. Together, the two cultures most consumer ventures struggle to combine.</>}
+                desc={<div className='space-y-2'>
+                    <p> UBR brings disciplined capital and operator discipline.</p>
+                    <p>DISRPTVE brings audience ownership and brand-building.  </p>
+                   <p className='highlight'>Together, the two cultures most consumer ventures struggle to combine.</p>
+                   </div>}
             />
             <div className="container flex overflow-x-scroll scroller_none md:grid grid-cols-3 gap-x-5">
                 <div className=" w-[80vw] md:w-full shrink-0 space-y-4">

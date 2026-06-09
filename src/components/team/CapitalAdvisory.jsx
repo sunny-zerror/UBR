@@ -8,7 +8,7 @@ const CapitalAdvisory = () => {
             <SectionHeading
                 btnText="Capital advisors"
                 heading="Capital, on tap."
-                desc={<>Ex-bankers with deep relationships across VCs, family offices and angel syndicates in India, <span className=' highlight'>the GCC and the USA.</span> The fundraise track is theirs to run.</>}
+                desc={<>Ex-bankers with deep relationships across VCs, family offices and angel syndicates in India, the GCC and the USA. The fundraise track is theirs to run.</>}
             />
             <div className="container  grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="   border border-black/50 items-stretch gap-x-5 rounded-xl flex p-4  md:p-8">

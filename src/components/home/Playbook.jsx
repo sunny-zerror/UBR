@@ -90,7 +90,7 @@ const Playbook = () => {
                                 Five pillars. <br /> One playbook.
                             </>
                         }
-                        desc={<>  <span className='highlight'>Not concepts.</span> Integrated capabilities delivered by an embedded team. Each pillar moves a <span className='highlight'> specific metric.</span></>}
+                        desc={<> Not concepts. <span className='highlight'>Integrated capabilities delivered by an embedded team. </span> Each pillar moves a  specific metric.</>}
                     />
 
                     <div className="container ">

@@ -54,6 +54,7 @@ const MacroPicture = () => {
 
     const cardRef = useRef();
     const imageRefs = useRef([]);
+    const imageRefs2 = useRef([]);
     const containerRef = useRef();
     const containerRef2 = useRef();
 
@@ -87,6 +88,12 @@ const MacroPicture = () => {
                 duration: 0.8,
                 ease: "power3.out",
             });
+            gsap.to(imageRefs2.current, {
+                x: (x - 0.5),
+                y: (y - 0.5),
+                duration: 0.8,
+                ease: "power3.out",
+            });
         };
 
         const handleLeave = () => {
@@ -98,6 +105,12 @@ const MacroPicture = () => {
             });
 
             gsap.to(imageRefs.current, {
+                x: 0,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+            });
+            gsap.to(imageRefs2.current, {
                 x: 0,
                 y: 0,
                 duration: 1,
@@ -162,11 +175,11 @@ const MacroPicture = () => {
     useGSAP(() => {
         const total = statsData.length - 1;
 
-        gsap.set(imageRefs.current, {
+        gsap.set(imageRefs2.current, {
             opacity: 0,
         });
 
-        gsap.set(imageRefs.current[0], {
+        gsap.set(imageRefs2.current[0], {
             opacity: 1,
         });
 
@@ -192,7 +205,7 @@ const MacroPicture = () => {
                         self.progress * total
                     );
 
-                    imageRefs.current.forEach((img, i) => {
+                    imageRefs2.current.forEach((img, i) => {
                         gsap.to(img, {
                             opacity: i === index ? 1 : 0,
                             duration: 0.2,
@@ -349,7 +362,7 @@ const MacroPicture = () => {
                                             <Image
                                                 fill
                                                 key={i}
-                                                ref={(el) => (imageRefs.current[i] = el)}
+                                                ref={(el) => (imageRefs2.current[i] = el)}
                                                 src={item.img}
                                                 alt={item.title}
                                                 className="absolute inset-0 w-full h-full object-cover will-change-transform"

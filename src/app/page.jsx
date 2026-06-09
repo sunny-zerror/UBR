@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <MobileHero/>
+      <MobileHero />
       <MacroPicture />
       <div className="bg-[#4688F0] ">
         <OurThesis />

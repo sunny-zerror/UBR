@@ -67,21 +67,23 @@ const OurThesis = () => {
                     </div>
                     <div className='md:text-xl  space-y-2 leading-tight md:w-[80%] '>
                         <p>
-                            <span className="highlight_white">Old playbook:</span>{" "}
+                            Old playbook:{" "}
                             buy customers, build the brand later. We invert it. The talent we bring
-                            into a brand as a <span className="highlight_white">co-owner</span> already
+                            into a brand as a co-owner already
                             owns the audience the brand wants to sell to.
                         </p>
 
                         <p>
-                            Trust shows up before the spend. <span className="highlight_white">CAC bends</span>.
+                            Trust shows up before the spend. CAC bends.
                             Repeat purchase rises. The brand stops renting attention and starts owning it.
                         </p>
 
                         <p>
+                            <span className='highlight_white'>
                             But trust alone is not a business. To turn it into{" "}
-                            <span className="highlight_white">profitable scale</span>, five capabilities
+                            profitable scale, five capabilities
                             have to work as one.
+                            </span>
                         </p>
                     </div>
                 </div>
