@@ -92,7 +92,8 @@ const SelectedWork = () => {
             <SectionHeading
                 btnText="Selected work"
                 heading="Brands we have backed."
-                desc={"Capital and celebrity, structured as a single move. Strategic advisory anchored to talent. A full-stack engagement that compounds."} />
+                desc={<>
+                <p>Capital and celebrity, structured as a single move. <span className='highlight'> Strategic advisory</span> anchored to talent. A full-stack engagement that compounds.</p></>} />
             <div className="container grid md:grid-cols-2 gap-x-5 gap-y-10">
                 {WorkData.map((item, i) => (
                     <Link onMouseEnter={(e) => handleMouseEnter(e, item.title)}
@@ -105,7 +106,7 @@ const SelectedWork = () => {
                         </div>
                         <div className="">
                             <h6 className='opacity-80'>{item.engagement}</h6>
-                            <h5 className='capitalize md:font-semibold flex items-center gap-x-2'>{item.title}</h5>
+                            <h5 className='  md:font-semibold flex items-center gap-x-2'>{item.title}</h5>
                         </div>
                     </Link>
                 ))}

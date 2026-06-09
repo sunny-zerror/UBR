@@ -40,7 +40,15 @@ const TheMindset = () => {
             <SectionHeading
                 btnText="The Mindset"
                 heading="An operating system for profitable scale. "
-                desc="In India's complex market, long-term value isn't created by venture capital alone. It is created by venture building. Five convictions, five phases, five pillars." />
+                desc={<>
+                    <p>
+                        In India's complex market, long-term value isn't created by venture capital
+                        alone. It is created by <span className="highlight">venture building.</span>Five convictions,
+                        five phases,
+                        five pillars.
+                    </p>
+                </>
+                } />
 
             <div className="container space-y-8  mt-5 md:mt-16">
 

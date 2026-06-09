@@ -202,7 +202,7 @@ const WorkDetail = () => {
       <div className=" content_box w-full relative overflow-hidden text-white bg-[#4688F0]  ">
         <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
           <div className="space-y-5 w-full  relative z-10 ">
-            <h1 className=' heading_split md:w-[80%] leading-none capitalize'>{work.title}</h1>
+            <h1 className=' heading_split md:w-[80%] leading-none  '>{work.title}</h1>
             <p className=' paragraph_split md:w-[45%] leading-tight'>{work.description}</p>
           </div>
         </div>
@@ -271,7 +271,7 @@ const WorkDetail = () => {
               </div>
               <div className="">
                 <h6 className=''>{item.engagement}</h6>
-                <h5 className='capitalize md:font-semibold flex items-center gap-x-2 leading-none mt-1'>{item.title}</h5>
+                <h5 className='  md:font-semibold flex items-center gap-x-2 leading-none mt-1'>{item.title}</h5>
               </div>
             </Link>
           ))}

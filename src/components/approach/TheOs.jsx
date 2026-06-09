@@ -104,7 +104,7 @@ const TheOs = () => {
           <SectionHeading
             btnText="The OS"
             heading="A phase-gated journey from vision to velocity."
-            desc="Five phases. Clear outputs. We don’t just advise, we co-create." />
+            desc={<>Five phases. <span className='highlight'> Clear outputs.</span> We don’t just advise, we co-create.</>} />
         </div>
 
         <div className="">

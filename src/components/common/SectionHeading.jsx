@@ -6,9 +6,9 @@ const SectionHeading = ({ btnText, btnOutline, heading, desc }) => {
             <div className='container'>
                 <h6 className='text-xs mb-2 uppercase'>[{btnText}]</h6>
                 <div className="md:grid grid-cols-6">
-                    <h2 data-para-effect className=' col-span-4 md:w-[75%] leading-none md:md:font-semibold capitalize'>  {heading}</h2>
+                    <h2 data-para-effect className=' col-span-4 md:w-[75%] leading-none md:md:font-semibold  '>  {heading}</h2>
                     <div className=" max-sm:mt-2 col-span-2 flex pb-3 items-end">
-                        <p data-para-effect className=' leading-tight opacity-60 md:text-xl capitalize'>  {desc}</p>
+                        <div className=' leading-tight md:text-xl  '>  {desc}</div>
                     </div>
                 </div>
             </div>

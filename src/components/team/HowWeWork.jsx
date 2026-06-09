@@ -125,7 +125,7 @@ const HowWeWork = () => {
                             <div key={index} className={`work_dt_${index + 1} absolute space-y-5 md:space-y-10 ${[1, 2].includes(index) ? "opacity-0 translate-y-5" : ""}`}>
                                 <div className="space-y-2">
                                     <h6>{item.label}</h6>
-                                    <h3 data-para-effect className='capitalize md:font-semibold leading-tight w-[80%]'>{item.title}</h3>
+                                    <h3 data-para-effect className='  md:font-semibold leading-tight w-[80%]'>{item.title}</h3>
                                 </div>
                                 <p data-para-effect className=' md:text-lg opacity-60 leading-tight md:w-[80%] '>{item.description}</p>
                             </div>

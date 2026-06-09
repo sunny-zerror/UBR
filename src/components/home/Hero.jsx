@@ -13,7 +13,7 @@ const modelCards = [
   {
     brand: "UBR Brings",
     logo: "/images/logo-ubrxdisrptve.png",
-    title: "The Capital And The Muscle.",
+    title: "The capital and the muscle.",
     desc: "A capital and operating advisory founded by Binoy Khimji. Institutional capital access, multiple consumer ventures built and scaled, and deep distribution intelligence across India. Anchored in the Cornerstone Group ecosystem.",
     img: "/images/home/ubr_bg.png",
     tags: [
@@ -35,7 +35,7 @@ const modelCards = [
   {
     brand: "DISRPTVE Brings ",
     logo: "/images/logo-disrptve-dark.png",
-    title: "The Brand And The Audience.",
+    title: "The brand and the audience.",
     desc: "A marketing and communications agency built by Ashish Chowdhry and Kaushik Sundararajan. Over a decade of brand strategy across Indian consumer categories, with deep access to celebrity and creator talent. Built by serial entrepreneurs who have raised capital and scaled multiple businesses themselves.",
     img: "/images/home/disrptve_bg.png",
     tags: [
@@ -153,7 +153,7 @@ const Hero = () => {
       stagger: 0.15
     }, "<");
 
-    },[isMobile]);
+  }, [isMobile]);
 
   useGSAP(() => {
 
@@ -215,7 +215,7 @@ const Hero = () => {
         ease: "linear",
       })
     }
-    },[isMobile]);
+  }, [isMobile]);
 
   return (
     <>
@@ -278,13 +278,13 @@ const Hero = () => {
 
                 <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
                   <div className="col-span-4">
-                    <p className="md:text-xl paragraph_split mb-2 capitalize ">The integrated model  for    non-linear growth.</p>
+                    <p className="md:text-xl paragraph_split mb-2   ">The integrated model  for    non-linear growth.</p>
 
-                    <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 lg:leading-20 tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
-                    <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
+                    <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden   leading-12 lg:leading-20 tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
+                    <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden   leading-none tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
                   </div>
                   <div className=" pb-4 text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
-                    <p className='leading-tight  md:text-xl   paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
+                    <p className='leading-tight  md:text-xl   paragraph_split  mt-5'>By <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
                   </div>
                 </div>
               </div>
@@ -306,10 +306,10 @@ const Hero = () => {
                               className="h-full"
                             />
                           </div>
-                          <h4 className="leading-none capitalize md:md:font-semibold">
+                          <h4 className="leading-none   md:md:font-semibold">
                             {card.brand}
                           </h4>
-                          <h4 className="leading-none capitalize md:md:font-semibold">
+                          <h4 className="leading-none   md:md:font-semibold">
                             {card.title}
                           </h4>
                           <p className="relative mt-5 md:mt-10 opacity-80  leading-tight md:text-lg">

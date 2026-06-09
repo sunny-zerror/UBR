@@ -79,10 +79,10 @@ const WhoWeAre = () => {
                                         className="h-full"
                                     />
                                 </div>
-                                <h4 className="leading-none capitalize md:md:font-semibold">
+                                <h4 className="leading-none   md:md:font-semibold">
                                     {card.brand}
                                 </h4>
-                                <h4 className="leading-none capitalize md:md:font-semibold">
+                                <h4 className="leading-none   md:md:font-semibold">
                                     {card.title}
                                 </h4>
                                 <p className="relative mt-5 md:mt-10 opacity-80  leading-tight md:text-lg">

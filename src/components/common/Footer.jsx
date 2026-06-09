@@ -168,12 +168,12 @@ const Footer = () => {
           </div>
           <div className=" h-full space-y-5">
             <p className=' uppercase text-sm aeonik'>Sitemap</p>
-            <div className=" capitalize space-y-2">
+            <div className="   space-y-2">
               {navLinks.map((link, i) => {
                 const isActive = pathname === link.href;
 
                 return (
-                  <div key={i} className={` text-[#FFFFFF] w-fit  text-sm capitalize opacity-60 hover:opacity-100 transition-all duration-150 ${isActive && "opacity-100"}  group cursor-pointer`}>
+                  <div key={i} className={` text-[#FFFFFF] w-fit  text-sm   opacity-60 hover:opacity-100 transition-all duration-150 ${isActive && "opacity-100"}  group cursor-pointer`}>
                     <Link href={link.href} className="relative  leading-none">
                       {link.label}
 
@@ -211,7 +211,7 @@ const Footer = () => {
           </div>
           <div className=" h-full space-y-5 md:*:pl-12">
             <p className=' uppercase text-sm aeonik' >Socials</p>
-            <div className=" capitalize space-y-2">
+            <div className="   space-y-2">
               <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
                 <span
                   className={` absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF] transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100 `}

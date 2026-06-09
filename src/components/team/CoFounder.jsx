@@ -8,7 +8,8 @@ const CoFounders = () => {
             <SectionHeading
                 btnText="Co Founders"
                 heading={<>Three operators. <br /> One model.</>}
-                desc="UBR brings disciplined capital and operator discipline. DISRPTVE brings audience ownership and brand-building. Together, the two cultures most consumer ventures struggle to combine."
+                desc={<>
+                    UBR brings <span className='highlight'>disciplined capital</span> and operator discipline. DISRPTVE brings <span className='highlight'>audience ownership</span> and brand-building. Together, the two cultures most consumer ventures struggle to combine.</>}
             />
             <div className="container flex overflow-x-scroll scroller_none md:grid grid-cols-3 gap-x-5">
                 <div className=" w-[80vw] md:w-full shrink-0 space-y-4">
@@ -18,7 +19,7 @@ const CoFounders = () => {
                         </div>
                     </div>
                     <div className="space-y-1">
-                        <h4 className='capitalize md:font-semibold leading-none'>Binoy Khimji</h4>
+                        <h4 className='  md:font-semibold leading-none'>Binoy Khimji</h4>
                         <h6 className=''>Co-founder • UBR</h6>
                         <p className='leading-tight  w-full opacity-80 max-sm:mt-4 md:w-[90%] mt-5'>Brings disciplined capital, enterprise scaling, and a proven playbook for turning revenue into profit. The P&L rigour and governance side of the model, anchored by the Cornerstone ecosystem.</p>
                     </div>
@@ -30,7 +31,7 @@ const CoFounders = () => {
                         </div>
                     </div>
                     <div className="space-y-1">
-                        <h4 className='capitalize md:font-semibold leading-none'>Ashish Chowdhry</h4>
+                        <h4 className='  md:font-semibold leading-none'>Ashish Chowdhry</h4>
                         <h6 className=''>Co-founder • disrptve</h6>
                         <p className='leading-tight  w-full opacity-80 max-sm:mt-4 md:w-[90%] mt-5'>Authentic celebrity co-ownership, deep brand-building experience, unrivalled access to high-affinity audiences. The talent and brand side of the operating model.</p>
                     </div>
@@ -42,7 +43,7 @@ const CoFounders = () => {
                         </div>
                     </div>
                     <div className="space-y-1">
-                        <h4 className='capitalize md:font-semibold leading-none'>Kaushik Sundararajan</h4>
+                        <h4 className='  md:font-semibold leading-none'>Kaushik Sundararajan</h4>
                         <h6 className=''>Co-founder • disrptve</h6>
                         <p className='leading-tight  w-full opacity-80 max-sm:mt-4 md:w-[90%] mt-5'>15+ years across marketing and brand strategy. Ran Omnikon for a decade before co-founding DISRPTVE Communications. Founder’s mindset, agency-built execution.</p>
                     </div>

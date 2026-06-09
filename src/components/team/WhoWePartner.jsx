@@ -51,7 +51,7 @@ const WhoWePartner = () => {
       <SectionHeading
         heading={"Five seats. One table."}
         btnText={"Who we partner with"}
-        desc={"Whichever seat you're in, the answer starts the same way — with a direct conversation about what you're building, and what it needs next."}
+        desc={<>Whichever seat you're in, the answer starts the same way — with a <span className='highlight'> direct conversation </span>about what you're building, and what it needs next.</>}
       />
       <div className="container md:pt-16">
 
@@ -61,7 +61,7 @@ const WhoWePartner = () => {
               <h6>{item.id} </h6>
               <h6> {item.group}</h6>
             </div>
-            <div className=" max-sm:pb-5 col-span-4 md:col-span-3 capitalize">
+            <div className=" max-sm:pb-5 col-span-4 md:col-span-3  ">
               <h4 className=' md:h-20 leading-tight '>{item.title}</h4>
               <div className="md:h-0 md:group-hover:h-[10rem] transition-all duration-300 overflow-hidden">
                 <p className='  w-full max-sm:mt-2 md:w-[80%] leading-tight text-sm  md:text-lg'>{item.description}</p>

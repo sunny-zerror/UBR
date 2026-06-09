@@ -90,7 +90,7 @@ const Playbook = () => {
                                 Five pillars. <br /> One playbook.
                             </>
                         }
-                        desc={"Not concepts. Integrated capabilities delivered by an embedded team. Each pillar moves a specific metric."}
+                        desc={<>  <span className='highlight'>Not concepts.</span> Integrated capabilities delivered by an embedded team. Each pillar moves a <span className='highlight'> specific metric.</span></>}
                     />
 
                     <div className="container ">
@@ -124,7 +124,7 @@ const Playbook = () => {
                                                 <RiArrowDownLine />
                                             </div>
                                         </div>
-                                        <div className={`h-0 pl-5 ${openId === item.id ? "h-42 opacity-100 pt-5" : "h-0 opacity-0 pt-0"} transition-all duration-300 overflow-hidden capitalize space-y-2`}>
+                                        <div className={`h-0 pl-5 ${openId === item.id ? "h-42 opacity-100 pt-5" : "h-0 opacity-0 pt-0"} transition-all duration-300 overflow-hidden   space-y-2`}>
                                             {item.items.map((subItem, i) => (
                                                 <div key={i} className="flex items-center gap-x-2">
                                                     <div className="size-1.75 bg-[#000000]"></div>

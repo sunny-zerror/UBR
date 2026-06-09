@@ -61,7 +61,7 @@ const ContactHero = () => {
     <div className=' contact_hero w-full   bg-[#4688F0]  text-white'>
       <div className=" container  content_box h-[60vh]! w-full flex items-end pb-5">
         <div className="space-y-5 w-full  relative z-10 ">
-          <h1 className=' heading_split md:w-[80%] leading-none capitalize'>Get In Touch</h1>
+          <h1 className=' heading_split md:w-[80%] leading-none  '>Get In Touch</h1>
           <p className=' paragraph_split md:w-[45%] leading-tight'>Tell us what you are building, raising, or backing. One of us reads everything that comes in and replies within two working days.</p>
         </div>
       </div>

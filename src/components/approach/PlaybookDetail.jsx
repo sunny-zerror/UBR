@@ -141,7 +141,7 @@ const PlaybookDetail = () => {
                                 <div className={`dec_h_${item.id} max-sm:hidden h-10`}></div>
                                 <div className={`dec_h_${item.id} overflow-hidden flex flex-col-reverse md:grid grid-cols-6`}>
                                     <div className="col-span-3 max-sm:mt-5">
-                                        <div className={` capitalize space-y-1`}>
+                                        <div className={`   space-y-1`}>
                                             {item.services.map((subItem, i) => (
                                                 <div key={i} className="flex max-sm:text-sm  items-center gap-x-2">
                                                     <div className="size-1.5 bg-black"></div>
@@ -152,7 +152,7 @@ const PlaybookDetail = () => {
                                     </div>
                                     <div className="col-span-3 space-y-5">
 
-                                        <div className={` max-sm:text-sm  grid grid-cols-2 gap-x-5  md:gap-x-10 capitalize`}>
+                                        <div className={` max-sm:text-sm  grid grid-cols-2 gap-x-5  md:gap-x-10  `}>
                                             {item.description.map((desc, i) => (
                                                 <div key={i} className="">
                                                     <p key={desc} className='leading-tight'> {desc}</p>

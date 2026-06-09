@@ -17,7 +17,7 @@ const Team = () => {
                         <img data-img-effect className='cover' src="/images/team/binoy.png" alt="img" />
                     </div>
                     <div className="space-y-1">
-                        <h4 className='capitalize md:font-semibold leading-none'>Binoy Khimji</h4>
+                        <h4 className='  md:font-semibold leading-none'>Binoy Khimji</h4>
                         <h6 className='opacity-80'>Co-founder • UBR</h6>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ const Team = () => {
                         <img data-img-effect className='cover' src="/images/team/ashish.png" alt="img" />
                     </div>
                     <div className="space-y-1">
-                        <h4 className='capitalize md:font-semibold leading-none'>Ashish Chowdhry</h4>
+                        <h4 className='  md:font-semibold leading-none'>Ashish Chowdhry</h4>
                         <h6 className='opacity-80'>Co-founder • disrptve</h6>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ const Team = () => {
                         <img data-img-effect className='cover' src="/images/team/kaushik.png" alt="img" />
                     </div>
                     <div className="space-y-1">
-                        <h4 className='capitalize md:font-semibold leading-none'>Kaushik Sundararajan</h4>
+                        <h4 className='  md:font-semibold leading-none'>Kaushik Sundararajan</h4>
                         <h6 className='opacity-80'>Co-founder • disrptve</h6>
                     </div>
                 </div>

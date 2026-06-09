@@ -156,7 +156,7 @@ const MobileHero = () => {
             stagger: 0.15
         }, "<");
 
-    },[isMobile]);
+    }, [isMobile]);
 
     return (
         <>
@@ -179,90 +179,88 @@ const MobileHero = () => {
                     <div className='story_wrapper relative '>
 
 
-                        <div className="  hero_section w-full pt-16 pb-10 h-[100svh] flex flex-col justify-between  overflow-hidden  content_box ">
+                        <div className="  hero_section w-full pt-14 pb-10 h-[100svh] flex flex-col justify-between  overflow-hidden  content_box ">
 
                             <div className="video_section mx-auto container opacity-0  aspect-video rounded-xl overflow-hidden">
                                 <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='cover rounded-xl'></video>
                             </div>
-                            <div className=' hero_content opacity-0 mt-5 padding flex items-end '>
+                            <div className=' hero_content mt-12 opacity-0 padding flex items-end '>
 
                                 <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
                                     <div className="col-span-4">
-                                        <p className="md:text-xl paragraph_split mb-2 capitalize ">The integrated model  for    non-linear growth.</p>
-
-                                        <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden capitalize leading-12 lg:leading-20 tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
-                                        <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden capitalize leading-12 md:leading-24 tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
+                                        <p className="md:text-xl paragraph_split mb-2   ">The integrated model  for    non-linear growth.</p>
+                                        <h1 className=' mt-2 md:hidden   leading-12 md:leading-24 tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
                                     </div>
-                                    <div className=" pb-4 text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
-                                        <p className='leading-tight  md:text-xl   paragraph_split  mt-5'>Built by <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
+                                    <div className=" mt-2  text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
+                                        <p className='leading-tight  md:text-xl   paragraph_split '>By <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
 
-                            <div className=" w-full h-full py-18 center  bg-[#4688F0] ">
-                                <p
-                                    className=" diagramm text-4xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
-                                >
-                                    UBR DISRPTVE is a venture builder for consumer brands that want to scale
-                                    profitably. We back founders launching new ventures and operators reigniting
-                                    established ones.
-                                </p>
-                            </div>
+                        <div className=" w-full h-full py-18 center  bg-[#4688F0] ">
+                            <p
+                                className=" diagramm text-2xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
+                            >
+                                <span className='text-4xl'>UBR DISRPTVE</span> is a venture builder for consumer brands that want to <span className='highlight_white'> scale profitably.</span>
+                                 We back founders launching new ventures and operators reigniting
+                                established ones.
+                            </p>
+                        </div>
 
-                            <div className="  top-full   w-full h-full inset-0 bg-[#4688F0]  pb-12 ">
-                                <div className="w-full container flex h-full items-center overflow-hidden">
+                        <div className="  top-full   w-full h-full inset-0 bg-[#4688F0]  pb-12 ">
+                            <div className="w-full container flex h-full items-center overflow-hidden">
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
-                                        {modelCards.map((card, index) => (
-                                            <div
-                                                key={index}
-                                                className={` card_${index} group relative  bg-white flex flex-col justify-between text-black  rounded-lg p-7 md:p-10 overflow-hidden `}
-                                            >
-                                                <div className="relative">
-                                                    <div className="relative h-8 mb-5  ">
-                                                        <img
-                                                            src={card.logo}
-                                                            alt="logo"
-                                                            className="h-full"
-                                                        />
-                                                    </div>
-                                                    <h4 className="leading-none capitalize md:md:font-semibold">
-                                                        {card.brand}
-                                                    </h4>
-                                                    <h4 className="leading-none capitalize md:md:font-semibold">
-                                                        {card.title}
-                                                    </h4>
-                                                    <p className="relative mt-5 md:mt-10 opacity-80  leading-tight md:text-lg">
-                                                        {card.desc}
-                                                    </p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
+                                    {modelCards.map((card, index) => (
+                                        <div
+                                            key={index}
+                                            className={` card_${index} group relative  bg-white flex flex-col justify-between text-black  rounded-lg p-7 md:p-10 overflow-hidden `}
+                                        >
+                                            <div className="relative">
+                                                <div className="relative h-8 mb-5  ">
+                                                    <img
+                                                        src={card.logo}
+                                                        alt="logo"
+                                                        className="h-full"
+                                                    />
                                                 </div>
-
-
-                                                <div className=" relative mt-5 md:mt-10 grid grid-cols-3  gap-3">
-                                                    {card.tags.map((tag, i) => {
-                                                        return (
-                                                            <div
-                                                                key={i}
-                                                                className={`rounded-md font-medium text-sm p-3 border border-black/20  bg-[#FFFFFF80] text-black`}
-                                                            >
-                                                                <div className="flex flex-col justify-center items-center md:gap-5">
-                                                                    <Image height={40} width={40} src={tag.icon} className=' max-sm:scale-75' alt='icon' />
-
-                                                                    <p className=" max-sm:text-xs aeonik md:md:font-semibold   uppercase">
-                                                                        {tag.label}
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        )
-                                                    })}
-                                                </div>
+                                                <h4 className="leading-none   md:md:font-semibold">
+                                                    {card.brand}
+                                                </h4>
+                                                <h4 className="leading-none   md:md:font-semibold">
+                                                    {card.title}
+                                                </h4>
+                                                <p className="relative mt-5 md:mt-10 opacity-80  leading-tight md:text-lg">
+                                                    {card.desc}
+                                                </p>
                                             </div>
-                                        ))}
-                                    </div>
+
+
+                                            <div className=" relative mt-5 md:mt-10 grid grid-cols-3  gap-3">
+                                                {card.tags.map((tag, i) => {
+                                                    return (
+                                                        <div
+                                                            key={i}
+                                                            className={`rounded-md font-medium text-sm p-3 border border-black/20  bg-[#FFFFFF80] text-black`}
+                                                        >
+                                                            <div className="flex flex-col justify-center items-center md:gap-5">
+                                                                <Image height={40} width={40} src={tag.icon} className=' max-sm:scale-75' alt='icon' />
+
+                                                                <p className=" max-sm:text-xs aeonik md:md:font-semibold   uppercase">
+                                                                    {tag.label}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </>
             )}
