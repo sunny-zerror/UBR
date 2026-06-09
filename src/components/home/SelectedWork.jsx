@@ -93,7 +93,7 @@ const SelectedWork = () => {
                 btnText="Selected work"
                 heading="Brands we have backed."
                 desc={<>
-                <p>Capital and celebrity, structured as a single move. <span className='highlight'> Strategic advisory</span> anchored to talent. A full-stack engagement that compounds.</p></>} />
+                <p>Capital and celebrity, structured as a single move.  Strategic advisory anchored to talent. A full-stack engagement that compounds.</p></>} />
             <div className="container grid md:grid-cols-2 gap-x-5 gap-y-10">
                 {WorkData.map((item, i) => (
                     <Link onMouseEnter={(e) => handleMouseEnter(e, item.title)}
