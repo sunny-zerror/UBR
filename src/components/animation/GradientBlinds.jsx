@@ -170,16 +170,35 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
   float dn = d / r;
   float spot = (1.0 - 2.0 * pow(dn, uSpotlightSoftness)) * uSpotlightOpacity;
   vec3 cir = vec3(spot);
-  float stripe = fract(uvMod.x * max(uBlindCount, 1.0));
+// square grid count
+float count = max(uBlindCount, 1.0);
 
-if (uShineFlip > 0.5)
-    stripe = 1.0 - stripe;
+// preserve square cells regardless of canvas aspect
+vec2 gridUV = uvMod;
+gridUV.x *= aspect;
 
-// smooth white strips
-float blinds = smoothstep(0.0, 0.8, stripe);
+// repeating square cells
+vec2 grid = fract(gridUV * count);
 
-// mix toward white instead of subtracting
-vec3 col = mix(base, vec3(1.0), blinds * 0.45);
+// optional flip
+if (uShineFlip > 0.5) {
+    grid.x = 1.0 - grid.x;
+}
+
+// center each cell
+vec2 cell = abs(grid - 0.5);
+
+// square mask
+float block =
+    1.0 -
+    smoothstep(
+        0.35, // inner size
+        0.55, // edge softness
+        max(cell.x, cell.y)
+    );
+
+// color
+vec3 col = mix(base, vec3(1.0), block * 0.45);
 
 // keep spotlight
 col += cir;
@@ -273,7 +292,9 @@ void main() {
         uniforms.iMouse.value = [x, y];
       }
     };
-    window.addEventListener('pointermove', onPointerMove);
+    const storyWrapper =
+      container.closest('.story_wrapper') || container;
+    storyWrapper.addEventListener('pointermove', onPointerMove);
 
     const loop = t => {
       rafRef.current = requestAnimationFrame(loop);
@@ -302,27 +323,36 @@ void main() {
     };
     rafRef.current = requestAnimationFrame(loop);
 
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      window.removeEventListener('pointermove', onPointerMove);
-      ro.disconnect();
-      if (canvas.parentElement === container) {
-        container.removeChild(canvas);
-      }
-      const callIfFn = (obj, key) => {
-        if (obj && typeof obj[key] === 'function') {
-          obj[key].call(obj);
-        }
-      };
-      callIfFn(programRef.current, 'remove');
-      callIfFn(geometryRef.current, 'remove');
-      callIfFn(meshRef.current, 'remove');
-      callIfFn(rendererRef.current, 'destroy');
-      programRef.current = null;
-      geometryRef.current = null;
-      meshRef.current = null;
-      rendererRef.current = null;
-    };
+return () => {
+  if (rafRef.current) cancelAnimationFrame(rafRef.current);
+
+  storyWrapper.removeEventListener(
+    'pointermove',
+    onPointerMove
+  );
+
+  ro.disconnect();
+
+  if (canvas.parentElement === container) {
+    container.removeChild(canvas);
+  }
+
+  const callIfFn = (obj, key) => {
+    if (obj && typeof obj[key] === 'function') {
+      obj[key].call(obj);
+    }
+  };
+
+  callIfFn(programRef.current, 'remove');
+  callIfFn(geometryRef.current, 'remove');
+  callIfFn(meshRef.current, 'remove');
+  callIfFn(rendererRef.current, 'destroy');
+
+  programRef.current = null;
+  geometryRef.current = null;
+  meshRef.current = null;
+  rendererRef.current = null;
+};
   }, [
     dpr,
     paused,

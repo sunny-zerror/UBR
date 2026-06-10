@@ -246,9 +246,9 @@ const Hero = () => {
                   gradientColors={['#ffffff', '#4688F0']}
                   angle={0}
                   noise={0.05}
-                  blindCount={30}
-                  blindMinWidth={60}
-                  spotlightRadius={2}
+                  blindCount={10}
+                  blindMinWidth={2}
+                  spotlightRadius={1.5}
                   spotlightSoftness={0.9}
                   spotlightOpacity={0.6}
                   mouseDampening={0.1}
