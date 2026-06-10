@@ -192,8 +192,8 @@ vec2 cell = abs(grid - 0.5);
 float block =
     1.0 -
     smoothstep(
-        0.35, // inner size
-        0.55, // edge softness
+        0.40, // inner size
+        0.65, // edge softness
         max(cell.x, cell.y)
     );
 
