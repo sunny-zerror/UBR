@@ -245,13 +245,13 @@ const Hero = () => {
                 <GradientBlinds
                   gradientColors={['#ffffff', '#4688F0']}
                   angle={0}
-                  noise={0.05}
+                  noise={0}
                   blindCount={10}
                   blindMinWidth={2}
-                  spotlightRadius={1.5}
+                  spotlightRadius={1}
                   spotlightSoftness={0.9}
-                  spotlightOpacity={0.6}
-                  mouseDampening={0.1}
+                  spotlightOpacity={0.4}
+                  mouseDampening={0.5}
                   distortAmount={0}
                   shineDirection="right"
                 // mixBlendMode='darken'
